@@ -1,46 +1,43 @@
-import React from 'react'
-import './Login.css'
+import React from "react";
+import "./Login.css";
+import { headings } from "../../constants/Headings/headings";
 
-const Login = () => {
+const Login = (props) => {
+  const closeModal=()=>{
+    props.modalClose(false)
+  }
   return (
-    <center className="container">
-        <div className="form-box">
-          <div className="header-form">
-            <h4 className="text-primary text-center"><i className="fa fa-user-circle" style={{fontSize:"110px"}}></i></h4>
-            <div className="image">
-            </div>
+    <div className="container">
+      <div className="row">
+        <div className="cardContainer">
+          <div className="exitSection">
+            <button onClick={closeModal} className="exitbutton">X</button>
           </div>
-          <div className="body-form">
-           <form>
-              <div className="input-group mb-3">
-   <div className="input-group-prepend">
-    <span className="input-group-text"><i className="fa fa-user"></i></span>
-  </div>
-  <input type="text" className="form-control" placeholder="Username" />
-</div>
- <div className="input-group mb-3">
-   <div className="input-group-prepend">
-    <span className="input-group-text"><i className="fa fa-lock"></i></span>
-  </div>
-  <input type="text" className="form-control" placeholder="Password" />
-</div>
- <button type="button" className="btn btn-secondary btn-block">LOGIN</button>
- <div className="message">
-<div><input type="checkbox" /> Remember ME</div>
- <div><a href="/#">Forgot your password</a></div>
- </div>
-   </form>
-            <div className="social">
-              <a href="/#"><i className="fab fa-facebook"></i></a>
-              <a href="/#"><i className="fab fa-twitter-square"></i></a>
-              <a href="/#"><i className="fab fa-google"></i></a>
-            </div>
+          <div>
+            <h2 className="titleHeading">{headings.loginHeading}</h2>
+          </div>
+          <div className="userLoginContainer">
+            <label>Email</label>
+            <input
+              type="email"
+              placeholder="Enter Email"
+              className="form-control"
+            />
+            <label>Password</label>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              className="form-control"
+            />
+          </div>
+          <div className="buttonSection">
+            <button className="btn btn-success">Login</button>
+            <button className="btn btn-primary">Signup</button>
           </div>
         </div>
-       </center>
-  )
-}
+      </div>
+    </div>
+  );
+};
 
-export default Login
-
-
+export default Login;

@@ -23,13 +23,11 @@ const Home = () => {
   return (
     <div>
       <button onClick={()=>setLoginModal(!loginmodal)}>Login</button>
-<<<<<<< HEAD
       <TopSection/>
       <Navbar/>
       <Dropdowns/>
       <Vendorpage />
       <div>{loginmodal && <Login modalClose={modalClose} />}</div>
-=======
       <Feature />
       <Product />
       <Cards/>
@@ -38,8 +36,7 @@ const Home = () => {
       <ArrivedSection />
       <Vendorpage />
       <Footer/>
-      <div>{loginmodal && <Login />}</div>
->>>>>>> origin/balaManohar
+     
       
       
     </div>

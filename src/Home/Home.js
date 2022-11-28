@@ -7,6 +7,9 @@ import ArrivedSection from './ArrivedSection/ArrivedSection'
 import StayUpdated from "./StayUpdated/StayUpdated";
 
 import TrendySection from './TrendySection/TrendySection'
+import Feature from "./Features/Features"; 
+import Product from './Products/Product';
+
 
 
 const Home = () => {
@@ -14,6 +17,8 @@ const Home = () => {
   return (
     <div>
       <button onClick={()=>setLoginModal(!loginmodal)}>Login</button>
+      <Feature />
+      <Product />
       <TrendySection />
       <StayUpdated />
       <ArrivedSection />

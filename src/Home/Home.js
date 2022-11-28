@@ -14,16 +14,14 @@ import Product from './Products/Product';
 
 const Home = () => {
   const [loginmodal, setLoginModal] = useState(false);
+  const modalClose =(info)=>{
+    setLoginModal(info)
+  }
   return (
     <div>
       <button onClick={()=>setLoginModal(!loginmodal)}>Login</button>
-      <Feature />
-      <Product />
-      <TrendySection />
-      <StayUpdated />
-      <ArrivedSection />
       <Vendorpage />
-      <div>{loginmodal && <Login />}</div>
+      <div>{loginmodal && <Login modalClose={modalClose} />}</div>
       
       
     </div>

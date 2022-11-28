@@ -9,7 +9,7 @@ const Home = () => {
   }
   return (
     <div>
-      <button onClick={()=>setLoginModal(!loginmodal)}>Login</button>
+      <button className="d-none" onClick={()=>setLoginModal(!loginmodal)}>Login</button>
       <Vendorpage />
       <div>{loginmodal && <Login modalClose={modalClose} />}</div>
       

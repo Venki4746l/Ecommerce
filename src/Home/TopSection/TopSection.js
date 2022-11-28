@@ -59,7 +59,7 @@ const TopSection = () => {
             </div>
           </div>
           <div className="search">
-            <input type="text" placeholder="Search for Products" className='form-control' />
+            <input type="text" placeholder="Search for Products" className='form-control serachinput' />
             <svg
               className="search-icon"
               xmlns="http://www.w3.org/2000/svg"

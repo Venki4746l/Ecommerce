@@ -26,7 +26,7 @@ const Home = () => {
       <TopSection/>
       <Navbar/>
       <Dropdowns/>
-      <Vendorpage />
+     
       <div>{loginmodal && <Login modalClose={modalClose} />}</div>
       <Feature />
       <Product />

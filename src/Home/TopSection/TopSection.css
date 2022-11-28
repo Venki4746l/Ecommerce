@@ -13,7 +13,7 @@
     align-items: center;
     justify-content: center;
     background-color: #dcdcdc;
-    height: 10vh;
+    height: 19px;
     min-width: 100vw;
 }
 
@@ -134,7 +134,7 @@
 }
   
 
-  input {
+.serachinput {
     height: 40px;
     background: #fcfcfc;
     border: 1px solid #aaa;
@@ -144,7 +144,7 @@
 
 
   @media screen and (min-width: 992px) {
-    input {
+    .serachinput {
         height: 40px;
         min-width: 550px;
         background: #fcfcfc;

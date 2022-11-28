@@ -63,8 +63,8 @@ const data = [
 ];
 
 const TrendySection = () => {
-  const first_button = "View Detail";
-  const second_button = "Add To Cart";
+  // const first_button = "View Detail";
+  // const second_button = "Add To Cart";
   return (
     <>
       <div className="products-container">
@@ -89,8 +89,8 @@ const TrendySection = () => {
                   <h4 className="cross-price">${each.cross_price}.00</h4>
                 </div>
               </div>
-              <hr className="line" />
-              <div className="button-container pl-3 pr-3">
+              {/* <hr className="line" /> */}
+              {/* <div className="button-container pl-3 pr-3">
                 <div className="">
                   <svg
                     className="icon"
@@ -113,7 +113,7 @@ const TrendySection = () => {
                   </svg>
                   <button className="button">{second_button}</button>
                 </div>
-              </div>
+              </div> */}
             </div>
           );
         })}

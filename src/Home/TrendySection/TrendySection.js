@@ -81,7 +81,7 @@ const TrendySection = () => {
                 className="card-img-top from-control"
                 alt={each.title}
               />
-              <hr className="line" />
+              <hr className="card-line" />
               <div className="card-body">
                 <h5 className="title">{each.title}</h5>
                 <div className="price-container">

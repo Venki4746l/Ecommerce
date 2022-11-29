@@ -5,6 +5,7 @@
     background-size: cover;
     width: 338px;
   margin: 14px
+  
   }
   
   .title {
@@ -28,7 +29,7 @@
     color: grey;
   }
   
-  .line {
+  .card-line {
     width: 100%;
   }
   
@@ -67,7 +68,7 @@
   
   @media screen and (min-width: 992px) {
     .card-img-top {
-      padding: 37px;
+      padding: 70px;
       transition: transform 0.2s;
       width: 330px;
       height: 320px;
@@ -75,7 +76,7 @@
     }
   
     .card-img-top:hover {
-      transform: scale(1.3);
+      transform: scale(1.4);
     }
   }
   .shop-container {

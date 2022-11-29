@@ -3,9 +3,9 @@ import "./Card.css";
 
 function Cards() {
   return (
-    
+    <div className="container">
       <div className="row">
-        <div className="col-6 ">
+        <div className="col-6">
           <div className="small-container P-R d-flex flex-row justify-content-between">
             <img
               className="girl-image"
@@ -37,6 +37,7 @@ function Cards() {
             ></img>
           </div>
         </div>
+      </div>
       </div>
     
   );

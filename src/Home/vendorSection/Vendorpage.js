@@ -16,7 +16,7 @@ const Vendorpage = () => {
     // </div>
     <div className="slider_wraper">
       <div className="slider_tracker">
-        {imagesData.map((item)=><div className="slide">
+        {imagesData.map((item)=><div className="venderSlideImages">
           <img src={item} alt=""/>
 
         </div>)}

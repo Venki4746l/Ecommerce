@@ -1,25 +1,25 @@
-import React, { useState } from "react";
-import Login from "../pages/Login/Login";
-import Vendorpage from "./vendorSection/Vendorpage";
+import React from "react";
+//import Login from "../pages/Login/Login";
+
 import Navbar from "./NavbarSection/Navbar";
 import Dropdowns from "./DropDown/Dropdowns";
 import TopSection from "./TopSection/TopSection";
-
-import ArrivedSection from './ArrivedSection/ArrivedSection'
-
+import Feature from "./Features/Features";
+import Product from "./Products/Product";
+import Cards from "./CardOffer/Cards";
+import TrendySection from "./TrendySection/TrendySection";
 import StayUpdated from "./StayUpdated/StayUpdated";
 
-import TrendySection from './TrendySection/TrendySection'
-import Feature from "./Features/Features"; 
-import Product from './Products/Product';
-import Footer from "../Footer/Footer"
-import Cards from "./CardOffer/Cards"
+import ArrivedSection from "./ArrivedSection/ArrivedSection";
+
+import Vendorpage from "./vendorSection/Vendorpage";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
-  const [loginmodal, setLoginModal] = useState(false);
-  const modalClose =(info)=>{
-    setLoginModal(info)
-  }
+  // const [loginmodal, setLoginModal] = useState(false);
+  // const modalClose =(info)=>{
+  //   setLoginModal(info)
+  // }
   return (
     <div>
       <button onClick={()=>setLoginModal(!loginmodal)}>Login</button>
@@ -30,7 +30,7 @@ const Home = () => {
       <div>{loginmodal && <Login modalClose={modalClose} />}</div>
       <Feature />
       <Product />
-      <Cards/>
+      <Cards />
       <TrendySection />
       <StayUpdated />
       <ArrivedSection />

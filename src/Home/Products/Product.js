@@ -37,11 +37,11 @@ const Product = () => {
   
     return (  
       <>
-      <div className='cards'>
+      <div className='productcardssection'>
         {data.map((product)=> {
           return( 
-            <div key={product.id} className="product-card" >
-              <div className="product-container"> 
+            <div key={product.id} className="productSection-card" >
+              <div className="productSection-container"> 
                 <p> 15 Products</p>
               </div>
           <div className="image"><img src={product.imgSrc} className="card-img-top" alt={product.title} /></div> 

@@ -4,11 +4,11 @@ import "./TopSection.css";
 
 const TopSection = () => {
   return (
-    <>
+    
       <div className="entire-container">
         <div className="top-section-container">
           <div className="queries-section d-none d-lg-block">
-            <h6 className="heading">
+            <h6 className="top-section-heading">
               FAQs<span className="lines">|</span>Help
               <span className="lines">|</span>Support
             </h6>
@@ -54,12 +54,12 @@ const TopSection = () => {
         <div className="search-container">
           <div className="d-none d-lg-block">
             <div className="logos-container">
-              <h3 className="logo">E</h3>
+              <button className="shopLogo">E</button>
               <h1 className="logo-text">Shopper</h1>
             </div>
           </div>
           <div className="search">
-            <input type="text" placeholder="Search for Products" className='form-control' />
+            <input type="text" placeholder="Search for Products" className='form-control serachinput' />
             <svg
               className="search-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +93,7 @@ const TopSection = () => {
         </div>
         <hr className="line" />
       </div>
-    </>
+    
   );
 };
 

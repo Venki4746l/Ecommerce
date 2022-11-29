@@ -1,11 +1,12 @@
 import Carousel from "react-bootstrap/Carousel";
+import './index.css'
 
 function UncontrolledExample() {
   return (
-    <Carousel>
+    <Carousel className="carouselContainer">
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block carosalimage"
           src="https://technext.github.io/eshopper/img/carousel-1.jpg"
           alt="First slide"
         />
@@ -16,7 +17,7 @@ function UncontrolledExample() {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block carosalimage"
           src="https://technext.github.io/eshopper/img/carousel-2.jpg"
           alt="Second slide"
         />

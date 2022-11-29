@@ -22,12 +22,11 @@ const Home = () => {
   // }
   return (
     <div>
-      <button onClick={()=>setLoginModal(!loginmodal)}>Login</button>
-      <TopSection/>
-      <Navbar/>
-      <Dropdowns/>
+      <TopSection />
+      <Navbar />
+      <Dropdowns />
       <Vendorpage />
-      <div>{loginmodal && <Login modalClose={modalClose} />}</div>
+
       <Feature />
       <Product />
       <Cards />
@@ -35,10 +34,7 @@ const Home = () => {
       <StayUpdated />
       <ArrivedSection />
       <Vendorpage />
-      <Footer/>
-      <div>{loginmodal && <Login />}</div>
-      
-      
+      <Footer />
     </div>
   );
 };

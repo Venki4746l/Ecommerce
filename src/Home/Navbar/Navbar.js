@@ -1,7 +1,12 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Navbar.css";
+import Login from "../../pages/Login/Login";
 
 const Navbar = () => {
+    const [loginmodal, setLoginModal] = useState(false);
+  const modalClose = (info) => {
+    setLoginModal(info);
+  };
   return (
     <div>
       <div className="container-fluid mb-5">
@@ -110,7 +115,7 @@ const Navbar = () => {
                   <a href="contact.html" class="nav-item nav-link items">Contact</a>
                 </div>
                 <div class="navbar-nav ml-auto py-0">
-                  <a href="kd" class="nav-item nav-link items">Login</a>
+                <button onClick={() => setLoginModal(!loginmodal)}>Login</button>
                   <a href="kd" class="nav-item nav-link items">Register</a>
                 </div>
               </div>
@@ -162,6 +167,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      <div>{loginmodal && <Login modalClose={modalClose} />}</div>
     </div>
   );
 };

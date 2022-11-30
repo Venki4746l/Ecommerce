@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Login from "../pages/Login/Login";
 import Vendorpage from "./vendorSection/Vendorpage";
-import Navbar from "./NavbarSection/Navbar";
-import Dropdowns from "./DropDown/Dropdowns";
-import TopSection from "./TopSection/TopSection";
+import Topbar from "./TopBar/Topbar"
+import Navbar from "./Navbar/Navbar";
 
 import ArrivedSection from './ArrivedSection/ArrivedSection'
 
@@ -23,13 +22,8 @@ const Home = () => {
   return (
     <div>
       <button onClick={()=>setLoginModal(!loginmodal)}>Login</button>
-<<<<<<< HEAD
-      <TopSection/>
       <Navbar/>
-      <Dropdowns/>
-      <Vendorpage />
-      <div>{loginmodal && <Login modalClose={modalClose} />}</div>
-=======
+      <Topbar/>
       <Feature />
       <Product />
       <Cards/>
@@ -39,7 +33,6 @@ const Home = () => {
       <Vendorpage />
       <Footer/>
       <div>{loginmodal && <Login />}</div>
->>>>>>> origin/balaManohar
       
       
     </div>

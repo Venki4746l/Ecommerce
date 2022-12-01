@@ -53,13 +53,13 @@
   height: 200px;
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding-left: 15px;
   overflow: hidden;
   perspective: 100px;
   cursor: pointer;
   margin: 10px;
-  background-color: white;
-  border: 1px solid rgb(228, 220, 220);
+  background-image: linear-gradient(rgb(rgb(243, 178, 178)188, 188),rgb(236, 202, 202),rgb(164, 214, 164),rgb(255, 255, 179));
+  border: 1px solid gray;
 }
 
 .slide img {

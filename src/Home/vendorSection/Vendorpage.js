@@ -4,7 +4,7 @@ import imagesData from "../../constants/vendorImagesData/vendorimageData";
 
 const Vendorpage = () => {
   return (
-    <div className="pl-5 pr-5 ">
+    <div className="pl-5 pr-5 mt-3 mb-3">
       <div className="vendorBackgruond  p-2 d-flex ">
         {imagesData.map((image,index) => (
           <div key={index}  className="imageContainer p-4 mr-4">

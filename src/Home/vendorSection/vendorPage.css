@@ -6,13 +6,14 @@
   
  
 }
+
 .vendorBackgruond::-webkit-scrollbar {
   display: none; 
 }
 .imageContainer {
   background-color: #ffffff;
   border: 1px solid #ddd2d2;
-  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 4px rgb(228, 220, 220);
 }
 .vendorimage {
   width: 150px;

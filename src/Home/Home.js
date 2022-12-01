@@ -16,14 +16,14 @@ import Footer from "../Footer/Footer";
 const Home = () => {
   return (
     <div>
-      {/* <Topbar />
+      <Topbar />
       <Navbar /> 
       <Cards />
       <TrendySection />
       <StayUpdated />
-      <ArrivedSection /> */}
+      <ArrivedSection />
       <Vendorpage />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

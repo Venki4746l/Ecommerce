@@ -1,7 +1,8 @@
 import React from "react";
 
+
+import Topbar from "./TopBar/Topbar";
 import Navbar from "./Navbar/Navbar";
-import TopNavbar from "./TopBar/Topbar";
 
 import Cards from "./CardOffer/Cards";
 import TrendySection from "./TrendySection/TrendySection";
@@ -15,9 +16,8 @@ import Footer from "../Footer/Footer";
 const Home = () => {
   return (
     <div>
-      <TopNavbar />
       <Navbar />
-
+      <Topbar />
       <Cards />
       <TrendySection />
       <StayUpdated />

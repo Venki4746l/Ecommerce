@@ -18,6 +18,19 @@ const imagesData = [
   sliding1,
   sliding2,
   sliding3,
+  sliding5,
+  sliding1,
+  sliding2,
+  sliding3,
+  sliding4,
+  sliding5,
+  sliding6,
+  sliding7,
+  sliding8,
+  sliding1,
+  sliding2,
+  sliding3,
   sliding5
 ];
-export default imagesData
+export default imagesData;
+

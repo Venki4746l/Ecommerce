@@ -1,4 +1,5 @@
 import React from 'react'
+import './AllSection.css'
 
 import ArrivedSection from '../ArrivedSection/ArrivedSection'
 

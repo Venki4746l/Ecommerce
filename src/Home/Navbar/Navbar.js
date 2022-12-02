@@ -22,7 +22,7 @@ const Navbar = () => {
               <h6 className="m-4 text-dark">Categories</h6>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 1800 480"
+                viewBox="0 0 512 512"
                 className="m-3"
               >
                 <path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
@@ -40,13 +40,20 @@ const Navbar = () => {
                 <div className="nav-item dropdown">
                   <a
                     href="#k"
-                    className="nav-link dropdown-toggle"
+                    className="nav-link"
                     data-toggle="dropdown"
                     aria-expanded="false"
                     role="button"
                     id="navbarDropdown"
                   >
-                    Dresses <i class="fa fa-angle-down float-right mt-1"></i>
+                    Dresses <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 512"
+                className="m-3"
+                style={{height:"10px",width:"40px"}}
+              >
+                <path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+              </svg>
                   </a>
                   <div
                     className="dropdown-menu position-absolute bg-light border-0 rounded-0 w-100 m-0"
@@ -71,79 +78,79 @@ const Navbar = () => {
           </div>
           <div className="col-lg-9">
             <nav className="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-              <a href="kd" class="text-decoration-none d-block d-lg-none">
+              <a href="kd" className="text-decoration-none d-block d-lg-none">
                 <h1 className="m-0 display-5 font-weight-semi-bold">
-                  <span class="text-primary font-weight-bold border px-3 mr-1">E</span>
-                  <span class="heading">Shopper</span>
+                  <span className="text-primary font-weight-bold border px-3 mr-1">E</span>
+                  <span className="heading">Shopper</span>
                 </h1>
               </a>
-              {/* <button
+              <button
                 type="button"
-                class="navbar-toggler"
+                className="navbar-toggler"
                 data-toggle="collapse"
                 data-target="#navbarCollapse"
               >
                 <span className="navbar-toggler-icon"></span>
-              </button> */}
+              </button>
               <div
                 className="collapse navbar-collapse justify-content-between d-lg-block"
                 id="navbarCollapse"
               >
-                <div class="navbar-nav mr-auto py-0">
-                  <a href="index.html" class="nav-item nav-link items">Home</a>
-                  <a href="shop.html" class="nav-item nav-link items">Shop</a>
-                  <a href="detail.html" class="nav-item nav-link items">Shop Detail</a>
+                <div className="navbar-nav mr-auto py-0">
+                  <a href="index.html" className="nav-item nav-link items">Home</a>
+                  <a href="shop.html" className="nav-item nav-link items">Shop</a>
+                  <a href="detail.html" className="nav-item nav-link items">Shop Detail</a>
                   <div class="nav-item dropdown">
                     <a
                       href="#k"
-                      class="nav-link dropdown-toggle items"
+                      className="nav-link dropdown-toggle items"
                       data-toggle="dropdown"
                       aria-expanded="false"
                     >
                       Pages
                     </a>
-                    <div class="dropdown-menu rounded-0 m-0">
-                      <a href="cart.html" class="dropdown-item items">Shopping Cart</a>
-                      <a href="checkout.html" class="dropdown-item items">Checkout</a>
+                    <div className="dropdown-menu rounded-0 m-0">
+                      <a href="cart.html" className="dropdown-item items">Shopping Cart</a>
+                      <a href="checkout.html" className="dropdown-item items">Checkout</a>
                     </div>
                   </div>
-                  <a href="contact.html" class="nav-item nav-link items">Contact</a>
+                  <a href="contact.html" className="nav-item nav-link items">Contact</a>
                 </div>
-                <div class="navbar-nav ml-auto py-0">
-                  <a href="kd" class="nav-item nav-link items">Login</a>
-                  <a href="kd" class="nav-item nav-link items">Register</a>
+                <div className="navbar-nav ml-auto py-0">
+                  <a href="kd" className="nav-item nav-link items">Login</a>
+                  <a href="kd" className="nav-item nav-link items">Register</a>
                 </div>
               </div>
             </nav>
             <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src="https://technext.github.io/eshopper/img/carousel-1.jpg" className="d-block w-100" alt="..."/>
-      <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                    <div class="p-3" style={{ maxWidth: "700px" }}>
-                      <h4 class="text-light text-uppercase font-weight-medium mb-3">
+      <img src="https://technext.github.io/eshopper/img/carousel-1.jpg" className="d-block w-100" alt="Images"/>
+      <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div className="p-3" style={{ maxWidth: "700px" }}>
+                      <h4 className="text-light text-uppercase font-weight-medium mb-3">
                         10% Off Your First Order
                       </h4>
-                      <h3 class="display-4 text-white font-weight-bold mb-4">
+                      <h3 className="display-4 text-white font-weight-bold mb-4">
                       Reasonable Price
                       </h3>
-                      <a href="kd" class="btn btn-light py-2 px-3">
+                      <a href="kd" className="btn btn-light py-2 px-3">
                         Shop Now
                       </a>
                     </div>
                   </div>
     </div>
     <div className="carousel-item">
-      <img src="https://technext.github.io/eshopper/img/carousel-2.jpg" className="d-block w-100" alt="..."/>
-      <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                    <div class="p-3" style={{ maxWidth: "700px" }}>
-                      <h4 class="text-light text-uppercase font-weight-medium mb-3">
+      <img src="https://technext.github.io/eshopper/img/carousel-2.jpg" className="d-block w-100" alt="Images"/>
+      <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div className="p-3" style={{ maxWidth: "700px" }}>
+                      <h4 className="text-light text-uppercase font-weight-medium mb-3">
                         10% Off Your First Order
                       </h4>
-                      <h3 class="display-4 text-white font-weight-bold mb-4">
+                      <h3 className="display-4 text-white font-weight-bold mb-4">
                         Fashionable Dress
                       </h3>
-                      <a href="kd" class="btn btn-light py-2 px-3">
+                      <a href="kd" className="btn btn-light py-2 px-3">
                         Shop Now
                       </a>
                     </div>

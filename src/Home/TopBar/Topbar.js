@@ -9,6 +9,7 @@ const TopNavbar = () => {
           className="row py-2 px-xl-5"
           style={{ backgroundColor: "#EDF1FF" }}
         >
+          <></>
           <div className="col-lg-6 d-none d-lg-block">
             <div className="d-inline-flex align-items-start justify-content-start">
               <a className="text-dark text-decoration-none" href="kd">
@@ -24,65 +25,65 @@ const TopNavbar = () => {
               </a>
             </div>
           </div>
-          <div class="col-lg-6 text-center text-lg-right">
-            <div class="d-inline-flex align-items-center">
-              <a class="text-dark px-2" href="kd">
-                <i class="fab fa-facebook-f"></i>
+          <div className="col-lg-6 text-center text-lg-right">
+            <div className="d-inline-flex align-items-center">
+              <a className="text-dark px-2" href="kd">
+                <i className="fab fa-facebook-f"></i>
               </a>
-              <a class="text-dark px-2" href="kd">
-                <i class="fab fa-twitter"></i>
+              <a className="text-dark px-2" href="kd">
+                <i className="fab fa-twitter"></i>
               </a>
-              <a class="text-dark px-2" href="kd">
-                <i class="fab fa-linkedin-in"></i>
+              <a className="text-dark px-2" href="kd">
+                <i className="fab fa-linkedin-in"></i>
               </a>
-              <a class="text-dark px-2" href="kd">
-                <i class="fab fa-instagram"></i>
+              <a className="text-dark px-2" href="kd">
+                <i className="fab fa-instagram"></i>
               </a>
-              <a class="text-dark pl-2" href="kd">
-                <i class="fab fa-youtube"></i>
+              <a className="text-dark pl-2" href="kd">
+                <i className="fab fa-youtube"></i>
               </a>
             </div>
           </div>
         </div>
-        <div class="row align-items-center py-3 px-xl-5">
-          <div class="col-lg-3 d-none d-lg-block">
+        <div className="row align-items-center py-3 px-xl-5">
+          <div className="col-lg-3 d-none d-lg-block">
             <a
               href="kd"
-              class="text-decoration-none"
+              className="text-decoration-none"
               style={{ color: "black" }}
             >
-              <h1 class="m-0 font-weight-semi-bold">
-                <span class="text-primary font-weight-bold px-2 border mr-1">
+              <h1 className="m-0 font-weight-semi-bold">
+                <span className="text-primary font-weight-bold px-2 border mr-1">
                   E
                 </span>
-                <span class="heading font-weight-bold">Shopper</span>
+                <span className="heading font-weight-bold">Shopper</span>
               </h1>
             </a>
           </div>
-          <div class="col-lg-6 col-6 text-left">
+          <div className="col-lg-6 col-6 text-left">
             <form action="">
-              <div class="input-group">
+              <div className="input-group">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Search for products"
                 />
-                <div class="input-group-append">
-                  <span class="input-group-text bg-transparent text-primary">
-                    <i class="fa fa-search"></i>
+                <div className="input-group-append">
+                  <span className="input-group-text bg-transparent text-primary">
+                    <i className="fa fa-search"></i>
                   </span>
                 </div>
               </div>
             </form>
           </div>
-          <div class="col-lg-3 col-6 text-right">
-            <a href="kd" class="btn border">
-              <i class="fas fa-heart text-primary"></i>
-              <span class="heading badge">0</span>
+          <div className="col-lg-3 col-6 text-right">
+            <a href="kd" className="btn border">
+              <i className="fas fa-heart text-primary"></i>
+              <span className="heading badge">0</span>
             </a>
-            <a href="kd" class="btn border">
-              <i class="fas fa-shopping-cart text-primary"></i>
-              <span class="heading badge">0</span>
+            <a href="kd" className="btn border">
+              <i className="fas fa-shopping-cart text-primary"></i>
+              <span className="heading badge">0</span>
             </a>
           </div>
         </div>

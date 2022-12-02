@@ -7,6 +7,7 @@ const Login = (props) => {
     props.modalClose(false)
   }
   return (
+    <div className="container containermain">
     <div className="container main">
       <div className="row">
         <div className="cardContainer">

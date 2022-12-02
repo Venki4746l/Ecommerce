@@ -13,7 +13,7 @@ function Footer() {
               </h1>
             </a>
 
-            <p className="description">
+            <p className="footer-description">
               Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum
               no sit erat lorem et magna ipsum dolore amet erat.
             </p>
@@ -180,13 +180,13 @@ function Footer() {
                 <h3 className="quick-heading">Newsletter</h3>
                 <form>
                   <input
-                    className="input-field"
+                    className="footer-input-field"
                     placeholder="Your Name"
                     type="text"
                     required
                   ></input>
                   <input
-                    className="input-field"
+                    className="footer-input-field"
                     placeholder="Your Email"
                     type="email"
                     required

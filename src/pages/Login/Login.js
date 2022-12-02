@@ -8,6 +8,7 @@ const Login = (props) => {
   }
   return (
     <div className="container containermain">
+    <div className="container main">
       <div className="row">
         <div className="cardContainer">
           <div className="exitSection">

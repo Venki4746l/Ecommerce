@@ -1,0 +1,34 @@
+.items:hover {
+    color: #D19C97 !important;
+}
+.heading{
+    color: #0c0c0b !important;
+    font-weight: 600;
+}
+.navslide{
+    font-size: 16px;
+    margin-left: 40px;
+    font-family: sans-serif;
+}
+@media  screen and (max-width:568px) {
+    .text-container{
+        height: 120px;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 60px !important;
+        
+    }
+    .text-light{
+        font-size: 13px !important;
+        font-weight: 600 !important;
+    }
+    .shop-button{
+        padding: 2px !important;
+    }
+    .image-container{
+        height: 300px;
+    }
+}

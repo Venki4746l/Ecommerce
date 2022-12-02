@@ -1,12 +1,7 @@
-.card-1{
-    font-size: 25px;
-    font-weight: bold;    
-}
-
-.card-4 {
-    padding-bottom: 15px;
-}
-
-.h5 {
-    margin: 3px;
+.feature-container {
+    background-color: white;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    margin: 20px;
 }

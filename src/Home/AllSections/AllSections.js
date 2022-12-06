@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './AllSections.css'
+
 import ArrivedSection from '../ArrivedSection/ArrivedSection'
 
 import StayUpdated from '../StayUpdated/StayUpdated'
@@ -73,10 +75,16 @@ const AllSections = () => {
           <span>Trendy Products</span>
         </h2>
       </div>
-      <div className="trendy-container">
+      <div className="container-fluid app-container">
+      <div className="row">
         {data.map((each) => {
-          return <TrendySection key={each.id} shopDetails={each} />;
-        })}
+          return (
+            <div className="col-lg-3 col-md-6 col-sm-12"> 
+                <TrendySection key={each.id} shopDetails={each} />
+            </div>
+            )
+          })}
+        </div>
       </div>
       <StayUpdated />
       <div className="heading-section">
@@ -84,10 +92,16 @@ const AllSections = () => {
           <span>Just Arrived</span>
         </h2>
       </div>
-      <div className="trendy-container">
+      <div className="container-fluid app-container">
+      <div className="row">
         {data.map((each) => {
-          return <ArrivedSection key={each.id} shopDetails={each} />;
-        })}
+          return (
+            <div className="col-lg-3 col-md-6 col-sm-12"> 
+                <ArrivedSection key={each.id} shopDetails={each} />
+            </div>
+            )
+          })}
+        </div>
       </div>
     </>
   )

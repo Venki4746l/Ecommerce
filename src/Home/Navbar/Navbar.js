@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Dropdown from "react-bootstrap/Dropdown";
+import Login from "../../pages/Login/Login";
 
 const Navbar = () => {
+  const [isLogin,setLogin] =useState(false)
+
+  const modalClosehandler=(value)=>{
+    setLogin(value)
+  }
   return (
     <div>
       <div className="container-fluid mb-5">
@@ -84,9 +90,10 @@ const Navbar = () => {
                   <a href="contact.html" className="nav-item nav-link items">Contact</a>
                 </div>
                 <div className="navbar-nav ml-auto py-0">
-                  <a href=".." className="nav-item nav-link items">Login</a>
+                  <button  onClick={()=>setLogin(true)} className="border-0 nav-item nav-link items">Login</button>
                   <a href=".." className="nav-item nav-link items">Register</a>
                 </div>
+                {isLogin && <Login modalClose={modalClosehandler} />}
               </div>
             </nav>
 

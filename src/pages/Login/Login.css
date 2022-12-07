@@ -11,19 +11,28 @@
   display: flex;
   width: 80%;
   margin: 10% auto;
+  background-color: white;
+  
+  border-radius: 15px;
+ 
   
 }
 .cardContainerLogin {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid gray;
-  background-color: rgb(245, 233, 233);
-  box-shadow: 0 1px 1px black;
+  background-color: rgb(203, 248, 178);
+  width: 50%;
+  padding: 10px;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
 .imageLogin {
   object-fit: cover;
+  width: 50%;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .login_exitSection {

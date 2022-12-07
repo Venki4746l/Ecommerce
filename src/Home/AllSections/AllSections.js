@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
-import './AllSections.css'
+import "./AllSections.css";
 
-import ArrivedSection from '../ArrivedSection/ArrivedSection'
+import ArrivedSection from "../ArrivedSection/ArrivedSection";
 
-import StayUpdated from '../StayUpdated/StayUpdated'
+import StayUpdated from "../StayUpdated/StayUpdated";
 
-import TrendySection from '../TrendySection/TrendySection';
+import TrendySection from "../TrendySection/TrendySection";
 
 const data = [
   {
@@ -76,13 +76,13 @@ const AllSections = () => {
         </h2>
       </div>
       <div className="container-fluid app-container">
-      <div className="row">
-        {data.map((each) => {
-          return (
-            <div className="col-lg-3 col-md-6 col-sm-12"> 
+        <div className="row">
+          {data.map((each) => {
+            return (
+              <div className="col-lg-3 col-md-6 col-sm-12">
                 <TrendySection key={each.id} shopDetails={each} />
-            </div>
-            )
+              </div>
+            );
           })}
         </div>
       </div>
@@ -93,10 +93,10 @@ const AllSections = () => {
         </h2>
       </div>
       <div className="container-fluid app-container">
-      <div className="row">
-        {data.map((each) => {
-          return (
-            <div className="col-lg-3 col-md-6 col-sm-12"> 
+        <div className="row">
+          {data.map((each) => {
+            return (
+              <div className="col-lg-3 col-md-6 col-sm-12">
                 <ArrivedSection key={each.id} shopDetails={each} />
             </div>
 
@@ -108,7 +108,7 @@ const AllSections = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default AllSections
+export default AllSections;

@@ -99,6 +99,10 @@ const AllSections = () => {
             <div className="col-lg-3 col-md-6 col-sm-12"> 
                 <ArrivedSection key={each.id} shopDetails={each} />
             </div>
+
+
+
+
             )
           })}
         </div>

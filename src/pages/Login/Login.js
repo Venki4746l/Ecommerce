@@ -1,7 +1,7 @@
 import React from "react";
 import "./Login.css";
 import { headings } from "../../constants/Headings/headings";
-import loginimage from "../../Assets/loginimage.jpeg";
+import login from "../../Assets/login.jpeg";
 
 const Login = (props) => {
   const closeModal = () => {
@@ -54,7 +54,7 @@ const Login = (props) => {
 
         <img
           className="imageLogin flex-fill order-1 d-none d-sm-block"
-          src={loginimage}
+          src={login}
           alt=""
         />
       </div>

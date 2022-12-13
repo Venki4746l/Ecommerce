@@ -34,7 +34,7 @@ const TopNavbar = () => {
         <div className="row align-items-center py-3 px-xl-5">
           <div className="col-lg-3 d-none d-lg-block">
             <a
-              href="kd"
+              href="..."
               className="text-decoration-none"
               style={{ color: "black" }}
             >

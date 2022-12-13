@@ -71,7 +71,7 @@ const AllSections = () => {
   return (
     <>
       <div className="heading-section">
-        <h2 class="decorated">
+        <h2 className="decorated">
           <span>Trendy Products</span>
         </h2>
       </div>
@@ -79,7 +79,7 @@ const AllSections = () => {
         <div className="row">
           {data.map((each) => {
             return (
-              <div className="col-lg-3 col-md-6 col-sm-12">
+              <div key={each.id} className="col-lg-3 col-md-6 col-sm-12">
                 <TrendySection key={each.id} shopDetails={each} />
               </div>
             );
@@ -88,7 +88,7 @@ const AllSections = () => {
       </div>
       <StayUpdated />
       <div className="heading-section">
-        <h2 class="decorated">
+        <h2 className="decorated">
           <span>Just Arrived</span>
         </h2>
       </div>
@@ -96,7 +96,7 @@ const AllSections = () => {
         <div className="row">
           {data.map((each) => {
             return (
-              <div className="col-lg-3 col-md-6 col-sm-12">
+              <div key={each.id} className="col-lg-3 col-md-6 col-sm-12">
                 <ArrivedSection key={each.id} shopDetails={each} />
               </div>
             );

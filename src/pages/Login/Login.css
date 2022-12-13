@@ -1,46 +1,57 @@
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 400px;
-  z-index: 9999;
+.Modal_container {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 250px;
-  min-height: 100px;
-  padding: 15px;
-  border-radius: 10px;
-  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  overflow: none;
+  left: 0;
+  top: 0;
+  z-index: 99;
+}
+.Modal_content_container {
+  display: flex;
+  width: 80%;
+  margin: 10% auto;
+  background-color: white;
+  
+  border-radius: 15px;
+ 
   
 }
-
-.exitSection{
-  align-self: end;
-  padding: 10px;
-}
-.exitbutton{
-  background-color: transparent;
-  border: none;
-  font-size: 28px;
-  font-family: 'Courier New', Courier, monospace;
-}
-.titleHeading{
-  font-size: 34px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: rgb(71, 187, 18);
-}
-.cardContainer{
+.cardContainerLogin {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid gray;
-  height: 350px;
-  width: 350px;
-  background-color: rgb(231, 227, 227);
-  box-shadow: 0 1px 1px black;
+  background-color: rgb(203, 248, 178);
+  width: 50%;
+  padding: 10px;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
 }
-.userLoginContainer{
+
+.imageLogin {
+  object-fit: cover;
+  width: 50%;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.login_exitSection {
+  align-self: flex-start;
+  padding: 10px;
+}
+.login_exitbutton {
+  background-color: transparent;
+  border: none;
+  font-size: 28px;
+  font-family: "Courier New", Courier, monospace;
+}
+.login_titleHeading {
+  font-size: 34px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(71, 187, 18);
+}
+
+.userLoginContainer {
   display: flex;
   flex-direction: column;
   color: rgb(68, 8, 233);
@@ -48,11 +59,11 @@
   padding: 9px;
   font-weight: bold;
 }
-.buttonSection{
+.login_buttonSection {
   display: flex;
   justify-content: space-around;
   padding: 15px;
   font-size: 32px;
   font-weight: bold;
-
+  
 }

@@ -1,14 +1,14 @@
 import React from 'react'
-import Navbar from './Home/Navbar/Navbar';
-import TopNavbar from './Home/TopBar/Topbar';
+//import Login from './pages/Login/Login'
+import Home from './Home/Home'
+
+
 const App = () => {
   return (
-    <div>
-      <TopNavbar/>
-     <Navbar/>
-    </div>
+    <>
+    <Home/>
+    </>
   )
 }
 
 export default App
-;

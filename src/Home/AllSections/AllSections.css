@@ -1,0 +1,31 @@
+.heading-section {
+    width: 100%;
+    align-items: center;
+    margin-top: 30px;
+    
+  }
+
+.app-container {
+  padding-right: 60px;
+  padding-left: 60px;
+}
+  
+  .decorated{
+    overflow: hidden;
+    text-align: center;
+  }
+  .decorated > span{
+   position: relative;
+   display: inline-block;
+  }
+  .decorated > span:before, .decorated > span:after{
+   content: '';
+   position: absolute;
+   top: 50%;
+   border-bottom: 2px solid;
+   width: 50px;
+   margin: 0 10px;
+  }
+  .decorated > span:before{
+   right: 100%;
+  }

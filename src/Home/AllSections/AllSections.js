@@ -70,7 +70,7 @@ const AllSections = () => {
           <span>Trendy Products</span>
         </h2>
       </div>
-      <div className="d-flex flex-wrap">
+      <div className="d-flex flex-wrap p-sm-1 p-xl-5">
         {data.map((item) => (
           <ProductCard key={item.id} productDetails={item} />
         ))}
@@ -81,7 +81,7 @@ const AllSections = () => {
           <span>Just Arrived</span>
         </h2>
       </div>
-      <div className="d-flex flex-wrap">
+      <div className="d-flex flex-wrap p-sm-1 p-lg-5">
         {data.map((item) => (
           <ProductCard key={item.id} productDetails={item} />
         ))}

@@ -1,12 +1,7 @@
 import React from "react";
-
 import "./AllSections.css";
-
-import ArrivedSection from "../ArrivedSection/ArrivedSection";
-
 import StayUpdated from "../StayUpdated/StayUpdated";
-
-import TrendySection from "../TrendySection/TrendySection";
+import ProductCard from "../ProductCard/ProductCard";
 
 const data = [
   {
@@ -75,16 +70,10 @@ const AllSections = () => {
           <span>Trendy Products</span>
         </h2>
       </div>
-      <div className="container-fluid app-container">
-        <div className="row">
-          {data.map((each) => {
-            return (
-              <div key={each.id} className="col-lg-3 col-md-6 col-sm-12">
-                <TrendySection key={each.id} shopDetails={each} />
-              </div>
-            );
-          })}
-        </div>
+      <div className="d-flex flex-wrap p-sm-1 p-xl-5">
+        {data.map((item) => (
+          <ProductCard key={item.id} productDetails={item} />
+        ))}
       </div>
       <StayUpdated />
       <div className="heading-section">
@@ -92,16 +81,10 @@ const AllSections = () => {
           <span>Just Arrived</span>
         </h2>
       </div>
-      <div className="container-fluid app-container">
-        <div className="row">
-          {data.map((each) => {
-            return (
-              <div key={each.id} className="col-lg-3 col-md-6 col-sm-12">
-                <ArrivedSection key={each.id} shopDetails={each} />
-              </div>
-            );
-          })}
-        </div>
+      <div className="d-flex flex-wrap p-sm-1 p-lg-5">
+        {data.map((item) => (
+          <ProductCard key={item.id} productDetails={item} />
+        ))}
       </div>
     </>
   );

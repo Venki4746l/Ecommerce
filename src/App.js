@@ -6,7 +6,6 @@ const App = () => {
   return (
     <div>
      <Home />
-    <h1>SaiShiva</h1>
     </div>
   )
 }

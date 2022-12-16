@@ -33,7 +33,7 @@
     margin-right: 9px;
 }
 
-.description{
+.footer-description{
     margin-top: 23px;
     font-size: 16px;
 }
@@ -50,7 +50,7 @@
     color: #1c1c1c;
 }
 
-.input-field{
+.footer-input-field{
     width: 100%;
     border: none;
     outline: none;
@@ -79,7 +79,6 @@
 
 .shopper-heading:hover{
     color: #1c1c1c;
-    text-decoration: none;
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: rgb(182, 172, 172);

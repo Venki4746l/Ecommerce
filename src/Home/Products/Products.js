@@ -1,7 +1,7 @@
 import React from 'react'
 import './Products.css';
 
-const App = () => {
+const Product = () => {
   return (
     <center>
     <div>
@@ -93,4 +93,4 @@ const App = () => {
   )
 }
 
-export default App
+export default Product;

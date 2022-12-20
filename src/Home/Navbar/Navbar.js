@@ -18,10 +18,6 @@ const Navbar = () => {
             <a
               className="btn shadow-none d-flex align-items-center justify-content-between text-white w-100"
               data-toggle="collapse"
-<<<<<<< HEAD
-              href="..."
-              style={{height:"65px",backgroundColor:"#D19C97",marginTop:"-1px",padding:"0 30px",ariaExpanded:"true",}}
-=======
               href="#navbar-vertical"
               style={{
                 height: "65px",
@@ -30,7 +26,6 @@ const Navbar = () => {
                 padding: "0 30px",
                 ariaExpanded: "true",
               }}
->>>>>>> origin/Venkateswara_rao
             >
               <h6 className="m-4 text-dark">Categories</h6>
 
@@ -66,22 +61,6 @@ const Navbar = () => {
                     </svg> */}
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
-<<<<<<< HEAD
-                    <Dropdown.Item href="...">Men's Dresses</Dropdown.Item>
-                    <Dropdown.Item href="...">Women's Dresses</Dropdown.Item>
-                    <Dropdown.Item href="...">Baby's Dresses</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-                  <a href="..." className="nav-item nav-link">Shirts</a>
-                  <a href="..." className="nav-item nav-link">Jeans</a>
-                  <a href="..." className="nav-item nav-link">Swimwear</a>
-                  <a href="..." className="nav-item nav-link">Sleepwear</a>
-                  <a href="..." className="nav-item nav-link">Sportswear</a>
-                  <a href="..." className="nav-item nav-link">Jumpsuits</a>
-                  <a href="..." className="nav-item nav-link">Blazers</a>
-                  <a href="..." className="nav-item nav-link">Jackets</a>
-                  <a href="..." className="nav-item nav-link">Shoes</a>
-=======
                     <Dropdown.Item href="#/action-1">
                       Men's Dresses
                     </Dropdown.Item>
@@ -120,7 +99,6 @@ const Navbar = () => {
                 <a href="kd" className="nav-item nav-link">
                   Shoes
                 </a>
->>>>>>> origin/Venkateswara_rao
               </div>
             </nav>
           </div>
@@ -149,16 +127,6 @@ const Navbar = () => {
                 id="navbarCollapse"
               >
                 <div className="navbar-nav mr-auto py-0">
-<<<<<<< HEAD
-                  <a href="..." className="nav-item nav-link items">Home</a>
-                  <a href="..." className="nav-item nav-link items">Shop</a>
-                  <a href="..." className="nav-item nav-link items">Shop Detail</a>
-                  <NavDropdown title="Pages" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="...">Shopping Cart</NavDropdown.Item>
-                    <NavDropdown.Item href="...">Checkout</NavDropdown.Item>
-                  </NavDropdown>
-                  <a href="..." className="nav-item nav-link items">Contact</a>
-=======
                   <a href="index.html" className="nav-item nav-link items">
                     Home
                   </a>
@@ -179,14 +147,9 @@ const Navbar = () => {
                   <a href="contact.html" className="nav-item nav-link items">
                     Contact
                   </a>
->>>>>>> origin/Venkateswara_rao
                 </div>
                 
                 <div className="navbar-nav ml-auto py-0">
-<<<<<<< HEAD
-                  <a href="..." className="nav-item nav-link items">Login</a>
-                  <a href="..." className="nav-item nav-link items">Register</a>
-=======
                   <button
                     onClick={() => setLogin(true)}
                     className="border-0 nav-item nav-link items"
@@ -196,7 +159,6 @@ const Navbar = () => {
                   <a href=".." className="nav-item nav-link items">
                     Register
                   </a>
->>>>>>> origin/Venkateswara_rao
                 </div>
                 {isLogin && <Login modalClose={modalClosehandler} />}
               </div>
@@ -209,15 +171,6 @@ const Navbar = () => {
             >
               <div className="carousel-inner">
                 <div className="carousel-item active">
-<<<<<<< HEAD
-                  <img src="https://technext.github.io/eshopper/img/carousel-1.jpg" className="d-block w-100" alt="Images"/>
-                    <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                      <div className="p-3" style={{ maxWidth: "700px" }}>
-                        <h4 className="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
-                          <h3 className="display-4 text-white font-weight-bold mb-4">Reasonable Price</h3>
-                            <a href="..." className="btn btn-light py-2 px-3">Shop Now</a>
-                      </div>
-=======
                   <img
                     src="https://technext.github.io/eshopper/img/carousel-1.jpg"
                     className="d-block w-100"
@@ -234,20 +187,10 @@ const Navbar = () => {
                       <a href="kd" className="btn btn-light py-2 px-3">
                         Shop Now
                       </a>
->>>>>>> origin/Venkateswara_rao
                     </div>
                   </div>
                 </div>
                 <div className="carousel-item">
-<<<<<<< HEAD
-                  <img src="https://technext.github.io/eshopper/img/carousel-2.jpg" className="d-block w-100" alt="Images"/>
-                    <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                      <div className="p-3" style={{ maxWidth: "700px" }}>
-                        <h4 className="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
-                          <h3 className="display-4 text-white font-weight-bold mb-4">Fashionable Dress</h3>
-                            <a href="..." className="btn btn-light py-2 px-3">Shop Now</a>
-                      </div>
-=======
                   <img
                     src="https://technext.github.io/eshopper/img/carousel-2.jpg"
                     className="d-block w-100"
@@ -264,7 +207,6 @@ const Navbar = () => {
                       <a href="kd" className="btn btn-light py-2 px-3">
                         Shop Now
                       </a>
->>>>>>> origin/Venkateswara_rao
                     </div>
                   </div>
                 </div>

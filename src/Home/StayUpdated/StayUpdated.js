@@ -7,7 +7,7 @@ const StayUpdated = () => {
     <>
       <div className="stay-container">
         <div className="heading-section">
-          <h2 class="decorated">
+          <h2 className="decorated">
             <span>Stay Updated</span>
           </h2>
           <div className="description-container">

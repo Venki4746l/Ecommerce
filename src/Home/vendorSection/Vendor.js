@@ -7,10 +7,10 @@ import options from './../../constants/vendorImagesData/vendorResponsive';
 
 const Vendor = () => {
   return (
-    <div class="container-fluid vendorContainer">
+    <div className="container-fluid vendorContainer">
       <OwlCarousel {...options}>
-        {imagesData.map((item) => (
-          <div className="vendorImageContainer">
+        {imagesData.map((item,index) => (
+          <div key={index} className="vendorImageContainer">
             <img className="img" src={item} alt="" />
           </div>
         ))}

@@ -1,10 +1,6 @@
 .text-primary {
     color: #D19C97 !important;
 }
-.heading{
-    color: #0c0c0b !important;
-    
-}
-.mar{
-    margin-right: 5px;
+.d-block {
+    display: block !important;
 }

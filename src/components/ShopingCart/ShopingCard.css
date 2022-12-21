@@ -19,13 +19,27 @@
   height: 30px;
   width: 35px;
 }
-.buttons-card-shoping {
+.buttons-increse-quantity {
   background-color: #d19c97;
   border-width: 0px;
   color: black;
   height: 30px;
   width: 31px;
 }
+.buttons-increse-quantity:hover {
+  background-color: green;
+}
+.buttons-decrese-quantity {
+  background-color: #d19c97;
+  border-width: 0px;
+  color: black;
+  height: 30px;
+  width: 31px;
+}
+.buttons-decrese-quantity:hover {
+  background-color: red;
+}
+
 .card-deleted-button {
   background-color: #d19c97;
   border-width: 0px;

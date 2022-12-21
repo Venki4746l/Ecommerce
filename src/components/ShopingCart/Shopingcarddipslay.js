@@ -63,7 +63,7 @@ const Shopingcarddipslay = ({
                       <div className="input-group-btn">
                         <button
                           onClick={() => DecreaseQuantity(key)}
-                          className="buttons-card-shoping"
+                          className="buttons-decrese-quantity"
                         >
                           <i className="fa fa-minus"></i>
                         </button>
@@ -78,7 +78,7 @@ const Shopingcarddipslay = ({
                       <div className="input-group-btn">
                         <button
                           onClick={() => IncreaseQuantity(key)}
-                          className="buttons-card-shoping"
+                          className="buttons-increse-quantity"
                         >
                           <i className="fa fa-plus"></i>
                         </button>

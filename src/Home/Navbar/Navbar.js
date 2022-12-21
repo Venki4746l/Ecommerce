@@ -130,7 +130,7 @@ const Navbar = (props) => {
               <div className="navbar-nav ml-auto py-0">
                 <button
                   onClick={() => setLogin(false)}
-                  href="/"
+                 
                   className="nav-item nav-link"
                 >
                   Login

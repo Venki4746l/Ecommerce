@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import "./ShopingCard.css";
 import {
   IncreaseQuantity,
   DecreaseQuantity,
@@ -26,7 +27,7 @@ const Shopingcarddipslay = ({
       <div className="row px-xl-5">
         <div className="col-lg-8 table-responsive mb-5">
           <table className="table table-bordered text-center mb-0">
-            <thead className="bg-info text-dark">
+            <thead className="bg-primary text-white">
               <tr>
                 <th>Products</th>
                 <th>Price</th>
@@ -38,14 +39,20 @@ const Shopingcarddipslay = ({
             <tbody className="align-middle">
               {ListCart.map((item, key) => (
                 <tr key={key}>
-                  <td className="d-flex">
+                  <td className="d-flex border">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className=""
-                      style={{ width: "90px" }}
+                      className="align-start"
+                      style={{
+                        height: "75px",
+                        width: "75px",
+                        objectFit: "cover",
+                      }}
                     />
-                    <p className="align-center">{item.name}</p>
+                    <p className="align-center pt-4 title-card-name d-inline-block">
+                      {item.name}
+                    </p>
                   </td>
                   <td className="align-middle">${item.price}</td>
                   <td className="align-middle">
@@ -56,14 +63,14 @@ const Shopingcarddipslay = ({
                       <div className="input-group-btn">
                         <button
                           onClick={() => DecreaseQuantity(key)}
-                          className="btn btn-sm btn-primary btn-minus"
+                          className="buttons-card-shoping"
                         >
                           <i className="fa fa-minus"></i>
                         </button>
                       </div>
                       <h1
                         type="text"
-                        className="form-control form-control-sm bg-info text-dark text-center"
+                        className="quantity-showing"
                         value={item.quantity}
                       >
                         {item.quantity}
@@ -71,7 +78,7 @@ const Shopingcarddipslay = ({
                       <div className="input-group-btn">
                         <button
                           onClick={() => IncreaseQuantity(key)}
-                          className="btn btn-sm btn-primary btn-plus"
+                          className="buttons-card-shoping"
                         >
                           <i className="fa fa-plus"></i>
                         </button>
@@ -84,7 +91,7 @@ const Shopingcarddipslay = ({
                   <td className="align-middle">
                     <button
                       onClick={() => DeleteCart(key)}
-                      className="btn btn-sm btn-primary"
+                      className="card-deleted-button"
                     >
                       <i className="fa fa-times"></i>
                     </button>
@@ -95,7 +102,7 @@ const Shopingcarddipslay = ({
           </table>
         </div>
         <div className="col-lg-4">
-          <form className="mb-5" action="">
+          {/* <form className="mb-5" action="">
             <div className="input-group">
               <input
                 type="text"
@@ -106,10 +113,10 @@ const Shopingcarddipslay = ({
                 <button className="btn btn-primary">Apply Coupon</button>
               </div>
             </div>
-          </form>
+          </form> */}
           <div className="card border-info mb-5">
             <div className="card-header bg-info border-0">
-              <h4 className="font-weight-semi-bold m-0">Cart Summary</h4>
+              <h4 className="font-weight-bold text-white m-0">Cart Summary</h4>
             </div>
             <div className="card-body">
               <div className="d-flex justify-content-between mb-3 pt-1">
@@ -126,7 +133,7 @@ const Shopingcarddipslay = ({
                 <h5 className="font-weight-bold">Total</h5>
                 <h5 className="font-weight-bold">${TotalCart + 10}</h5>
               </div>
-              <button className="btn btn-block btn-primary my-3 py-3">
+              <button className="btn-block checkout_button my-3 py-3">
                 Proceed To Checkout
               </button>
             </div>

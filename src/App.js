@@ -1,6 +1,6 @@
 import React from 'react'
 import Shopingcarddipslay from './components/ShopingCart/Shopingcarddipslay'
-// import AllSections from './Home/AllSections/AllSections'
+//import AllSections from './Home/AllSections/AllSections'
 //import Login from './pages/Login/Login'
 import Home from './Home/Home'
 

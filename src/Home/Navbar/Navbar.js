@@ -75,6 +75,7 @@ const Navbar = () => {
               <div
                 className="collapse navbar-collapse justify-content-between d-lg-block"
                 id="navbarCollapse"
+                style={{height: "65px"}}
               >
                 <div className="navbar-nav mr-auto py-0">
                   <a href="..." className="font-weight-bold nav-item nav-link items">Home</a>

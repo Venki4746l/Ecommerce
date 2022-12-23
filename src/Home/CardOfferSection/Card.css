@@ -1,51 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-.card-small-container{
-    background-color: #edf1ff;
-    font-family: poppins;
-    margin-bottom: 20px;
+.card-small-container {
+  background-color: #edf1ff;
+  font-family: poppins;
+  margin-bottom: 20px;
+  border: 2px solid green;
 }
 
-.P-L{
-    padding: 30px 0 0 30px;
+.P-L {
+  padding: 30px 0 0 30px;
 }
 
-.P-R{
-    padding: 30px 30px 0 0;
+.P-R {
+  padding: 30px 30px 0 0;
 }
 
-.text-cont-right{
-    text-align: right;
+.text-cont-right {
+  text-align: right;
 }
 
-.girl-image{
-    height: 200px;
+.girl-image {
+  height: 200px;
+  z-index: 0;
 }
 
-.card-button{
+.card-button {
+  text-decoration: none;
+  color: #d19c97;
+  border: 1px solid #d19c97;
+  padding: 8px 15px;
+  font-size: 18px;
+  transition: all 0.3s;
+}
+
+.card-button:hover {
+  background-color: #d19c97;
+  color: black;
+}
+
+.offer {
+  color: #d19c97;
+  font-size: 20px;
+}
+.card-heading {
+  font-weight: bold;
+  font-weight: 30px;
+  margin: 0 0 30px 0;
+}
+
+.card-card {
+  right: 20px;
+  margin-top: 20px;
+  z-index: 99;
+}
+@media screen and (max-width: 776px) {
+  .girl-image {
+    height: 170px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .girl-image {
+    height: 110px;
+  }
+  .card-card {
+    font-size: 2rem;
+    margin-top: 5px;
+  }
+  .card-heading {
+    margin: 0px;
+  }
+  .card-button {
     text-decoration: none;
-    color: #D19C97;
-    border: 1px solid  #D19C97;
-    padding: 8px 15px;
-    font-size: 18px;
+    color: #d19c97;
+    border: 1px solid #d19c97;
+    padding: 4px 8px;
+    font-size: 12px;
     transition: all 0.3s;
+  }
+  .P-L {
+    padding: 10px 0 0 10px;
+  }
+
+  .P-R {
+    padding: 10px 10px 0 0;
+  }
 }
 
-.card-button:hover{
-    background-color: #D19C97;
-    color: black;
+@media screen and (max-width: 306px) {
+  .girl-image {
+    height: 140px;
+  }
+}
+@media screen and (max-width: 260px) {
+  .girl-image {
+    height: 110px;
+  }
 }
 
-.offer{
-    color: #D19C97;
-    font-size: 20px;
-}
-.card-heading{
-    font-weight: bold;
-    font-weight: 30px;
-    margin:0 0 30px 0 ;
-}
-
-.card-card{
-    margin-top: 20px;
+@media screen and (max-width: 236px) {
+  .girl-image {
+    height: 90px;
+  }
 }

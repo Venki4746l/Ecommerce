@@ -1,3 +1,6 @@
+//contributors venkateswara rao ,dinesh ,dhanaraju
+
+//venkateswara Rao task start
 export const INCREASE_QUANTITY = 'INCREASE_QUANTITY';
 export const DECREASE_QUANTITY = 'DECREASE_QUANTITY';
 export const GET_NUMBER_CART = 'GET_NUMBER_CART';
@@ -11,18 +14,15 @@ export function GetNumberCart(){
     }
 }
 
+//Add to card item passing item info with payload
 export function AddCart(payload){
     return {
         type:'ADD_CART',
         payload
     }
 }
-export function UpdateCart(payload){
-    return {
-        type:'UPDATE_CART',
-        payload
-    }
-}
+
+// deleted the item in card 
 export function DeleteCart(payload){
     return{
         type:'DELETE_CART',
@@ -30,12 +30,15 @@ export function DeleteCart(payload){
     }
 }
 
+//increase the quantity of existing item
 export function IncreaseQuantity(payload){
     return{
         type:'INCREASE_QUANTITY',
         payload
     }
 }
+
+//decrese the quantity of exisiting item
 export function DecreaseQuantity(payload){
     return{
         type:'DECREASE_QUANTITY',
@@ -43,4 +46,5 @@ export function DecreaseQuantity(payload){
     }
 }
 
+//venkateswara Rao task end
 

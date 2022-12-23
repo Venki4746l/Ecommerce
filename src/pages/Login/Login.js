@@ -1,9 +1,64 @@
-import React from "react";
+//taskLogin -venkateswara rao
+import React, { useRef, useState, useEffect } from "react";
 import "./Login.css";
 import { headings } from "../../constants/Headings/headings";
 // import login from "../../Assets/login.jpeg";
 
 const Login = (props) => {
+  const [userDetails, setUserDetails] = useState([]);
+  const fetchData = async () => {
+    const response = await fetch("https://fakestoreapi.com/users");
+    if (!response.ok) {
+      throw new Error("Data coud not be fetched!");
+    } else {
+      return response.json();
+    }
+  };
+  useEffect(() => {
+    fetchData()
+      .then((res) => {
+        setUserDetails(res);
+      })
+      .catch((e) => {
+        console.log(e.message);
+      });
+  }, []);
+
+  //using ref read the dat user entires
+  const usernameRef = useRef();
+  const passwordRef = useRef();
+
+  //submit the data
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    const username = usernameRef.current.value;
+    const password = passwordRef.current.value;
+
+    const userData = {
+      username,
+      password,
+    };
+
+    if (username === "" || password === "") {
+      alert("Enter Username and Password Correctly");
+    } else if (password.length < 5) {
+      alert("Password must be above 8 char");
+    } else {
+      const data = userDetails.find(
+        (person) =>
+          person.username === userData.username &&
+          person.password === userData.password
+      );
+      if(!data){
+        alert("invalid login")
+      }
+      else{
+        alert("succeesfully login")
+        
+      }
+    }
+  };
+
   const closeModal = () => {
     props.modalClose(false);
   };
@@ -19,24 +74,30 @@ const Login = (props) => {
           <div>
             <h2 className="login_titleHeading">{headings.loginHeading}</h2>
           </div>
-          <div className="userLoginContainer">
-            <label>Email</label>
-            <input
-              type="email"
-              placeholder="Enter Email"
-              className="form-control"
-            />
-            <label>Password</label>
-            <input
-              type="password"
-              placeholder="Enter Password"
-              className="form-control"
-            />
-          </div>
-          <div className="login_buttonSection">
-            <button className="btn btn-success">Login</button>
-            <button className="btn btn-primary">Signup</button>
-          </div>
+          <form onSubmit={onSubmitHandler}>
+            <div className="userLoginContainer">
+              <label>Email</label>
+              <input
+                type="text"
+                placeholder="Enter username"
+                className="form-control"
+                ref={usernameRef}
+              />
+              <label>Password</label>
+              <input
+                type="password"
+                placeholder="Enter Password"
+                className="form-control"
+                ref={passwordRef}
+              />
+            </div>
+            <div className="login_buttonSection">
+              <button type="submit" className="btn btn-success">
+                Login
+              </button>
+              <button className="btn btn-primary">Signup</button>
+            </div>
+          </form>
           <hr />
           <div className="d-flex flex-column pl-2 pr-2 ">
             <h5 className="text-center">---------------or-------------</h5>

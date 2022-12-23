@@ -5,7 +5,7 @@ import Topbar from "./TopBar/Topbar";
 import Features from "./Features/Features";
 import Product from "./Products/Products";
 import AllSections from "./AllSections/AllSections";
-//import Cards from "./CardOfferSection/Cards";
+import Cards from "./CardOfferSection/Cards";
 import Vendor from "./vendorSection/Vendor";
 import Footer from "../Footer/Footer";
 
@@ -16,7 +16,7 @@ const Home = () => {
       <Navbar />
       <Features />
       <Product />
-      {/* <Cards /> */}
+      <Cards />
       <AllSections />
       <Vendor />
       <Footer />

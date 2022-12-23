@@ -15,6 +15,7 @@ const Vendor = () => {
           </div>
         ))}
       </OwlCarousel>
+  
     </div>
   );
 };

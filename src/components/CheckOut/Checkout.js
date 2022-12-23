@@ -183,19 +183,19 @@ function Checkout() {
                         <div class="form-group">
                             <div class="custom-radio">
                                 <input type="radio" class="checkout-radio" name="payment" id="paypal"/>
-                                <label class="checkout-label" for="paypal">Paypal</label>
+                                <label class="checkout-label" htmlfor="paypal">Paypal</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="custom-radio">
                                 <input type="radio" class="checkout-radio" name="payment" id="directcheck"/>
-                                <label class="checkout-label" for="directcheck">Direct Check</label>
+                                <label class="checkout-label" htmlfor="directcheck">Direct Check</label>
                             </div>
                         </div>
                         <div class="">
                             <div class="">
                                 <input type="radio" class="checkout-radio" name="payment" id="banktransfer"/>
-                                <label class="checkout-label mb-0" for="banktransfer">Bank Transfer</label>
+                                <label class="checkout-label mb-0" htmlfor="banktransfer">Bank Transfer</label>
                             </div>
                         </div>
                     </div>

@@ -5,6 +5,10 @@
     color: #0c0c0b !important;
     font-weight: 600;
 }
+.loginButton{
+    border-width:0px ;
+    background:none;
+}
 .navslide{
     font-size: 16px;
     margin-left: 40px;

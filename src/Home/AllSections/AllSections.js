@@ -70,7 +70,7 @@ const AllSections = () => {
     <>
       <div className="pt-5">
         
-        <h2 class="decorated">
+        <h2 className="decorated">
           <span>Trendy Products</span>
         </h2>
       
@@ -92,7 +92,7 @@ const AllSections = () => {
       <StayUpdated />
       <div className="pt-5">
         
-        <h2 class="decorated">
+        <h2 className="decorated">
           <span>Just Arrived</span>
         </h2>
       

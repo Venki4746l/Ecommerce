@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import CarsoulImages from "./CarsoulImages";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
+import Login from "../../pages/Login/Login";
 
 const Navbar = () => {
+  const [isLogin, setLogin] = useState(false);
+  const loginHandler = (value) => {
+    setLogin(value);
+  };
+
   return (
     <div>
       <div className="container-fluid mb-5">
@@ -127,20 +134,20 @@ const Navbar = () => {
                 style={{ height: "65px" }}
               >
                 <div className="navbar-nav mr-auto py-0">
-                  <a
-                    href="..."
+                  <Link
+                    to="/"
                     className="font-weight-bold nav-item nav-link items"
                   >
                     Home
-                  </a>
-                  <a
-                    href="..."
+                  </Link>
+                  <Link
+                    to="/shop"
                     className="font-weight-bold nav-item nav-link items"
                   >
                     Shop
-                  </a>
+                  </Link>
                   <a
-                    href="..."
+                    href="/"
                     className="font-weight-bold nav-item nav-link items"
                   >
                     Shop Detail
@@ -155,25 +162,28 @@ const Navbar = () => {
                       Pages
                     </a>
                     <div className="dropdown-menu rounded-0 m-0">
-                      <a href="..." className="dropdown-item items">
+                      <Link to="/cartCheck" className="dropdown-item items">
                         Shopping Cart
-                      </a>
-                      <a href="..." className="dropdown-item items">
+                      </Link>
+                      <Link to="/checkout" className="dropdown-item items">
                         Checkout
-                      </a>
+                      </Link>
                     </div>
                   </div>
-                  <a
-                    href="contact.html"
+                  <Link
+                    to="/contact"
                     className="font-weight-bold nav-item nav-link items"
                   >
                     Contact
-                  </a>
+                  </Link>
                 </div>
-                <div className="navbar-nav ml-auto py-0">
-                  <a href="/Login" className="font-weight-bold border-none nav-item nav-link items">
+                <div className="navbar-nav cartCheck py-0">
+                  <p
+                    onClick={() => setLogin(true)}
+                    className="loginButton font-weight-bold border-none nav-item nav-link items"
+                  >
                     Login
-                  </a>
+                  </p>
                   <a
                     href="..."
                     className="font-weight-bold nav-item nav-link items"
@@ -182,6 +192,7 @@ const Navbar = () => {
                   </a>
                 </div>
               </div>
+              <div>{isLogin && <Login modalClose={loginHandler} />}</div>
             </nav>
 
             <CarsoulImages />

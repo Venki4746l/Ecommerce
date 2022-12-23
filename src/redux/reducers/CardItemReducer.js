@@ -82,6 +82,8 @@ function cardProduct(state = initProduct, action) {
     default:
       return state;
   }
+
+  
 }
 const ShopAppCard = combineReducers({
   _cardProduct: cardProduct,

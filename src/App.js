@@ -5,8 +5,7 @@ import Shopingcarddipslay from './components/ShopingCart/Shopingcarddipslay'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ProductComponent from './components/ShopProducts/ProductComponent/ProductComponent'
-// import CheckOut from './components/CheckOut/Checkout'
-
+import Checkout from './components/CheckOut/Checkout'
 
 
 const App = () => {
@@ -19,7 +18,7 @@ const App = () => {
       <Route exact path='/shop' element={<ProductComponent />}  />
       <Route exact path='/shop/:id' element={<SingleProduct />} />
       <Route exact path='/cart' element={<Shopingcarddipslay />} />
-      {/* <Route exact path='/checkout' element={<CheckOut />} /> */}
+      <Route exact path="/checkout" element={<Checkout />}/>
     </Routes>
   </BrowserRouter>
 

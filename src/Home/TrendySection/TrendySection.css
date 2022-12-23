@@ -101,6 +101,12 @@
   text-decoration: none;
   margin: 8px;
 }
+.Addcart-button{
+  margin-left: 8px;
+  border-width:0px;
+  color: black;
+  background: none;
+}
 
 .cart-button:hover {
   color: black;

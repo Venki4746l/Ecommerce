@@ -2,10 +2,10 @@ import React from "react";
 import "./Home.css";
 import Navbar from "./Navbar/Navbar";
 import Topbar from "./TopBar/Topbar";
-// import Features from "./Features/Features";
+import Features from "./Features/Features";
 import Product from "./Products/Products";
 import AllSections from "./AllSections/AllSections";
-// import Cards from "./CardOfferSection/Cards";
+import Cards from "./CardOfferSection/Cards";
 import Vendor from "./vendorSection/Vendor";
 import Footer from "../Footer/Footer";
 
@@ -14,9 +14,9 @@ const Home = () => {
     <div>
       <Topbar />
       <Navbar />
-      {/* <Features /> */}
+      <Features />
       <Product />
-      {/* <Cards /> */}
+      <Cards />
       <AllSections />
       <Vendor />
       <Footer />

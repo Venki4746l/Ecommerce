@@ -1,3 +1,5 @@
+// bala
+
 import React,{useState} from "react";
 import "./Checkout.css";
 
@@ -78,7 +80,7 @@ function Checkout() {
                         <div class="col-md-12 form-group">
                             <div>
                                 <input onChange={()=>setChecked(!checked)} type="checkbox" class="checkout-checkbox" id="shipto"/>
-                                <label class="checkout-check-text checkout-label mb-5" for="shipto"  >Ship to different address</label>
+                                <label class="checkout-check-text checkout-label mb-4" for="shipto"  >Ship to different address</label>
                             </div>
                         </div>
                     </div>
@@ -156,7 +158,7 @@ function Checkout() {
                             <p className="checkout-card-products">Colorful Stylish Shirt 3</p>
                             <p className="checkout-card-products">$150</p>
                         </div>
-                        <hr class="mt-0"/>
+                        <hr class="mt-0 checkout-hr"/>
                         <div class="d-flex justify-content-between mb-4 pt-3">
                             <h6 class="checkout-items">Subtotal</h6>
                             <h6 class="checkout-items">$150</h6>

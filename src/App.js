@@ -1,5 +1,4 @@
 import React from 'react'
-import Checkout from './components/CheckOut/Checkout'
 //import Checkout from './components/CheckOut/Checkout'
 import Shopingcarddipslay from './components/ShopingCart/Shopingcarddipslay'
 //import AllSections from './Home/AllSections/AllSections'
@@ -12,8 +11,7 @@ const App = () => {
     <>
     <Home/>
     <Shopingcarddipslay />
-    <Checkout/>
-    
+   
     </>
   )
 }

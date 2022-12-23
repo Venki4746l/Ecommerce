@@ -1,3 +1,4 @@
+//this section down by venkateswara rao
 import React from "react";
 import { connect } from "react-redux";
 import "./ShopingCard.css";

@@ -1,6 +1,5 @@
 //contributors venkateswara rao ,dinesh ,dhanaraju
 
-import { combineReducers } from "redux";
 import {
   GET_NUMBER_CART,
   ADD_CART,
@@ -14,7 +13,7 @@ const initProduct = {
   Carts: [],
 };
 
-function cardProduct(state = initProduct, action) {
+ function cardProduct(state = initProduct, action) {
   const { type, payload } = action;
   switch (type) {
     case GET_NUMBER_CART:
@@ -85,9 +84,7 @@ function cardProduct(state = initProduct, action) {
       return state;
   }
 
-  
+
 }
-const ShopAppCard = combineReducers({
-  _cardProduct: cardProduct,
-});
-export default ShopAppCard;
+
+export default cardProduct

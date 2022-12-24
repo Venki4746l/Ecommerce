@@ -3,12 +3,12 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import CardItemstore from "./redux/stores/carditemStore";
+import store from "./redux/Store/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Provider store={CardItemstore}>
+    <Provider store={store}>
       <App />
     </Provider>
   </React.StrictMode>

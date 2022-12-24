@@ -1,4 +1,5 @@
-import { combineReducers } from "redux";
+//contributors venkateswara rao ,dinesh ,dhanaraju
+
 import {
   GET_NUMBER_CART,
   ADD_CART,
@@ -12,7 +13,7 @@ const initProduct = {
   Carts: [],
 };
 
-function cardProduct(state = initProduct, action) {
+ function cardProduct(state = initProduct, action) {
   const { type, payload } = action;
   switch (type) {
     case GET_NUMBER_CART:
@@ -25,7 +26,7 @@ function cardProduct(state = initProduct, action) {
           id: payload.id,
           quantity: 1,
           name: payload.title,
-          image: payload.imgSrc,
+          image: payload.image,
           price: payload.price,
         };
         state.Carts.push(cart);
@@ -43,7 +44,7 @@ function cardProduct(state = initProduct, action) {
             id: payload.id,
             quantity: 1,
             name: payload.title,
-            image: payload.imgSrc,
+            image: payload.image,
             price: payload.price,
           };
           state.Carts.push(_cart);
@@ -82,8 +83,8 @@ function cardProduct(state = initProduct, action) {
     default:
       return state;
   }
+
+
 }
-const ShopAppCard = combineReducers({
-  _cardProduct: cardProduct,
-});
-export default ShopAppCard;
+
+export default cardProduct

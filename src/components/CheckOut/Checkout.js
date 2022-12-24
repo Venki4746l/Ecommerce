@@ -2,6 +2,7 @@
 
 import React,{useState} from "react";
 import "./Checkout.css";
+import { Link } from 'react-router-dom';
 
 function Checkout() {
     const [checked,setChecked]=useState(false)
@@ -12,7 +13,7 @@ function Checkout() {
           <h2 className="checkout-heading">CHECKOUT</h2>
           <div className="checkout-heading-caption">
             <p>
-                <a className="checkout-heading-link" href="@">Home</a>  
+                <Link className="checkout-heading-link" to="/">Home</Link>  
             </p>
             <p className="dashhh">-</p>
             <p className="chechout-checkout">Checkout</p>

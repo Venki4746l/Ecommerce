@@ -4,11 +4,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getSingleProduct } from "../../../redux/actions/ShopDetailAction";
 
-
- import AllProducts from '../AllProducts/AllProducts'
-
+import AllProducts from "../AllProducts/AllProducts";
+import { Link } from "react-router-dom";
 import "./SingleProduct.css";
 import TabSection from "../TabSection/TabSection";
+import { ADD_CART } from "../../../redux/actions/Carditemaction";
 
 const SingleProduct = () => {
   const { loading, product } = useSelector((state) => state.productDetails);
@@ -24,9 +24,9 @@ const SingleProduct = () => {
       <div className="shop-detail-header-container">
         <h1 className="shop">SHOP DETAIL</h1>
         <div className="shop-detail-navigation">
-          <a href="/" className="links">
+          <Link to="/" className="links">
             Home
-          </a>
+          </Link>
           <p className="pl-2 pr-2">-</p>
           <span> Shop Detail</span>
         </div>
@@ -47,7 +47,7 @@ const SingleProduct = () => {
                 </div>
                 <div className="col-sm-12 col-md-12 col-lg-7">
                   <h3 className="shop-detail-product-title">{product.title}</h3>
-                
+
                   <h3 className="shop-product-price">${product.price}</h3>
 
                   <p className="shop-product-description">
@@ -168,19 +168,26 @@ const SingleProduct = () => {
                         <p className="value ">1</p>
                       </div>
                       <div className="">
-                        <button className="shop-detail-cart-button">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 448 512"
-                            className="cart-button"
-                          >
-                            <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
-                          </svg>
-                        </button>
+                        <Link to={`/shop/productdetails/${product.id}`}>
+                          <button className="shop-detail-cart-button">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 448 512"
+                              className="cart-button"
+                            >
+                              <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
+                            </svg>
+                          </button>
+                        </Link>
                       </div>
                     </div>
                     <div>
-                      <button className="shop-cart-button">
+                      <button
+                        onClick={() =>
+                          dispatch({ type: ADD_CART, payload: product })
+                        }
+                        className="shop-cart-button"
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 576 512"
@@ -224,7 +231,6 @@ const SingleProduct = () => {
                     </svg>
                   </div>
                 </div>
-
               </div>
             </div>
           </>
@@ -235,12 +241,9 @@ const SingleProduct = () => {
         )}
       </div>
       <div className="col-lg-12 tab-section-container">
-       
-          <TabSection />
-         
+        <TabSection />
       </div>
       <AllProducts />
-      
     </>
   );
 };

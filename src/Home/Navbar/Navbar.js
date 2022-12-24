@@ -1,3 +1,4 @@
+//saishiva- navbar design ,venkateswara rao login section detials
 import React, { useState } from "react";
 import CarsoulImages from "./CarsoulImages";
 import "./Navbar.css";
@@ -5,10 +6,26 @@ import { Link } from "react-router-dom";
 import Login from "../../pages/Login/Login";
 
 const Navbar = () => {
-  const [isLogin, setLogin] = useState(false);
-  const loginHandler = (value) => {
-    setLogin(value);
+  const [loginModal, setLoginmodal] = useState(false);
+  const [isLogined, setIslogined] = useState(false);
+  const [userName,setUserName]=useState("")
+  //this for open login modal
+  const loginHandlermodal = (value) => {
+    setLoginmodal(value);
   };
+
+  //aftre login logout button
+  const logoutButtonShow = (value) => {
+    setIslogined(value);
+  };
+
+  //user Details hanlder
+  const userDetailshandler=(details)=>{
+    const nameuser=details[0].name.firstname+details[0].name.lastname
+    setUserName(nameuser)
+
+
+  }
 
   return (
     <div>
@@ -161,6 +178,7 @@ const Navbar = () => {
                     >
                       Pages
                     </a>
+                    
                     <div className="dropdown-menu rounded-0 m-0">
                       <Link to="/cartCheck" className="dropdown-item items">
                         Shopping Cart
@@ -171,29 +189,47 @@ const Navbar = () => {
                     </div>
                   </div>
                   <Link
-                    to="/contact"
+                    to="/contactus"
                     className="font-weight-bold nav-item nav-link items"
                   >
                     Contact
                   </Link>
                 </div>
-                <div className="navbar-nav cartCheck py-0">
+                {isLogined?<div  className="navbar-nav cartCheck py-0">
+                <p className="font-weight-bold nav-item nav-link items">
+                    {userName}
+                  </p>
+                <p
+                    onClick={() => setIslogined(false)}
+                    className="loginButton font-weight-bold border-none nav-item nav-link items"
+                  >
+                    Logout
+                  </p>
+
+                </div>:<div className="navbar-nav cartCheck py-0">
                   <p
-                    onClick={() => setLogin(true)}
+                    onClick={() => setLoginmodal(true)}
                     className="loginButton font-weight-bold border-none nav-item nav-link items"
                   >
                     Login
                   </p>
-                  <a
-                    href="..."
-                    className="font-weight-bold nav-item nav-link items"
-                  >
+                  <p className="font-weight-bold nav-item nav-link items">
                     Register
-                  </a>
-                </div>
+                  </p>
+                </div>}
               </div>
-              <div>{isLogin && <Login modalClose={loginHandler} />}</div>
             </nav>
+            {/* login page calling  */}
+            {/* login section handler by venkateswara rao */}
+            <div>
+              {loginModal && (
+                <Login
+                  logOutShow={logoutButtonShow}
+                  modalClose={loginHandlermodal}
+                  userDetailsGet={userDetailshandler}
+                />
+              )}
+            </div>
 
             <CarsoulImages />
           </div>

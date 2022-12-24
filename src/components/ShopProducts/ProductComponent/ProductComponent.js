@@ -1,3 +1,4 @@
+//dinesh,dhanaraju,venkateswara rao
 import React from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -8,12 +9,13 @@ import Search from "../ShopSearch/ShopSearch";
 import { SpinnerCircularFixed } from "spinners-react";
 import { Link } from "react-router-dom";
 import Shop from "../Shop/Shop";
+import { ADD_CART } from "../../../redux/actions/Carditemaction";
 
 const ProductComponent = () => {
   const dispatch = useDispatch();
   const { products, loading } = useSelector((state) => ({ ...state.Products }));
-  console.log(products);
-
+  
+//fetching the data
   useEffect(() => {
     dispatch(fetchData());
   }, [dispatch]);
@@ -64,12 +66,12 @@ const ProductComponent = () => {
                         </div>
                         <div className="card-footer d-flex justify-content-between bg-light border">
                           <Link to={`/shop/productdetails/${each.id}`}>
-                            <a href="kd" className="btn btn-sm text-dark p-0">
+                            <button  className="button_addtocart text-dark p-0">
                               <i className="fas fa-eye mr-1 fas-color"></i>
                               View Detail
-                            </a>
+                            </button>
                           </Link>
-                          <button>
+                          <button onClick={()=>dispatch({type:ADD_CART,payload:each})} className="button_addtocart">
                             <i className="fas fa-shopping-cart mr-1 fas-color"></i>
                             Add To Cart
                           </button>

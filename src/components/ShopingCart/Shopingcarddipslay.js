@@ -18,7 +18,7 @@ const Shopingcarddipslay = () => {
   const dispatch = useDispatch();
 
   const items = useSelector((state) => state._cardProduct);
-  console.log(items);
+  // console.log(items);
 
   let TotalCart = 0;
   items.Carts.forEach(function (item) {

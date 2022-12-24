@@ -3,6 +3,12 @@
     padding: 10px !important;
     padding-left: 30px !important;
 }
+.button_addtocart{
+  border-width: 0px;
+  background-color: transparent;
+  color: black;
+
+}
 .fas-color{
     color:  #D19C97;
 }

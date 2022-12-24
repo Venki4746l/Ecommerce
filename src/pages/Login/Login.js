@@ -54,6 +54,10 @@ const Login = (props) => {
       }
       else{
         alert("succeesfully login")
+        props.modalClose(false)
+        props.logOutShow(true)
+        const name=userDetails.filter((person)=>person.username===userData.username)
+        props.userDetailsGet(name)
         
       }
     }

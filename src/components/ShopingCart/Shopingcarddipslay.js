@@ -7,15 +7,18 @@ import {
   DELETE_CART,
 } from "../../redux/actions/Carditemaction";
 import "./ShopingCard.css";
+import {useNavigate} from "react-router-dom"
 // import {
 // import { useDispatch } from 'react-redux';
-// IncreaseQuantity,
+// import { Redirect } from 'react-router-dom';
+// import { productDetailsReducer } from './../../redux/reducers/ProductRreducer';
 //   DecreaseQuantity,
 //   DeleteCart,
 // } from "../../redux/actions/Carditemaction.js";
 
 const Shopingcarddipslay = () => {
   const dispatch = useDispatch();
+  const navigate=useNavigate()
 
   const items = useSelector((state) => state._cardProduct);
   // console.log(items);
@@ -27,6 +30,11 @@ const Shopingcarddipslay = () => {
   function TotalPrice(price, tonggia) {
     return Number(price * tonggia).toLocaleString("en-US");
   }
+
+  const procedtocheckout=()=>{
+    navigate("/checkout")
+  }
+  
   return (
     <React.Fragment>
       <div className="shop-detail-header-container">
@@ -163,9 +171,11 @@ const Shopingcarddipslay = () => {
                   <h5 className="font-weight-bold">Total</h5>
                   <h5 className="font-weight-bold">${TotalCart + 10}</h5>
                 </div>
-                <button className="btn-block checkout_button my-3 py-3">
-                  Proceed To Checkout
-                </button>
+                
+                  <button onClick={procedtocheckout} className="btn-block checkout_button my-3 py-3">
+                    Proceed To Checkout
+                  </button>
+               
               </div>
             </div>
           </div>

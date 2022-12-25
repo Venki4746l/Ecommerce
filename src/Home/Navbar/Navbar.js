@@ -8,7 +8,7 @@ import Login from "../../pages/Login/Login";
 const Navbar = () => {
   const [loginModal, setLoginmodal] = useState(false);
   const [isLogined, setIslogined] = useState(false);
-  const [userName,setUserName]=useState("")
+  const [userName, setUserName] = useState("");
   //this for open login modal
   const loginHandlermodal = (value) => {
     setLoginmodal(value);
@@ -20,12 +20,10 @@ const Navbar = () => {
   };
 
   //user Details hanlder
-  const userDetailshandler=(details)=>{
-    const nameuser=details[0].name.firstname+details[0].name.lastname
-    setUserName(nameuser)
-
-
-  }
+  const userDetailshandler = (details) => {
+    const nameuser = details[0].name.firstname + details[0].name.lastname;
+    setUserName(nameuser);
+  };
 
   return (
     <div>
@@ -55,17 +53,17 @@ const Navbar = () => {
               </svg>
             </a>
             <nav
-              className="navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 collapse show"
+              className="navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 collapse show navoverplay"
               id="navbar-vertical"
-              style={{}}
+              
             >
               <div
                 className="navbar-nav w-100 overflow-hidden navslide"
                 style={{ height: "410px" }}
               >
                 <div className="nav-item dropdown">
-                  <a
-                    href="..."
+                  <Link
+                    to="/"
                     className="font-weight-bold nav-link"
                     data-toggle="dropdown"
                     aria-expanded="false"
@@ -81,62 +79,62 @@ const Navbar = () => {
                     >
                       <path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
                     </svg>
-                  </a>
+                  </Link>
                   <div
                     className="dropdown-menu position-absolute bg-light border-0 rounded-0 w-100 m-0"
                     aria-labelledby="navbarDropdown"
                   >
-                    <a href="..." className="dropdown-item">
+                    <Link to="/" className="dropdown-item">
                       Men's Dresses
-                    </a>
-                    <a href="..." className="dropdown-item">
+                    </Link>
+                    <Link to="/" className="dropdown-item">
                       Women's Dresses
-                    </a>
-                    <a href="..." className="dropdown-item">
+                    </Link>
+                    <Link to="/" className="dropdown-item">
                       Baby's Dresses
-                    </a>
+                    </Link>
                   </div>
                 </div>
-                <a href="..." className="font-weight-bold nav-item nav-link">
+                <Link to="/" className="font-weight-bold nav-item nav-link">
                   Shirts
-                </a>
-                <a href="..." className="font-weight-bold nav-item nav-link">
+                </Link>
+                <Link to="/" className="font-weight-bold nav-item nav-link">
                   Jeans
-                </a>
-                <a href="..." className="font-weight-bold nav-item nav-link">
+                </Link>
+                <Link to="/" className="font-weight-bold nav-item nav-link">
                   Swimwear
-                </a>
-                <a href="..." className="font-weight-bold nav-item nav-link">
+                </Link>
+                <Link to="/" className="font-weight-bold nav-item nav-link">
                   Sleepwear
-                </a>
-                <a href="..." className="font-weight-bold nav-item nav-link">
+                </Link>
+                <Link to="/" className="font-weight-bold nav-item nav-link">
                   Sportswear
-                </a>
-                <a href="..." className="font-weight-bold nav-item nav-link">
+                </Link>
+                <Link to="/" className="font-weight-bold nav-item nav-link">
                   Jumpsuits
-                </a>
-                <a href="..." className="font-weight-bold nav-item nav-link">
+                </Link>
+                <Link to="/" className="font-weight-bold nav-item nav-link">
                   Blazers
-                </a>
-                <a href="..." className="font-weight-bold nav-item nav-link">
+                </Link>
+                <Link to="/" className="font-weight-bold nav-item nav-link">
                   Jackets
-                </a>
-                <a href="..." className="font-weight-bold nav-item nav-link">
+                </Link>
+                <Link to="/" className="font-weight-bold nav-item nav-link">
                   Shoes
-                </a>
+                </Link>
               </div>
             </nav>
           </div>
           <div className="col-lg-9">
             <nav className="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-              <a href="..." className="text-decoration-none d-block d-lg-none">
+              <Link to="/" className="text-decoration-none d-block d-lg-none">
                 <h1 className="m-0 display-5 font-weight-semi-bold">
                   <span className="text-primary font-weight-bold border px-3 mr-1">
                     E
                   </span>
                   <span className="heading">Shopper</span>
                 </h1>
-              </a>
+              </Link>
               <button
                 type="button"
                 className="navbar-toggler"
@@ -163,24 +161,24 @@ const Navbar = () => {
                   >
                     Shop
                   </Link>
-                  <a
+                  <Link
                     href="/"
                     className="font-weight-bold nav-item nav-link items"
                   >
                     Shop Detail
-                  </a>
+                  </Link>
                   <div className="font-weight-bold nav-item dropdown">
-                    <a
-                      href="..."
+                    <Link
+                      href="/pages"
                       className="nav-link dropdown-toggle items"
                       data-toggle="dropdown"
                       aria-expanded="false"
                     >
                       Pages
-                    </a>
-                    
+                    </Link>
+
                     <div className="dropdown-menu rounded-0 m-0">
-                      <Link to="/cartCheck" className="dropdown-item items">
+                      <Link to="/cartcheck" className="dropdown-item items">
                         Shopping Cart
                       </Link>
                       <Link to="/checkout" className="dropdown-item items">
@@ -195,28 +193,31 @@ const Navbar = () => {
                     Contact
                   </Link>
                 </div>
-                {isLogined?<div  className="navbar-nav cartCheck py-0">
-                <p className="font-weight-bold nav-item nav-link items">
-                    {userName}
-                  </p>
-                <p
-                    onClick={() => setIslogined(false)}
-                    className="loginButton font-weight-bold border-none nav-item nav-link items"
-                  >
-                    Logout
-                  </p>
-
-                </div>:<div className="navbar-nav cartCheck py-0">
-                  <p
-                    onClick={() => setLoginmodal(true)}
-                    className="loginButton font-weight-bold border-none nav-item nav-link items"
-                  >
-                    Login
-                  </p>
-                  <p className="font-weight-bold nav-item nav-link items">
-                    Register
-                  </p>
-                </div>}
+                {isLogined ? (
+                  <div className="navbar-nav cartCheck py-0">
+                    <p className="font-weight-bold nav-item nav-link items">
+                      {userName}
+                    </p>
+                    <p
+                      onClick={() => setIslogined(false)}
+                      className="loginButton font-weight-bold border-none nav-item nav-link items"
+                    >
+                      Logout
+                    </p>
+                  </div>
+                ) : (
+                  <div className="navbar-nav cartCheck py-0">
+                    <p
+                      onClick={() => setLoginmodal(true)}
+                      className="loginButton font-weight-bold border-none nav-item nav-link items"
+                    >
+                      Login
+                    </p>
+                    <p className="font-weight-bold nav-item nav-link items">
+                      Register
+                    </p>
+                  </div>
+                )}
               </div>
             </nav>
             {/* login page calling  */}

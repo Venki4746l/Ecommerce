@@ -58,12 +58,4 @@
     height: 300px;
   }
 }
-.navoverplay {
-  width: calc(100% - 30px);
-  z-index: 1;
-}
-.toggledropdown {
-  height: 65px;
-  margin-top: -1px;
-  padding: 0 30px;
-}
+

@@ -7,8 +7,9 @@ import {
   DELETE_CART,
 } from "../../redux/actions/Carditemaction";
 import "./ShopingCard.css";
-import {useNavigate} from "react-router-dom"
-// import {
+import {useNavigate,Link} from "react-router-dom"
+
+
 // import { useDispatch } from 'react-redux';
 // import { Redirect } from 'react-router-dom';
 // import { productDetailsReducer } from './../../redux/reducers/ProductRreducer';
@@ -40,9 +41,9 @@ const Shopingcarddipslay = () => {
       <div className="shop-detail-header-container">
         <h1 className="shop">SHOP DETAIL</h1>
         <div className="shop-detail-navigation">
-          <a href="/" className="links">
+          <Link to="/" className="links">
             Home
-          </a>
+          </Link>
           <p className="pl-2 pr-2">-</p>
           <span> CheckOut</span>
         </div>

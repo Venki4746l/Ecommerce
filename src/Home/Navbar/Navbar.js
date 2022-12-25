@@ -53,7 +53,7 @@ const Navbar = () => {
               </svg>
             </a>
             <nav
-              className="navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 collapse show navoverplay"
+              className="navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 collapse show "
               id="navbar-vertical"
               
             >

@@ -67,7 +67,7 @@ const Shopingcarddipslay = () => {
                     <td className="d-flex border">
                       <img
                         src={item.image}
-                        alt={item.title}
+                        alt={item.name}
                         className="align-start"
                         style={{
                           height: "75px",

@@ -223,3 +223,9 @@
     font-size: 10.24px;
   }
 }
+
+.card_item_showing{
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}

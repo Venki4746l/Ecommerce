@@ -104,7 +104,7 @@ const Login = (props) => {
           </form>
           <hr />
           <div className="socialbuttonContainer">
-            <h5 className="text-center">--------------or-------------</h5>
+            <h5 className="text-center">----or----</h5>
             <button className="btn btn-primary  mb-1" id="facebook">
               Sign in with Facebook
             </button>
@@ -118,7 +118,7 @@ const Login = (props) => {
         </div>
 
         <img
-          className="imageLogin flex-fill order-1 d-none d-sm-block"
+          className="imageLogin flex-fill order-1 d-none d-md-block"
           src="https://cdn.pixabay.com/photo/2019/04/26/07/14/store-4156934_960_720.png"
           alt=""
         />

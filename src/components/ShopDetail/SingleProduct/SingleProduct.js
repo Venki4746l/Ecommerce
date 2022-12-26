@@ -3,10 +3,12 @@ import { SpinnerCircular } from "spinners-react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getSingleProduct } from "../../../redux/actions/ShopDetailAction";
+import Rating from '../Rating/Rating'
 
 import AllProducts from "../AllProducts/AllProducts";
 import { Link } from "react-router-dom";
 import "./SingleProduct.css";
+
 import TabSection from "../TabSection/TabSection";
 import { ADD_CART } from "../../../redux/actions/Carditemaction";
 

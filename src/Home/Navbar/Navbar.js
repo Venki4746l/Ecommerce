@@ -164,7 +164,7 @@ const Navbar = () => {
                     Shop
                   </Link>
                   <Link
-                    href="/"
+                    to="/shop/1"
                     className="font-weight-bold nav-item nav-link items"
                   >
                     Shop Detail

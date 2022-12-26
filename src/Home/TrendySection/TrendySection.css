@@ -96,6 +96,7 @@
 .cart-button {
   color: black;
   background: none;
+  font-size: 12px;
   text-decoration: none;
   margin: 8px;
 }

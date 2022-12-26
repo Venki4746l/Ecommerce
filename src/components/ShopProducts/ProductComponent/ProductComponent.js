@@ -9,12 +9,13 @@ import Search from "../ShopSearch/ShopSearch";
 import { SpinnerCircularFixed } from "spinners-react";
 import { Link } from "react-router-dom";
 import Shop from "../Shop/Shop";
+import { ADD_CART } from "../../../redux/actions/Carditemaction";
 
 const ProductComponent = () => {
   const dispatch = useDispatch();
   const { products, loading } = useSelector((state) => ({ ...state.Products }));
-  
-//fetching the data
+
+  //fetching the data
   useEffect(() => {
     dispatch(fetchData());
   }, [dispatch]);
@@ -44,7 +45,7 @@ const ProductComponent = () => {
                     >
                       <div className="card border-0 mb-4">
                         <div className="card-header p-0 product-img border bg-transparent overflow-hidden position-relative">
-                          <Link to={`/shop/productdetails/${each.id}`}>
+                          <Link to={`/shop/${each.id}`}>
                             <img
                               className="img-fluid w-100 h-100 img-styling"
                               src={each.image}
@@ -53,7 +54,7 @@ const ProductComponent = () => {
                           </Link>
                         </div>
                         <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                          <Link to={`/shop/productdetails/${each.id}`}>
+                          <Link to={`/shop/${each.id}`}>
                             <h6 className="text-truncate mb-3">{each.title}</h6>
                           </Link>
                           <div className="d-flex justify-content-center">
@@ -64,13 +65,18 @@ const ProductComponent = () => {
                           </div>
                         </div>
                         <div className="card-footer d-flex justify-content-between bg-light border">
-                          <Link to={`/shop/productdetails/${each.id}`}>
-                            <button  className="button_addtocart text-dark p-0">
+                          <Link to={`/shop/${each.id}`}>
+                            <button className="button_addtocart text-dark p-0">
                               <i className="fas fa-eye mr-1 fas-color"></i>
                               View Detail
                             </button>
                           </Link>
-                          <button onClick={()=>dispatch({type:ADD_CART,payload:each})} className="button_addtocart">
+                          <button
+                            onClick={() =>
+                              dispatch({ type: ADD_CART, payload: each })
+                            }
+                            className="button_addtocart"
+                          >
                             <i className="fas fa-shopping-cart mr-1 fas-color"></i>
                             Add To Cart
                           </button>
@@ -98,4 +104,3 @@ const ProductComponent = () => {
   );
 };
 export default ProductComponent;
-

@@ -47,7 +47,8 @@ const SingleProduct = () => {
                 </div>
                 <div className="col-sm-12 col-md-12 col-lg-7">
                   <h3 className="shop-detail-product-title">{product.title}</h3>
-
+                  <Rating rating={product.rating?.rate} reviews={product.rating?.count} />
+                
                   <h3 className="shop-product-price">${product.price}</h3>
 
                   <p className="shop-product-description">

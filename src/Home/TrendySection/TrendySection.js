@@ -8,7 +8,11 @@ const TrendySection = (props) => {
   const dispatch = useDispatch();
   const [itemadded,setItemAdded]=useState(false)
   const { shopDetails } = props;
+<<<<<<< HEAD
   const { image, title, price, cross_price } = shopDetails;
+=======
+  const { id, imgSrc, title, price, cross_price } = shopDetails;
+>>>>>>> Dhanaraju
   const first_button = "View Detail";
   const second_button = "Add To Cart";
 

@@ -3,12 +3,11 @@ import { SpinnerCircular } from "spinners-react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getSingleProduct } from "../../../redux/actions/ShopDetailAction";
-
-
- import AllProducts from '../AllProducts/AllProducts'
+import AllProducts from '../AllProducts/AllProducts'
 
 import "./SingleProduct.css";
 import TabSection from "../TabSection/TabSection";
+import Rating from "../Rating/Rating";
 
 const SingleProduct = () => {
   const { loading, product } = useSelector((state) => state.productDetails);
@@ -47,6 +46,7 @@ const SingleProduct = () => {
                 </div>
                 <div className="col-sm-12 col-md-12 col-lg-7">
                   <h3 className="shop-detail-product-title">{product.title}</h3>
+                  <Rating rating={product.rating?.rate} reviews={product.rating?.count} />
                 
                   <h3 className="shop-product-price">${product.price}</h3>
 
@@ -167,7 +167,7 @@ const SingleProduct = () => {
                       <div className="value-container">
                         <p className="value ">1</p>
                       </div>
-                      <div className="">
+                      <div>
                         <button className="shop-detail-cart-button">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"

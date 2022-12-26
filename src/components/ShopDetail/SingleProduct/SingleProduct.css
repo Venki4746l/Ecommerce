@@ -188,7 +188,7 @@ label {
 .shop-detail-cart-button {
     border: none;
     height: 30px;
-    width: 30px;
+    width: 36px;
     background-color: #D19C97;
 }
 
@@ -202,9 +202,10 @@ label {
 }
 
 .cart-button {
-    width: 14px;
+    width: 12px;
     padding-bottom: 4px;
     color: #212529;
+    font-size: 8px;
 }
 
 @media screen and (min-width: 992px) {

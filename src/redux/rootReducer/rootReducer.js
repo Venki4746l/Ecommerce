@@ -1,7 +1,7 @@
 
 
 import { combineReducers } from "redux";
-import { productDetailsReducer } from "../reducers/ProductRreducer";
+import { productDetailsReducer } from "../reducers/ProductReducer";
 
 import cardProduct from "../reducers/CardItemReducer";
 

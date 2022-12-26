@@ -1,0 +1,38 @@
+.product-img{
+    height: 280px;
+    padding: 10px !important;
+    padding-left: 30px !important;
+}
+.button_addtocart{
+  border-width: 0px;
+  background-color: transparent;
+  color: black;
+
+}
+.fas-color{
+    color:  #D19C97;
+}
+.img-styling {
+    padding: 20px;
+    transition: transform 0.2s;
+    width: 230px;
+    height: 230px;
+    margin: 0 auto;
+  }
+  
+  .img-styling:hover {
+    transform: scale(1.4);
+  }
+  @media screen and (min-width: 992px) {
+    .img-styling {
+      padding: 37px;
+      transition: transform 0.2s;
+      width: 330px;
+      height: 320px;
+      margin: 0 auto;
+    }
+  
+    .img-styling:hover {
+      transform: scale(1.3); 
+    }
+  }

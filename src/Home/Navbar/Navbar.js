@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CarsoulImages from "./CarsoulImages";
 import "./Navbar.css";
 
@@ -139,12 +140,12 @@ const Navbar = () => {
                   >
                     Shop
                   </a>
-                  <a
-                    href="..."
+                  <Link
+                    to="/shop/1"
                     className="font-weight-bold nav-item nav-link items"
                   >
                     Shop Detail
-                  </a>
+                  </Link>
                   <div className="font-weight-bold nav-item dropdown">
                     <a
                       href="..."

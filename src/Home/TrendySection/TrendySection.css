@@ -105,7 +105,16 @@
   margin-left: 8px;
   border-width:0px;
   color: black;
-  background: none;
+  background: #F4CA09;
+  border-radius: 3px;
+}
+.AddedCard_button{
+  background-color: rgb(57, 223, 57);
+  border-width: 0px;
+  margin-left: 8px;
+  border-width:0px;
+  color: black;
+  border-radius: 3px;
 }
 
 .cart-button:hover {

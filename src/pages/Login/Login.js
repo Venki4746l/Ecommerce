@@ -76,7 +76,7 @@ const Login = (props) => {
             </button>
           </div>
           <div>
-            <h2 className="login_titleHeading">{headings.loginHeading}</h2>
+            <h2 className="login_titleHeading text-center">{headings.loginHeading}</h2>
           </div>
           <form onSubmit={onSubmitHandler}>
             <div className="userLoginContainer">
@@ -103,15 +103,15 @@ const Login = (props) => {
             </div>
           </form>
           <hr />
-          <div className="d-flex flex-column pl-2 pr-2 ">
-            <h5 className="text-center">---------------or-------------</h5>
-            <button className="btn btn-primary mb-1" id="facebook">
+          <div className="socialbuttonContainer">
+            <h5 className="text-center">--------------or-------------</h5>
+            <button className="btn btn-primary  mb-1" id="facebook">
               Sign in with Facebook
             </button>
-            <button className="btn btn-secondary mb-1" id="twitter">
+            <button className="btn btn-secondary p-1 mb-1" id="twitter">
               Sign in with Twitter
             </button>
-            <button className="btn btn-success" id="googleplus">
+            <button className="btn btn-success p-1" id="googleplus">
               Sign in with Google
             </button>
           </div>

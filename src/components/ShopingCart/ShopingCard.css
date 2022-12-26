@@ -1,6 +1,9 @@
 
 .title-card-name {
   font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .checkout_button {

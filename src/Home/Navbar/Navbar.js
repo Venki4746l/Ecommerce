@@ -2,13 +2,15 @@
 import React, { useState } from "react";
 import CarsoulImages from "./CarsoulImages";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 import Login from "../../pages/Login/Login";
 
 const Navbar = () => {
   const [loginModal, setLoginmodal] = useState(false);
   const [isLogined, setIslogined] = useState(false);
   const [userName, setUserName] = useState("");
+  //check the cuurent location
+  const location=useLocation()
   //this for open login modal
   const loginHandlermodal = (value) => {
     setLoginmodal(value);
@@ -31,16 +33,16 @@ const Navbar = () => {
         <div className="row border-top px-xl-5">
           <div className="col-lg-3 cateegioressection  d-none d-lg-block">
             <a
-              className="btn shadow-none d-flex align-items-center justify-content-between text-white w-100"
+              className="btn shadow-none d-flex align-items-center justify-content-between  text-white w-100 toggledropdown"
               data-toggle="collapse"
               href="#navbar-vertical"
-              style={{
-                height: "65px",
-                backgroundColor: "#D19C97",
-                marginTop: "-1px",
-                padding: "0 10px",
-                ariaExpanded: "true",
-              }}
+              // style={{
+              //   height: "65px",
+              //   backgroundColor: "#D19C97",
+              //   marginTop: "-1px",
+              //   padding: "0 10px",
+              //   iaExpanded: "truear",
+              // }}
             >
               <h6 className="font-weight-bold m-4 text-dark">Categories</h6>
               <svg
@@ -53,9 +55,9 @@ const Navbar = () => {
               </svg>
             </a>
             <nav
-              className="navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 collapse show "
+              className="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light navoverplay"
+              // className="navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 collapse show "
               id="navbar-vertical"
-              
             >
               <div
                 className="navbar-nav w-100 overflow-hidden navslide"
@@ -232,7 +234,7 @@ const Navbar = () => {
               )}
             </div>
 
-            <CarsoulImages />
+            { location.pathname==="/" && <CarsoulImages />}
           </div>
         </div>
       </div>

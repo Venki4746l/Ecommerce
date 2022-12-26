@@ -3,9 +3,17 @@
 import React,{useState} from "react";
 import "./Checkout.css";
 import { Link } from 'react-router-dom';
+import { useSelector } from "react-redux";
 
 function Checkout() {
     const [checked,setChecked]=useState(false)
+    const items = useSelector((state) => state._cardProduct);
+  // console.log(items);
+
+  let TotalCart = 0;
+  items.Carts.forEach(function (item) {
+    TotalCart += item.quantity * item.price;
+  });
   return (
     <>
       <div className="checkout-first-container text-center d-flex flex-column justify-content-center">
@@ -172,7 +180,7 @@ function Checkout() {
                     <div class="checkout-total-container">
                         <div class="d-flex justify-content-between mt-2">
                             <h5 class="checkout-total">Total</h5>
-                            <h5 class="checkout-total">$160</h5>
+                            <h5 class="checkout-total">${TotalCart+10}</h5>
                         </div>
                     </div>
                 </div>

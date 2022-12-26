@@ -52,7 +52,7 @@ const AllProducts = () => {
         <OwlCarousel {...options}>
           {products.map((eachProduct) => {
             return (
-              <div className="col-sm-12 col-md-6 col-lg-3">
+              <div key={eachProduct.id}>
                 <Card
                   style={{
                     width: "20rem",

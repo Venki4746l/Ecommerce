@@ -8,7 +8,6 @@ import Search from "../ShopSearch/ShopSearch";
 import { SpinnerCircularFixed } from "spinners-react";
 import { Link } from "react-router-dom";
 import Shop from "../Shop/Shop";
-import { ADD_CART } from "../../../redux/actions/Carditemaction";
 
 
 const ProductComponent = () => {

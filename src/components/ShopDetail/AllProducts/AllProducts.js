@@ -62,11 +62,10 @@ const AllProducts = () => {
                     margin: "18px",
                   }}
                 >
-                  <Card.Img
-                    variant="top"
-                    src={eachProduct.image}
-                    className="all-products-shop-image p-3"
-                  />
+                   <div style={{width: '16rem'}}>
+        <Card.Img variant="top" src={eachProduct.image} className='all-products-shop-image p-4' />
+        </div>
+        
                   <hr className="line" />
                   <div style={{ height: "6rem" }}>
                     <div className="pt-3 pl-3 pr-3">

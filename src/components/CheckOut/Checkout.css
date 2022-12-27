@@ -232,6 +232,9 @@
   flex-direction: column;
   overflow-y: scroll;
 }
+.card_item_showing div:nth-child(odd){
+  background-color: lightblue;
+}
 
 .itemTextOverflow{
   text-overflow: ellipsis;

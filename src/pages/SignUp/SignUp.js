@@ -1,69 +1,7 @@
-//taskLogin -venkateswara rao
-import React, { useRef, useState, useEffect } from "react";
-import "./Login.css";
-import { headings } from "../../constants/Headings/headings";
-// import login from "../../Assets/login.jpeg";
+import React from "react";
 
-const Login = (props) => {
-  const [userDetails, setUserDetails] = useState([]);
-  const fetchData = async () => {
-    const response = await fetch("https://fakestoreapi.com/users");
-    if (!response.ok) {
-      throw new Error("Data coud not be fetched!");
-    } else {
-      return response.json();
-    }
-  };
-  useEffect(() => {
-    fetchData()
-      .then((res) => {
-        setUserDetails(res);
-      })
-      .catch((e) => {
-        console.log(e.message);
-      });
-  }, []);
-
-  //using ref read the dat user entires
-  const usernameRef = useRef();
-  const passwordRef = useRef();
-
-  //submit the data
-  const onSubmitHandler = (e) => {
-    e.preventDefault();
-    const username = usernameRef.current.value;
-    const password = passwordRef.current.value;
-
-    const userData = {
-      username,
-      password,
-    };
-
-    if (username === "" || password === "") {
-      alert("Enter Username and Password Correctly");
-    } else if (password.length < 5) {
-      alert("Password must be above 8 char");
-    } else {
-      const data = userDetails.find(
-        (person) =>
-          person.username === userData.username &&
-          person.password === userData.password
-      );
-      if (!data) {
-        alert("invalid login");
-      } else {
-        alert("succeesfully login");
-        props.modalClose(false);
-        props.logOutShow(true);
-        const name = userDetails.filter(
-          (person) => person.username === userData.username
-        );
-        props.userDetailsGet(name);
-      }
-    }
-  };
-
-  const closeModal = () => {
+const SignUp = (props) => {
+   const closeModal = () => {
     props.modalClose(false);
   };
   return (
@@ -77,29 +15,43 @@ const Login = (props) => {
           </div>
           <div>
             <h2 className="login_titleHeading text-center">
-              {headings.loginHeading}
+              SignUp
             </h2>
           </div>
-          <form onSubmit={onSubmitHandler}>
+          <form >
             <div className="userLoginContainer">
               <label>UserName</label>
               <input
                 type="text"
                 placeholder="Enter username"
                 className="form-control"
-                ref={usernameRef}
+                
               />
+              <label>Name</label>
+              <input
+                type="text"
+                placeholder="Enter name"
+                className="form-control"
+                
+              />
+
               <label>Password</label>
               <input
                 type="password"
                 placeholder="Enter Password"
                 className="form-control"
-                ref={passwordRef}
+              />
+              <label>Confirm Password</label>
+              <input
+                type="password"
+                placeholder="confrim Password"
+                className="form-control"
               />
             </div>
+            
             <div className="login_buttonSection">
               <button type="submit" className="userLoginButton">
-                Login
+                SignUp
               </button>
             </div>
           </form>
@@ -140,9 +92,9 @@ const Login = (props) => {
 
             <div className="modal-footer d-flex justify-content-center">
               <div className="signup-section">
-                Not a member yet?{" "}
+                Already  a member ?{" "}
                 <a href="/" className="text-info">
-                  Sign Up
+                  Login
                 </a>
                 .
               </div>
@@ -160,4 +112,4 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+export default SignUp;

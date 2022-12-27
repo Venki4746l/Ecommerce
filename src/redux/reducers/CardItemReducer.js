@@ -26,7 +26,7 @@ const initProduct = {
           id: payload.id,
           quantity: 1,
           name: payload.title,
-          image: payload.imgSrc,
+          image: payload.image,
           price: payload.price,
         };
         state.Carts.push(cart);
@@ -44,7 +44,7 @@ const initProduct = {
             id: payload.id,
             quantity: 1,
             name: payload.title,
-            image: payload.imgSrc,
+            image: payload.image,
             price: payload.price,
           };
           state.Carts.push(_cart);

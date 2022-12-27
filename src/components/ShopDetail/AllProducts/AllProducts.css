@@ -9,8 +9,9 @@
 
 
 .all-products-shop-image {
-  height: 200px;
+  height: 300px;
   width: 200px;
+  object-fit: contain;
 }
 
 .all-products-shop-title {
@@ -23,7 +24,11 @@
   flex-direction: column;
   align-items: center;
 }
-
+.card-buttons{
+  border-width:0px ;
+  background-color: transparent;
+  color: black;
+}
 
 .button {
   background: none;

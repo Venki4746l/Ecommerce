@@ -1,105 +1,163 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
-.card-small-container {
-  background-color: #edf1ff;
+.offer-card-container {
   font-family: poppins;
-  margin-bottom: 20px;
-  border: 2px solid green;
 }
 
-.P-L {
-  padding: 30px 0 0 30px;
+.rowww {
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
-.P-R {
-  padding: 30px 30px 0 0;
+.offer-card-bg {
+  background-color: #edf1ff;
+  position: relative;
 }
 
-.text-cont-right {
-  text-align: right;
+.offer-card-img {
+  position: absolute;
+  max-width: 50%;
+  max-height: 90%;
+  bottom: 0;
 }
 
-.girl-image {
-  height: 200px;
-  z-index: 0;
+.text-md-right img {
+  left: 0;
 }
 
-.card-button {
+.text-md-left img {
+  right: 0;
+}
+
+.z-index {
+  position: relative;
+  z-index: 1;
+}
+
+.offer-card-offer {
+  color: #d19c97;
+  font-size: 20px;
+}
+
+.offer-card-heading {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 33px;
+}
+
+.offer-card-button {
   text-decoration: none;
   color: #d19c97;
   border: 1px solid #d19c97;
   padding: 8px 15px;
-  font-size: 18px;
+  font-size: 16px;
   transition: all 0.3s;
 }
 
-.card-button:hover {
-  background-color: #d19c97;
-  color: black;
-}
+.offer-card-button:hover {
+    background-color: #d19c97;
+    color: black;
+  }
 
-.offer {
-  color: #d19c97;
-  font-size: 20px;
-}
-.card-heading {
-  font-weight: bold;
-  font-weight: 30px;
-  margin: 0 0 30px 0;
-}
-
-.card-card {
-  right: 20px;
-  margin-top: 20px;
-  z-index: 99;
-}
-@media screen and (max-width: 776px) {
-  .girl-image {
-    height: 170px;
+@media (min-width: 1200px) {
+  .rowww {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
-@media screen and (max-width: 480px) {
-  .girl-image {
-    height: 110px;
-  }
-  .card-card {
-    font-size: 2rem;
-    margin-top: 5px;
-  }
-  .card-heading {
-    margin: 0px;
-  }
-  .card-button {
-    text-decoration: none;
-    color: #d19c97;
-    border: 1px solid #d19c97;
-    padding: 4px 8px;
-    font-size: 12px;
-    transition: all 0.3s;
-  }
-  .P-L {
-    padding: 10px 0 0 10px;
-  }
-
-  .P-R {
-    padding: 10px 10px 0 0;
+@media screen and (min-width: 768px) {
+  .text-md-right {
+    text-align: right !important;
   }
 }
 
-@media screen and (max-width: 306px) {
-  .girl-image {
-    height: 140px;
+@media screen and (min-width: 768px) {
+  .text-md-left {
+    text-align: left !important;
   }
 }
+
+@media screen and (max-width: 500px) {
+    .offer-card-heading{
+        font-size: 38.4px;
+    }
+    .offer-card-offer{
+        font-size: 19.2px;
+    }
+    .offer-card-button{
+        font-size: 15.36px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .offer-card-heading{
+        font-size: 32px;
+    }
+    .offer-card-offer{
+        font-size: 16px;
+    }
+    .offer-card-button{
+        font-size: 12.8px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .offer-card-heading{
+        font-size: 26px;
+    }
+    .offer-card-offer{
+        font-size: 13px;
+    }
+    .offer-card-button{
+        font-size: 11.8px;
+    }
+}
+
 @media screen and (max-width: 260px) {
-  .girl-image {
-    height: 110px;
-  }
+    .offer-card-heading{
+        font-size: 22px;
+        margin-bottom: 28px;
+    }
+    .offer-card-offer{
+        font-size: 11px;
+    }
+    .offer-card-button{
+        font-size: 10px;
+        padding: 6px 10px;
+    }
 }
 
-@media screen and (max-width: 236px) {
-  .girl-image {
-    height: 90px;
-  }
+@media screen and (max-width: 230px) {
+    .offer-card-heading{
+        font-size: 18px;
+        margin-bottom: 24px;
+    }
+    .offer-card-offer{
+        font-size: 9px;
+    }
+    .offer-card-button{
+        font-size: 8px;
+        padding: 6px 8px;
+    }
+    .offer-card-bg{
+        padding: 30px !important;
+    }
+}
+
+@media screen and (max-width: 230px) {
+    .offer-card-heading{
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    .offer-card-offer{
+        font-size: 9px;
+    }
+    .offer-card-button{
+        font-size: 8px;
+        padding: 5px 7px;
+    }
+    .offer-card-bg{
+        padding: 25px !important;
+    }
 }

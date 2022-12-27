@@ -12,7 +12,7 @@ function Checkout() {
 
   let TotalCart = 0;
   items.Carts.forEach(function (item) {
-    TotalCart += item.quantity * item.price;
+    TotalCart += Math.round(item.quantity * item.price);
   });
   return (
     <>
@@ -251,7 +251,7 @@ function Checkout() {
                     <div key={key} className="d-flex justify-content-between">
                       <p className="checkout-card-products">{`${item.name} ${item.quantity}`}</p>
                       <p className="checkout-card-products">
-                        ${item.price * item.quantity}
+                        ${Math.round(item.price * item.quantity)}
                       </p>
                     </div>
                   ))}

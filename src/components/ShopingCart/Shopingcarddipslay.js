@@ -7,8 +7,7 @@ import {
   DELETE_CART,
 } from "../../redux/actions/Carditemaction";
 import "./ShopingCard.css";
-import {useNavigate,Link} from "react-router-dom"
-
+import { useNavigate, Link } from "react-router-dom";
 
 // import { useDispatch } from 'react-redux';
 // import { Redirect } from 'react-router-dom';
@@ -19,23 +18,38 @@ import {useNavigate,Link} from "react-router-dom"
 
 const Shopingcarddipslay = () => {
   const dispatch = useDispatch();
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   const items = useSelector((state) => state._cardProduct);
   // console.log(items);
 
   let TotalCart = 0;
   items.Carts.forEach(function (item) {
-    TotalCart += item.quantity * item.price;
+    TotalCart += Math.round(item.quantity * item.price);
   });
   function TotalPrice(price, tonggia) {
     return Number(price * tonggia).toLocaleString("en-US");
   }
 
-  const procedtocheckout=()=>{
-    navigate("/checkout")
-  }
-  
+  const procedtocheckout = () => {
+    navigate("/checkout");
+  };
+
+  //dleted or dcress quantity
+  const dcressQuantityhandler = (item,key) => {
+    if (item.quantity === 1) {
+      dispatch({
+        type: DELETE_CART,
+        payload: key,
+      });
+    } else {
+      dispatch({
+        type: DECREASE_QUANTITY,
+        payload: key,
+      });
+    }
+  };
+
   return (
     <React.Fragment>
       <div className="shop-detail-header-container">
@@ -87,15 +101,14 @@ const Shopingcarddipslay = () => {
                       >
                         <div className="input-group-btn">
                           <button
-                            onClick={() =>
-                              dispatch({
-                                type: DECREASE_QUANTITY,
-                                payload: key,
-                              })
-                            }
+                            onClick={() => dcressQuantityhandler(item,key)}
                             className="buttons-decrese-quantity"
                           >
-                            <i className="fa fa-minus"></i>
+                            {item.quantity === 1 ? (
+                              <i className="fa fa-trash"></i>
+                            ) : (
+                              <i className="fa fa-minus"></i>
+                            )}
                           </button>
                         </div>
                         <h1
@@ -130,7 +143,7 @@ const Shopingcarddipslay = () => {
                         }
                         className="card-deleted-button"
                       >
-                        <i className="fa fa-times"></i>
+                        <i className="fa fa-trash"></i>
                       </button>
                     </td>
                   </tr>
@@ -172,11 +185,13 @@ const Shopingcarddipslay = () => {
                   <h5 className="font-weight-bold">Total</h5>
                   <h5 className="font-weight-bold">${TotalCart + 10}</h5>
                 </div>
-                
-                  <button onClick={procedtocheckout} className="btn-block checkout_button my-3 py-3">
-                    Proceed To Checkout
-                  </button>
-               
+
+                <button
+                  onClick={procedtocheckout}
+                  className="btn-block checkout_button my-3 py-3"
+                >
+                  Proceed To Checkout
+                </button>
               </div>
             </div>
           </div>

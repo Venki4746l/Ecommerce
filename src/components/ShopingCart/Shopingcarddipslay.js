@@ -68,7 +68,7 @@ const Shopingcarddipslay = () => {
             <table className="table table-bordered text-center mb-0">
               <thead className="bg-primary text-white">
                 <tr>
-                  <th>Products</th>
+                  <th style={{width:"35%"}}>Products</th>
                   <th>Price</th>
                   <th>Quantity</th>
                   <th>Total</th>
@@ -78,7 +78,7 @@ const Shopingcarddipslay = () => {
               <tbody className="align-middle">
                 {items.Carts.map((item, key) => (
                   <tr key={key}>
-                    <td className="d-flex border">
+                    <td className="d-flex titlewraping border">
                       <img
                         src={item.image}
                         alt={item.name}
@@ -89,7 +89,7 @@ const Shopingcarddipslay = () => {
                           objectFit: "cover",
                         }}
                       />
-                      <p className="align-center pt-4 title-card-name d-inline-block">
+                      <p style={{width:"200px"}} className="align-center pt-4 title-card-name d-inline-block">
                         {item.name}
                       </p>
                     </td>
@@ -177,13 +177,13 @@ const Shopingcarddipslay = () => {
                 </div>
                 <div className="d-flex justify-content-between">
                   <h6 className="font-weight-medium">Shipping</h6>
-                  <h6 className="font-weight-medium">$10</h6>
+                  <h6 className="font-weight-medium">Free</h6>
                 </div>
               </div>
               <div className="card-footer border-secondary bg-transparent">
                 <div className="d-flex justify-content-between mt-2">
                   <h5 className="font-weight-bold">Total</h5>
-                  <h5 className="font-weight-bold">${TotalCart + 10}</h5>
+                  <h5 className="font-weight-bold">${TotalCart }</h5>
                 </div>
 
                 <button

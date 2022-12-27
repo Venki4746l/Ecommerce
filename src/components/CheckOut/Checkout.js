@@ -249,7 +249,7 @@ function Checkout() {
                 <div className="card_item_showing">
                   {items.Carts.map((item, key) => (
                     <div key={key} className="d-flex justify-content-between">
-                      <p className="checkout-card-products">{`${item.name} ${item.quantity}`}</p>
+                      <p className="checkout-card-productsName"><span className="itemTextOverflow">{item.name}</span>{item.quantity}</p>
                       <p className="checkout-card-products">
                         ${Math.round(item.price * item.quantity)}
                       </p>
@@ -264,13 +264,13 @@ function Checkout() {
                 </div>
                 <div className="d-flex justify-content-between">
                   <h6 className="checkout-items">Shipping</h6>
-                  <h6 className="checkout-items">$10</h6>
+                  <h6 className="checkout-items">Free</h6>
                 </div>
               </div>
               <div className="checkout-total-container">
                 <div className="d-flex justify-content-between mt-2">
                   <h5 className="checkout-total">Total</h5>
-                  <h5 className="checkout-total">${TotalCart + 10}</h5>
+                  <h5 className="checkout-total">${TotalCart }</h5>
                 </div>
               </div>
             </div>

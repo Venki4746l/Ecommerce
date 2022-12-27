@@ -4,11 +4,13 @@ import CarsoulImages from "./CarsoulImages";
 import "./Navbar.css";
 import { Link,useLocation } from "react-router-dom";
 import Login from "../../pages/Login/Login";
+import SignUp from './../../pages/SignUp/SignUp';
 
 const Navbar = () => {
   const [loginModal, setLoginmodal] = useState(false);
   const [isLogined, setIslogined] = useState(false);
   const [userName, setUserName] = useState("");
+  const [registerModal,setRegisterModal]=useState(false)
   //check the cuurent location
   const location=useLocation()
   //this for open login modal
@@ -26,6 +28,11 @@ const Navbar = () => {
     const nameuser = details[0].name.firstname + details[0].name.lastname;
     setUserName(nameuser);
   };
+
+  //register modal
+  const signupHandlermodal=(value)=>{
+    setRegisterModal(value)
+  }
 
   return (
     <div>
@@ -215,7 +222,7 @@ const Navbar = () => {
                     >
                       Login
                     </p>
-                    <p className="font-weight-bold nav-item nav-link items">
+                    <p onClick={()=>setRegisterModal(true)} className="font-weight-bold nav-item nav-link items">
                       Register
                     </p>
                   </div>
@@ -230,6 +237,14 @@ const Navbar = () => {
                   logOutShow={logoutButtonShow}
                   modalClose={loginHandlermodal}
                   userDetailsGet={userDetailshandler}
+                />
+              )}
+            </div>
+            {/* register modal */}
+            <div>
+              {registerModal && (
+                <SignUp
+                  modalClose={signupHandlermodal}
                 />
               )}
             </div>

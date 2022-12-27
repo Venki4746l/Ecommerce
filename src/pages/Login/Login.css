@@ -71,3 +71,19 @@
   flex-direction: column;
   margin: 35px;
 }
+.userLoginButton{
+  width: 200px;
+  background-color: #b85d5d;
+  border-width: 0px;
+  border-radius: 25px;
+  color: white;
+  font-size: 25px;
+}
+
+.socailButton{
+  height: 45px;
+  width: 45px;
+  border-width: 0px;
+  border-radius: 5px;
+  font-size: 25px;
+}

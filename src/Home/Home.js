@@ -1,6 +1,5 @@
 import React from "react";
 import "./Home.css";
-import Navbar from "./Navbar/Navbar";
 import Features from "./Features/Features";
 import Product from "./Products/Products";
 import AllSections from "./AllSections/AllSections";
@@ -12,7 +11,7 @@ const Home = () => {
   return (
     <div>
       
-      <Navbar />
+     
       <Features />
       <Product />
       <Cards />

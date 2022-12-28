@@ -7,34 +7,57 @@ import {
   DELETE_CART,
 } from "../../redux/actions/Carditemaction";
 import "./ShopingCard.css";
-// import {
+import { useNavigate, Link } from "react-router-dom";
+
 // import { useDispatch } from 'react-redux';
-// IncreaseQuantity,
+// import { Redirect } from 'react-router-dom';
+// import { productDetailsReducer } from './../../redux/reducers/ProductRreducer';
 //   DecreaseQuantity,
 //   DeleteCart,
 // } from "../../redux/actions/Carditemaction.js";
 
 const Shopingcarddipslay = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const items = useSelector((state) => state._cardProduct);
   // console.log(items);
 
   let TotalCart = 0;
   items.Carts.forEach(function (item) {
-    TotalCart += item.quantity * item.price;
+    TotalCart += Math.round(item.quantity * item.price);
   });
   function TotalPrice(price, tonggia) {
     return Number(price * tonggia).toLocaleString("en-US");
   }
+
+  const procedtocheckout = () => {
+    navigate("/checkout");
+  };
+
+  //dleted or dcress quantity
+  const dcressQuantityhandler = (item,key) => {
+    if (item.quantity === 1) {
+      dispatch({
+        type: DELETE_CART,
+        payload: key,
+      });
+    } else {
+      dispatch({
+        type: DECREASE_QUANTITY,
+        payload: key,
+      });
+    }
+  };
+
   return (
     <React.Fragment>
       <div className="shop-detail-header-container">
         <h1 className="shop">SHOP DETAIL</h1>
         <div className="shop-detail-navigation">
-          <a href="/" className="links">
+          <Link to="/" className="links">
             Home
-          </a>
+          </Link>
           <p className="pl-2 pr-2">-</p>
           <span> CheckOut</span>
         </div>
@@ -45,7 +68,7 @@ const Shopingcarddipslay = () => {
             <table className="table table-bordered text-center mb-0">
               <thead className="bg-primary text-white">
                 <tr>
-                  <th>Products</th>
+                  <th style={{width:"35%"}}>Products</th>
                   <th>Price</th>
                   <th>Quantity</th>
                   <th>Total</th>
@@ -55,10 +78,10 @@ const Shopingcarddipslay = () => {
               <tbody className="align-middle">
                 {items.Carts.map((item, key) => (
                   <tr key={key}>
-                    <td className="d-flex border">
+                    <td className="d-flex titlewraping border">
                       <img
                         src={item.image}
-                        alt={item.title}
+                        alt={item.name}
                         className="align-start"
                         style={{
                           height: "75px",
@@ -66,7 +89,7 @@ const Shopingcarddipslay = () => {
                           objectFit: "cover",
                         }}
                       />
-                      <p className="align-center pt-4 title-card-name d-inline-block">
+                      <p style={{width:"200px"}} className="align-center pt-4 title-card-name d-inline-block">
                         {item.name}
                       </p>
                     </td>
@@ -78,15 +101,14 @@ const Shopingcarddipslay = () => {
                       >
                         <div className="input-group-btn">
                           <button
-                            onClick={() =>
-                              dispatch({
-                                type: DECREASE_QUANTITY,
-                                payload: key,
-                              })
-                            }
+                            onClick={() => dcressQuantityhandler(item,key)}
                             className="buttons-decrese-quantity"
                           >
-                            <i className="fa fa-minus"></i>
+                            {item.quantity === 1 ? (
+                              <i className="fa fa-trash"></i>
+                            ) : (
+                              <i className="fa fa-minus"></i>
+                            )}
                           </button>
                         </div>
                         <h1
@@ -121,7 +143,7 @@ const Shopingcarddipslay = () => {
                         }
                         className="card-deleted-button"
                       >
-                        <i className="fa fa-times"></i>
+                        <i className="fa fa-trash"></i>
                       </button>
                     </td>
                   </tr>
@@ -155,15 +177,19 @@ const Shopingcarddipslay = () => {
                 </div>
                 <div className="d-flex justify-content-between">
                   <h6 className="font-weight-medium">Shipping</h6>
-                  <h6 className="font-weight-medium">$10</h6>
+                  <h6 className="font-weight-medium">Free</h6>
                 </div>
               </div>
               <div className="card-footer border-secondary bg-transparent">
                 <div className="d-flex justify-content-between mt-2">
                   <h5 className="font-weight-bold">Total</h5>
-                  <h5 className="font-weight-bold">${TotalCart + 10}</h5>
+                  <h5 className="font-weight-bold">${TotalCart }</h5>
                 </div>
-                <button className="btn-block checkout_button my-3 py-3">
+
+                <button
+                  onClick={procedtocheckout}
+                  className="btn-block checkout_button my-3 py-3"
+                >
                   Proceed To Checkout
                 </button>
               </div>

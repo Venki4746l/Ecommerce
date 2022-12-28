@@ -22,6 +22,8 @@
   color: #d19c97;
   font-size: 16px;
   text-decoration: none;
+
+  
 }
 
 .checkout-heading-link:hover{
@@ -117,6 +119,7 @@
   margin-bottom: 16px;
   font-size: 16px;
 }
+
 
 .checkout-hr{
   border-top: 1px solid rgba(0,0,0,0.1);
@@ -222,4 +225,18 @@
   .checkout-heading-link,.dashhh,.chechout-checkout,.checkout-label,.checkout-input,.checkout-select,.checkout-items,.checkout-card-products,::placeholder{
     font-size: 10.24px;
   }
+}
+
+.card_item_showing{
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+.card_item_showing div:nth-child(odd){
+  background-color: lightblue;
+}
+
+.itemTextOverflow{
+  text-overflow: ellipsis;
+  width: 100px;
 }

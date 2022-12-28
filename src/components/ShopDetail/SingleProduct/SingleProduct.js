@@ -3,10 +3,12 @@ import { SpinnerCircular } from "spinners-react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getSingleProduct } from "../../../redux/actions/ShopDetailAction";
+import Rating from '../Rating/Rating'
 
 import AllProducts from "../AllProducts/AllProducts";
 import { Link } from "react-router-dom";
 import "./SingleProduct.css";
+
 import TabSection from "../TabSection/TabSection";
 import { ADD_CART } from "../../../redux/actions/Carditemaction";
 
@@ -47,7 +49,8 @@ const SingleProduct = () => {
                 </div>
                 <div className="col-sm-12 col-md-12 col-lg-7">
                   <h3 className="shop-detail-product-title">{product.title}</h3>
-
+                  <Rating rating={product.rating?.rate} reviews={product.rating?.count} />
+                
                   <h3 className="shop-product-price">${product.price}</h3>
 
                   <p className="shop-product-description">

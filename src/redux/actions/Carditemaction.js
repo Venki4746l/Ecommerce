@@ -14,6 +14,7 @@ export function GetNumberCart(){
     }
 }
 
+
 //Add to card item passing item info with payload
 export function AddCart(payload){
     return {

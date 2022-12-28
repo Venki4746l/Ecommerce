@@ -2,6 +2,7 @@
 
 import React from 'react'
 import "./Card.css"
+import { Link } from 'react-router-dom';
 
 function Cards() {
   return (
@@ -13,7 +14,7 @@ function Cards() {
                     <div className="z-index" >
                         <h5 className="offer-card-offer mb-3">20% OFF THE ALL ORDER</h5>
                         <h1 className="offer-card-heading">Spring Collection</h1>
-                        <a href="@" className="offer-card-button">Shop Now</a>
+                        <Link to="/shop" className="offer-card-button">Shop Now</Link>
                     </div>
                 </div>
             </div>
@@ -23,7 +24,7 @@ function Cards() {
                     <div className="z-index" >
                         <h5 className="offer-card-offer mb-3">20% OFF THE ALL ORDER</h5>
                         <h1 className="offer-card-heading">Winter Collection</h1>
-                        <a href="@" className="offer-card-button">Shop Now</a>
+                        <Link to="/shop" className="offer-card-button">Shop Now</Link>
                     </div>
                 </div>
             </div>
@@ -32,4 +33,4 @@ function Cards() {
   )
 }
 
-export default Cards
+export default Cards;

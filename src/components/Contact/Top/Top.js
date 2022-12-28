@@ -1,5 +1,6 @@
 import React from 'react';
 import './Top.css'
+import { Link } from 'react-router-dom';
 
 const Top = () => {
   return (
@@ -8,7 +9,7 @@ const Top = () => {
             <div className="head">
                 <h1 className="font">CONTACT US</h1>
                 <div className="d-inline-flex">
-                    <p className="m-0"><a href="..." className='color'>Home</a> - Contacts</p>
+                    <p className="m-0"><Link to="/" className='color'>Home</Link> - Contacts</p>
                 </div>
             </div>
         </div>

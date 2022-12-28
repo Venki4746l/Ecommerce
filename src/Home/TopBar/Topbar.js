@@ -1,5 +1,5 @@
 import React from "react";
-import "./TopBar.css";
+import "./Topbar.css";
 
 const TopNavbar = () => {
   return (
@@ -10,7 +10,7 @@ const TopNavbar = () => {
           style={{ backgroundColor: "#EDF1FF" }}
         >
           <></>
-          <div className="col-lg-6 d-none d-lg-block">
+          <div className="col-lg-6 d-none d-lg-block"> Top-Navbar
             <div className="d-inline-flex align-items-start justify-content-start">
               <a className="text-dark" href="...">FAQs</a>
               <span className="text-muted px-2">|</span>
@@ -19,6 +19,7 @@ const TopNavbar = () => {
               <a className="text-dark text-decoration-none" href="...">Support</a>
             </div>
           </div>
+          {/* Top-Navbar section */}
 
           <div className="col-lg-6 text-center text-lg-right">
             <div className="d-inline-flex align-items-center">
@@ -39,13 +40,16 @@ const TopNavbar = () => {
               </a>
             </div>
           </div>
+          {/* Icons imported from Fontawesome website & style used for icon size */}
         </div>
 
         <div className="row align-items-center py-3 px-xl-5">
+          {/* row align-items-center is used for working in center alignment */}
           <div className="col-lg-3 d-none d-lg-block">
             <a href="..." className="text-decoration-none" style={{ color: "black" }}>
               <h1 className="m-0 font-weight-semi-bold">
                 <span className="text-primary font-weight-bold px-2 border mr-1">E</span>
+                {/* For E in box used border bootstrap className */}
                 <span className="heading font-weight-bold">Shopper</span>
               </h1>
             </a>
@@ -55,9 +59,12 @@ const TopNavbar = () => {
             <form action="">
               <div className="input-group">
                 <input type="text" className="form-control" placeholder="Search for products"/>
+                {/* For search bar used bootstrap form-control className */}
+                {/* placeholder is used showing lite text */}
                 <div className="input-group-append">
                   <span className="input-group-text bg-transparent text-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style={{height:'18px',width:'18px'}} fill="#D19C97"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg>
+                    {/* Search icon imported from Fontawesome */}
                   </span>
                 </div>
               </div>
@@ -65,7 +72,10 @@ const TopNavbar = () => {
           </div>
 
           <div className="col-lg-3 col-6 text-right">
+            {/* col-lg-3 used for in large devices 3 columns will consider */}
             <a href="..." className="btn border">
+              {/* href is used for giving access for link */}
+              {/* btn border is a bootstrap className it used for looking border around button annd btn is used for working as a button */}
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style={{height:'18px',width:'18px'}} fill="#D19C97"><path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
               <span className="heading badge">0</span>
             </a>

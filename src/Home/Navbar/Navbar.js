@@ -1,5 +1,6 @@
 import React from "react";
 import "./Navbar.css";
+import Carousel from 'react-bootstrap/Carousel';
 
 const Navbar = () => {
   return (
@@ -104,8 +105,8 @@ const Navbar = () => {
               </div>
             </nav>
 
-            <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-      <div className="carousel-inner">
+            {/* <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
+      <div className="carousel-inner" style={{height: "420px"}}>
       <div className="carousel-item active">
       <img src="https://technext.github.io/eshopper/img/carousel-1.jpg" className="d-block w-100" alt="..."/>
       <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
@@ -128,15 +129,44 @@ const Navbar = () => {
       </div>
     </div>
   </div>
-  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+  <button className="carousel-control-prev d-none" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
     <span className="visually-hidden">Previous</span>
   </button>
-  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+  <button className="carousel-control-next d-none" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
     <span className="carousel-control-next-icon" aria-hidden="true"></span>
     <span className="visually-hidden">Next</span>
   </button>
-</div>
+</div> */}
+
+<Carousel>
+      <Carousel.Item style={{height: "420px"}}>
+        <img
+          className="d-block w-100"
+          src="https://technext.github.io/eshopper/img/carousel-1.jpg"
+          alt="First slide"
+        />
+        <Carousel.Caption>
+          <h4>10% Off Your First Order</h4>
+          <h3>Reasonable Price</h3>
+          <a href="..." class="btn btn-light py-2 px-3">Shop Now</a>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item style={{height: "420px"}}>
+        <img
+          className="d-block w-100"
+          src="https://technext.github.io/eshopper/img/carousel-2.jpg"
+          alt="First slide"
+        />
+        <Carousel.Caption>
+        <h4>10% Off Your First Order</h4>
+          <h3>Fashionable Dress</h3>
+          <a href="..." class="btn btn-light py-2 px-3">Shop Now</a>
+        </Carousel.Caption>
+      </Carousel.Item>
+      
+    </Carousel>
 
           </div>
         </div>

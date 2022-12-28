@@ -2,13 +2,9 @@
 import React, { useState } from "react";
 import CarsoulImages from "./CarsoulImages";
 import "./Navbar.css";
-<<<<<<< HEAD
-import Carousel from 'react-bootstrap/Carousel';
-=======
 import { Link,useLocation } from "react-router-dom";
 import Login from "../../pages/Login/Login";
 import SignUp from './../../pages/SignUp/SignUp';
->>>>>>> 86e3f04746b5249c9cfde5790c52021188a2edf6
 
 const Navbar = () => {
   const [loginModal, setLoginmodal] = useState(false);

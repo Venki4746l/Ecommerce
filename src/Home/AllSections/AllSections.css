@@ -1,10 +1,18 @@
-.heading-section {
-    width: 100%;
-    align-items: center;
-    margin-top: 30px;
-    
-  }
+.trendy-shop-container {
+  padding: 18px;
+}
 
+@media screen and (min-width: 992px) {
+  .trendy-shop-container {
+    padding: 18px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .trendy-shop-container {
+    padding: 66px;
+  }
+}
   
   .decorated{
     overflow: hidden;

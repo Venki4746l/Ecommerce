@@ -216,4 +216,3 @@ export default Shopingcarddipslay;
 //   DecreaseQuantity,
 //   DeleteCart,
 // })(Shopingcarddipslay);
-

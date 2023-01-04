@@ -13,7 +13,7 @@ const TrendySection = (props) => {
   const second_button = "Add To Cart";
 
   const addTocardhandler=()=>{
-    dispatch({ type: ADD_CART, payload: shopDetails })
+    dispatch({ type: ADD_CART, payload: {...shopDetails,quantity:1} })
     setItemAdded(true)
     setTimeout(() => {
       setItemAdded(false) 

@@ -4,6 +4,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import store from "./redux/Store/store";
+import throttle from 'lodash/throttle';
+import { saveState } from "./redux/LocalStorage/LocalStorage";
+
+store.subscribe(throttle(() => {
+  console.debug('saveState')
+  const { _cardProduct } = store.getState()
+  saveState({
+    _cardProduct
+  })
+}, 1000))
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

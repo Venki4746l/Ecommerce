@@ -192,6 +192,7 @@ label {
     background-color: #D19C97;
 }
 
+
 @media screen and (min-width:992px) {
     .shop-detail-cart-button {
         border: none;
@@ -199,6 +200,7 @@ label {
         width: 40px;
         background-color: #D19C97;
     }
+   
 }
 
 .cart-button {
@@ -254,7 +256,19 @@ label {
     font-size: 12px;
     padding: 6px 16px;
     color: #212529;
+    border-radius: 5px;
 }
+.addedTocart{
+    background-color: #86e786;
+    height: 30px;
+    width: 120px;
+    border: none;
+    font-size: 13px;
+    padding: 6px 16px;
+    color: white;
+    border-radius: 5px;
+}
+
 
 @media screen and (min-width:992px) {
     .shop-cart-button {
@@ -265,6 +279,17 @@ label {
         font-size: 16px;
         padding: 6px 16px;
         color: #212529;
+        border-radius: 5px;
+    }
+    .addedTocart{
+        background-color: #86e786;
+        height: 40px;
+        width: 150px;
+        border: none;
+        font-size: 16px;
+        padding: 6px 16px;
+        color: white;
+        border-radius: 5px;
     }
 }
 .cart-icon-button {

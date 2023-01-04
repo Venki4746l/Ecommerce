@@ -35,7 +35,7 @@ const SingleProduct = () => {
   const addTocardhandler = (item) => {
     setAddTocart(true);
 
-    dispatch({ type: ADD_CART, payload: item });
+    dispatch({ type: ADD_CART, payload: {...item,quantity:count} });
     setTimeout(() => setAddTocart(false), 1500);
   };
 

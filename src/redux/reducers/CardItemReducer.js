@@ -24,7 +24,7 @@ const initProduct = {
       if (state.numberCart === 0) {
         let cart = {
           id: payload.id,
-          quantity: 1,
+          quantity: payload.quantity,
           name: payload.title,
           image: payload.image,
           price: payload.price,
@@ -42,7 +42,7 @@ const initProduct = {
         if (!check) {
           let _cart = {
             id: payload.id,
-            quantity: 1,
+            quantity: payload.quantity,
             name: payload.title,
             image: payload.image,
             price: payload.price,
@@ -52,7 +52,7 @@ const initProduct = {
       }
       return {
         ...state,
-        numberCart: state.numberCart + 1,
+        numberCart: state.numberCart + payload.quantity,
       };
     case INCREASE_QUANTITY:
       state.numberCart++;

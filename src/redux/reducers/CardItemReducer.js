@@ -1,7 +1,6 @@
 //contributors venkateswara rao ,dinesh ,dhanaraju
 
 import {
-  GET_NUMBER_CART,
   ADD_CART,
   DECREASE_QUANTITY,
   INCREASE_QUANTITY,
@@ -9,19 +8,14 @@ import {
 } from "../actions/Carditemaction.js";
 
 const initProduct = {
-  numberCart: 0,
   Carts: [],
 };
 
  function cardProduct(state = initProduct, action) {
   const { type, payload } = action;
   switch (type) {
-    case GET_NUMBER_CART:
-      return {
-        ...state,
-      };
     case ADD_CART:
-      if (state.numberCart === 0) {
+      if (state.Carts.length===0) {
         let cart = {
           id: payload.id,
           quantity: payload.quantity,
@@ -52,10 +46,10 @@ const initProduct = {
       }
       return {
         ...state,
-        numberCart: state.numberCart + payload.quantity,
+        
       };
     case INCREASE_QUANTITY:
-      state.numberCart++;
+     
       state.Carts[payload].quantity++;
 
       return {
@@ -64,7 +58,7 @@ const initProduct = {
     case DECREASE_QUANTITY:
       let quantity = state.Carts[payload].quantity;
       if (quantity > 1) {
-        state.numberCart--;
+       
         state.Carts[payload].quantity--;
       }
 
@@ -72,10 +66,8 @@ const initProduct = {
         ...state,
       };
     case DELETE_CART:
-      let quantity_ = state.Carts[payload].quantity;
       return {
         ...state,
-        numberCart: state.numberCart - quantity_,
         Carts: state.Carts.filter((item) => {
           return item.id !== state.Carts[payload].id;
         }),

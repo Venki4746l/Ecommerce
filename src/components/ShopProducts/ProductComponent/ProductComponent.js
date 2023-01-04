@@ -73,7 +73,7 @@ const ProductComponent = () => {
                           </Link>
                           <button
                             onClick={() =>
-                              dispatch({ type: ADD_CART, payload: each })
+                              dispatch({ type: ADD_CART, payload: {...each,quantity:1} })
                             }
                             className="button_addtocart"
                           >

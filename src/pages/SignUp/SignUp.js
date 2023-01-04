@@ -1,6 +1,12 @@
 import React from "react";
 
 const SignUp = (props) => {
+  //signup handler
+  const onSubmitHAndler=(e)=>{
+    e.preventDefault()
+    alert("Successfully Registered")
+    props.modalClose(false)
+  }
    const closeModal = () => {
     props.modalClose(false);
   };
@@ -18,7 +24,7 @@ const SignUp = (props) => {
               SignUp
             </h2>
           </div>
-          <form >
+          <form onSubmit={onSubmitHAndler}>
             <div className="userLoginContainer">
               <label>UserName</label>
               <input

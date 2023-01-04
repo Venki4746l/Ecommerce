@@ -1,4 +1,4 @@
-//contributors venkateswara rao ,dinesh ,dhanaraju
+//contributors venkateswara rao
 
 //venkateswara Rao task start
 export const INCREASE_QUANTITY = 'INCREASE_QUANTITY';

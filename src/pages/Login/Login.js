@@ -6,18 +6,20 @@ import { headings } from "../../constants/Headings/headings";
 
 const Login = (props) => {
   const [userDetails, setUserDetails] = useState([]);
+  //login intergration with dummyjson data
   const fetchData = async () => {
-    const response = await fetch("https://fakestoreapi.com/users");
+    const response = await fetch("https://dummyjson.com/users");
     if (!response.ok) {
       throw new Error("Data coud not be fetched!");
     } else {
       return response.json();
     }
   };
+
   useEffect(() => {
     fetchData()
       .then((res) => {
-        setUserDetails(res);
+        setUserDetails(res.users); //get the userData
       })
       .catch((e) => {
         console.log(e.message);
@@ -28,7 +30,7 @@ const Login = (props) => {
   const usernameRef = useRef();
   const passwordRef = useRef();
 
-  //submit the data
+  //submit the data for  check the login actions
   const onSubmitHandler = (e) => {
     e.preventDefault();
     const username = usernameRef.current.value;
@@ -38,12 +40,16 @@ const Login = (props) => {
       username,
       password,
     };
-
+    //checking the user enter details or not
     if (username === "" || password === "") {
       alert("Enter Username and Password Correctly");
-    } else if (password.length < 5) {
+    }
+    // password length check and validation password
+    else if (password.length < 8) {
       alert("Password must be above 8 char");
-    } else {
+    }
+    //if data is correct find the userdetails
+    else {
       const data = userDetails.find(
         (person) =>
           person.username === userData.username &&
@@ -161,4 +167,3 @@ const Login = (props) => {
 };
 
 export default Login;
-

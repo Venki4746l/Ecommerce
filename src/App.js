@@ -10,6 +10,7 @@ import TopNavbar from "./Home/TopBar/Topbar";
 import Contactus from "./components/Contact/Contactus";
 import Footer from "./Footer/Footer";
 import Navbar from "./Home/Navbar/Navbar";
+import BackToTopButton from "./components/BackToTop/BackToTopButton";
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
           <Route exact path="/contactus" element={<Contactus />} />
         </Routes>
         <Footer />
+        <BackToTopButton />
       </BrowserRouter>
     </>
   );

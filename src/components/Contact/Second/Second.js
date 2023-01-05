@@ -11,6 +11,7 @@ const Second = () => {
 
             <div>
                 <h5 className="font-weight-bold mb-3">Get In Touch</h5>
+                {/* font-weight is for text font-model & mb is for  margin bottom */}
                 <p>Justo sed diam ut sed amet duo amet lorem amet stet sea ipsum, sed duo amet et. Est elitr dolor elitr erat sit sit. Dolor diam et erat clita ipsum justo sed.</p>
                     <div className="d-flex flex-column mb-3">
                         <h5 className="font-weight-semi-bold mb-3">Store 1</h5>

@@ -31,6 +31,7 @@ const TopNavbar = () => {
               <Link className="text-dark text-decoration-none" to="/contactus">Support</Link>
             </div>
           </div>
+          {/* Top-Navbar section */}
 
           <div className="col-lg-6 text-end text-lg-right">
             <div className="d-inline-flex align-items-end">
@@ -51,13 +52,16 @@ const TopNavbar = () => {
               </a>
             </div>
           </div>
+          {/* Icons imported from Fontawesome website & style used for icon size */}
         </div>
 
         <div className="row align-items-center py-3 px-xl-5">
+          {/* row align-items-center is used for working in center alignment */}
           <div className="col-lg-3 d-none d-lg-block">
             <Link to="/" className="text-decoration-none" style={{ color: "black" }}>
               <h1 className="m-0 font-weight-semi-bold">
                 <span className="text-primary font-weight-bold px-2 border mr-1">E</span>
+                {/* For E in box used border bootstrap className */}
                 <span className="heading font-weight-bold">Shopper</span>
               </h1>
             </Link>
@@ -67,9 +71,12 @@ const TopNavbar = () => {
             <form action="">
               <div className="input-group">
                 <input type="text" className="form-control" placeholder="Search for products"/>
+                {/* For search bar used bootstrap form-control className */}
+                {/* placeholder is used showing lite text */}
                 <div className="input-group-append">
                   <span className="input-group-text bg-transparent text-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style={{height:'18px',width:'18px'}} fill="#D19C97"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg>
+                    {/* Search icon imported from Fontawesome */}
                   </span>
                 </div>
               </div>

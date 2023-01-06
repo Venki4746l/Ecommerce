@@ -6,7 +6,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { loadState } from '../LocalStorage/LocalStorage';
 
 import rootReducer from '../rootReducer/rootReducer';
-
+//saving the cart data in local storage
 const persistedState = loadState()
 
 

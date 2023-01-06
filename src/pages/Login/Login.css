@@ -1,3 +1,4 @@
+/* login modal container */
 .Modal_container {
   position: fixed;
   width: 100vw;
@@ -15,6 +16,7 @@
 
   border-radius: 15px;
 }
+/*card container for input fileds*/
 .cardContainerLogin {
   display: flex;
   flex-direction: column;
@@ -86,4 +88,19 @@
   border-width: 0px;
   border-radius: 5px;
   font-size: 25px;
+}
+
+/*error message section*/
+.ErrorMessage{
+  color: red;
+  font-size: 15px;
+  font-family:italic;
+  text-align: center;
+}
+/*correct detials entered */
+.successfullymessage{
+  color: green;
+  font-size: 15px;
+  text-align: center;
+
 }

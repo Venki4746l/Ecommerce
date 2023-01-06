@@ -6,6 +6,12 @@ import { headings } from "../../constants/Headings/headings";
 
 const Login = (props) => {
   const [userDetails, setUserDetails] = useState([]);
+
+  //error in login and succefully
+  const [error, setError] = useState(false);
+  const [message, setMessage] = useState("");
+  //successfully login
+  const [loginState, setLoginState] = useState(false);
   //login intergration with dummyjson data
   const fetchData = async () => {
     const response = await fetch("https://dummyjson.com/users");
@@ -35,18 +41,20 @@ const Login = (props) => {
     e.preventDefault();
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
-
+    //sample user details username:atuny0 password:9uQFF1Lh
     const userData = {
       username,
       password,
     };
     //checking the user enter details or not
     if (username === "" || password === "") {
-      alert("Enter Username and Password Correctly");
+      setError(true);
+      setMessage("Enter Username and Password Correctly");
     }
     // password length check and validation password
     else if (password.length < 8) {
-      alert("Password must be above 8 char");
+      setError(true);
+      setMessage("Password must be above 8 char");
     }
     //if data is correct find the userdetails
     else {
@@ -56,15 +64,22 @@ const Login = (props) => {
           person.password === userData.password
       );
       if (!data) {
-        alert("invalid login");
+        setError(true);
+        setMessage("invalid login"); //if invalid details entered
       } else {
-        alert("succeesfully login");
-        props.modalClose(false);
-        props.logOutShow(true);
-        const name = userDetails.filter(
-          (person) => person.username === userData.username
-        );
-        props.userDetailsGet(name);
+        setError(false);
+        setLoginState(true); //if no error in login show login message
+        //this for showing the succesfuuly message and close the modal
+        setTimeout(() => {
+          props.modalClose(false);
+          props.logOutShow(true);
+          //using filter get the logiend user details
+
+          const name = userDetails.filter(
+            (person) => person.username === userData.username
+          );
+          props.userDetailsGet(name);
+        }, 2000);
       }
     }
   };
@@ -102,6 +117,12 @@ const Login = (props) => {
                 className="form-control"
                 ref={passwordRef}
               />
+            </div>
+            <div>
+              {error && <p className="ErrorMessage">{message}</p>}
+              {loginState && (
+                <p className="successfullymessage">{headings.userLoginMessgae}</p>
+              )}
             </div>
             <div className="login_buttonSection">
               <button type="submit" className="userLoginButton">

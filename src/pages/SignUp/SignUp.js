@@ -1,3 +1,5 @@
+//venkateswara rao
+
 import React, { useRef, useState } from "react";
 
 const SignUp = (props) => {
@@ -13,7 +15,7 @@ const SignUp = (props) => {
     const username = userNameRef.current.value;
     const password = passWordRef.current.value;
     const confrimpass = conformPassRef.current.value;
-
+//checking the conditions details
     if (username === "") {
       setError(true);
       SeterrerMessage("userName Required");

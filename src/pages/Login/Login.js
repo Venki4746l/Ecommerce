@@ -6,18 +6,36 @@ import { headings } from "../../constants/Headings/headings";
 
 const Login = (props) => {
   const [userDetails, setUserDetails] = useState([]);
+
+  
+
+  //error in login and succefully
+  const [error, setError] = useState(false);
+  const [message, setMessage] = useState("");
+  //successfully login
+  const [loginState, setLoginState] = useState(false);
+
+  //singup page for clicking not account singnup
+  const registerPageOpenHandler=()=>{
+    props.createAccout(true)
+    props.modalClose(false);
+
+  }
+  
+  //login intergration with dummyjson data
   const fetchData = async () => {
-    const response = await fetch("https://fakestoreapi.com/users");
+    const response = await fetch("https://dummyjson.com/users");
     if (!response.ok) {
       throw new Error("Data coud not be fetched!");
     } else {
       return response.json();
     }
   };
+
   useEffect(() => {
     fetchData()
       .then((res) => {
-        setUserDetails(res);
+        setUserDetails(res.users); //get the userData
       })
       .catch((e) => {
         console.log(e.message);
@@ -28,37 +46,50 @@ const Login = (props) => {
   const usernameRef = useRef();
   const passwordRef = useRef();
 
-  //submit the data
+  //submit the data for  check the login actions
   const onSubmitHandler = (e) => {
     e.preventDefault();
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
-
+    //sample user details username:atuny0 password:9uQFF1Lh
     const userData = {
       username,
       password,
     };
-
+    //checking the user enter details or not
     if (username === "" || password === "") {
-      alert("Enter Username and Password Correctly");
-    } else if (password.length < 5) {
-      alert("Password must be above 8 char");
-    } else {
+      setError(true);
+      setMessage("Enter Username and Password Correctly");
+    }
+    // password length check and validation password
+    else if (password.length < 8) {
+      setError(true);
+      setMessage("Password must be above 8 char");
+    }
+    //if data is correct find the userdetails
+    else {
       const data = userDetails.find(
         (person) =>
           person.username === userData.username &&
           person.password === userData.password
       );
       if (!data) {
-        alert("invalid login");
+        setError(true);
+        setMessage("invalid login"); //if invalid details entered
       } else {
-        alert("succeesfully login");
-        props.modalClose(false);
-        props.logOutShow(true);
-        const name = userDetails.filter(
-          (person) => person.username === userData.username
-        );
-        props.userDetailsGet(name);
+        setError(false);
+        setLoginState(true); //if no error in login show login message
+        //this for showing the succesfuuly message and close the modal
+        setTimeout(() => {
+          props.modalClose(false);
+          props.logOutShow(true);
+          //using filter get the logiend user details
+
+          const name = userDetails.filter(
+            (person) => person.username === userData.username
+          );
+          props.userDetailsGet(name);
+        }, 2000);
       }
     }
   };
@@ -96,6 +127,12 @@ const Login = (props) => {
                 className="form-control"
                 ref={passwordRef}
               />
+            </div>
+            <div>
+              {error && <p className="ErrorMessage">{message}</p>}
+              {loginState && (
+                <p className="successfullymessage">{headings.userLoginMessgae}</p>
+              )}
             </div>
             <div className="login_buttonSection">
               <button type="submit" className="userLoginButton">
@@ -141,9 +178,9 @@ const Login = (props) => {
             <div className="modal-footer d-flex justify-content-center">
               <div className="signup-section">
                 Not a member yet?{" "}
-                <a href="/" className="text-info">
+                <button onClick={registerPageOpenHandler}  className="signUpbutton">
                   Sign Up
-                </a>
+                </button>
                 .
               </div>
             </div>
@@ -161,4 +198,3 @@ const Login = (props) => {
 };
 
 export default Login;
-

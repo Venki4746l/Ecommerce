@@ -1,6 +1,7 @@
 //venkateswara rao
 
 import React, { useRef, useState } from "react";
+import "./SignUp.css";
 
 const SignUp = (props) => {
   const [errerMessage, SeterrerMessage] = useState("");
@@ -8,6 +9,13 @@ const SignUp = (props) => {
   const userNameRef = useRef();
   const passWordRef = useRef();
   const conformPassRef = useRef();
+
+  //login section show already user have a account
+  const loginModalShow = () => {
+    props.loginModalOpen(true);
+    props.modalClose(false);
+  };
+
   //signup handler
   const onSubmitHAndler = (e) => {
     e.preventDefault();
@@ -15,7 +23,7 @@ const SignUp = (props) => {
     const username = userNameRef.current.value;
     const password = passWordRef.current.value;
     const confrimpass = conformPassRef.current.value;
-//checking the conditions details
+    //checking the conditions details
     if (username === "") {
       setError(true);
       SeterrerMessage("userName Required");
@@ -39,16 +47,21 @@ const SignUp = (props) => {
       })
         .then((res) => res.json())
         .then(console.log);
-      alert("Succssfully register")
+      alert("Succssfully register");
 
       props.modalClose(false);
+      props.loginModalOpen(true);
+
+      // fetch("https://dummyjson.com/users/")
+      //   .then((res) => res.json())
+      //   .then((data) => console.log(data));
     }
   };
   const closeModal = () => {
     props.modalClose(false);
   };
   return (
-    <div className="Modal_container">
+    <div className="Modal_container_signup">
       <div className="Modal_content_container ">
         <div className="cardContainerLogin  order-0 w-sm-100 flex-fill ">
           <div className="login_exitSection">
@@ -144,9 +157,9 @@ const SignUp = (props) => {
             <div className="modal-footer d-flex justify-content-center">
               <div className="signup-section">
                 Already a member ?{" "}
-                <a href="/" className="text-info">
+                <button onClick={loginModalShow} className="login_button">
                   Login
-                </a>
+                </button>
                 .
               </div>
             </div>

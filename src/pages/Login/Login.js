@@ -7,11 +7,21 @@ import { headings } from "../../constants/Headings/headings";
 const Login = (props) => {
   const [userDetails, setUserDetails] = useState([]);
 
+  
+
   //error in login and succefully
   const [error, setError] = useState(false);
   const [message, setMessage] = useState("");
   //successfully login
   const [loginState, setLoginState] = useState(false);
+
+  //singup page for clicking not account singnup
+  const registerPageOpenHandler=()=>{
+    props.createAccout(true)
+    props.modalClose(false);
+
+  }
+  
   //login intergration with dummyjson data
   const fetchData = async () => {
     const response = await fetch("https://dummyjson.com/users");
@@ -168,9 +178,9 @@ const Login = (props) => {
             <div className="modal-footer d-flex justify-content-center">
               <div className="signup-section">
                 Not a member yet?{" "}
-                <a href="/" className="text-info">
+                <button onClick={registerPageOpenHandler}  className="signUpbutton">
                   Sign Up
-                </a>
+                </button>
                 .
               </div>
             </div>

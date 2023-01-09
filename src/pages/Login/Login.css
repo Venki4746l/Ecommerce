@@ -104,3 +104,11 @@
   text-align: center;
 
 }
+/*singup buuton for create account*/
+.signUpbutton{
+  border-width:0px ;
+  background-color: rgb(211, 221, 224);
+  border-radius: 10px;
+  color: blue;
+  
+}

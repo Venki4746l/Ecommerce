@@ -113,14 +113,14 @@ const Login = (props) => {
           </div>
           <form onSubmit={onSubmitHandler}>
             <div className="userLoginContainer">
-              <label>UserName</label>
+              <label>{headings.UserName}</label>
               <input
                 type="text"
                 placeholder="Enter username"
                 className="form-control"
                 ref={usernameRef}
               />
-              <label>Password</label>
+              <label>{headings.Password}</label>
               <input
                 type="password"
                 placeholder="Enter Password"
@@ -142,7 +142,7 @@ const Login = (props) => {
           </form>
           <hr />
           <div className="text-center text-muted delimiter">
-            or use a social network
+           {headings.socialMessage}
           </div>
           <div className="d-flex flex-column">
             <div className="d-flex justify-content-center">
@@ -177,9 +177,9 @@ const Login = (props) => {
 
             <div className="modal-footer d-flex justify-content-center">
               <div className="signup-section">
-                Not a member yet?{" "}
+                {headings.socialMessage}{" "}
                 <button onClick={registerPageOpenHandler}  className="signUpbutton">
-                  Sign Up
+                  {headings.signUp}
                 </button>
                 .
               </div>

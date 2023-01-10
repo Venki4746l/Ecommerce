@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import "./SignUp.css";
+import { headings } from "../../constants/Headings/headings";
 
 const SignUp = (props) => {
   const [errerMessage, SeterrerMessage] = useState("");
@@ -70,32 +71,32 @@ const SignUp = (props) => {
             </button>
           </div>
           <div>
-            <h2 className="login_titleHeading text-center">SignUp</h2>
+            <h2 className="login_titleHeading text-center">{headings.signUp}</h2>
           </div>
           <form onSubmit={onSubmitHAndler}>
             <div className="userLoginContainer">
-              <label>UserName</label>
+              <label>{headings.UserName}</label>
               <input
                 type="text"
                 placeholder="Enter username"
                 className="form-control"
                 ref={userNameRef}
               />
-              <label>Name</label>
+              <label>{headings.name}</label>
               <input
                 type="text"
                 placeholder="Enter name"
                 className="form-control"
               />
 
-              <label>Password</label>
+              <label>{headings.Password}</label>
               <input
                 type="password"
                 placeholder="Enter Password"
                 className="form-control"
                 ref={passWordRef}
               />
-              <label>Confirm Password</label>
+              <label>{headings.ConfirmPassword}</label>
               <input
                 type="password"
                 placeholder="confrim Password"
@@ -115,13 +116,13 @@ const SignUp = (props) => {
 
             <div className="login_buttonSection">
               <button type="submit" className="userLoginButton">
-                SignUp
+                {headings.signUp}
               </button>
             </div>
           </form>
           <hr />
           <div className="text-center text-muted delimiter">
-            or use a social network
+            {headings.socialMessage}
           </div>
           <div className="d-flex flex-column">
             <div className="d-flex justify-content-center">
@@ -156,9 +157,9 @@ const SignUp = (props) => {
 
             <div className="modal-footer d-flex justify-content-center">
               <div className="signup-section">
-                Already a member ?{" "}
+                {headings.alreadyAmember}{" "}
                 <button onClick={loginModalShow} className="login_button">
-                  Login
+                  {headings.loginHeading}
                 </button>
                 .
               </div>

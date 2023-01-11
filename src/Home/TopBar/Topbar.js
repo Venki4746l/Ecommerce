@@ -24,7 +24,7 @@ const TopNavbar = () => {
          
           <div className="col-lg-6 d-none d-lg-block">
             <div className="d-inline-flex align-items-start justify-content-start">
-              <Link className="text-dark" to="/">FAQs</Link>
+              <Link className="text-dark" to="/">FAQsggggg</Link>
               <span className="text-muted px-2">|</span>
               <Link className="text-dark text-decoration-none" to="/">Help</Link>
               <span className="text-muted px-2">|</span>

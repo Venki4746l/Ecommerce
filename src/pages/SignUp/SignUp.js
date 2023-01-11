@@ -64,17 +64,22 @@ const SignUp = (props) => {
   return (
     <div className="Modal_container_signup">
       <div className="Modal_content_container ">
-        <div className="cardContainerLogin  order-0 w-sm-100 flex-fill ">
-          <div className="login_exitSection">
-            <button onClick={closeModal} className="login_exitbutton">
+      <img
+          className="imagesignup flex-fill order-0 d-none d-md-block"
+          src="https://cdn.pixabay.com/photo/2019/04/26/07/14/store-4156934_960_720.png"
+          alt=""
+        />
+        <div className="cardContainerSignup  order-1 w-sm-100 flex-fill ">
+          <div className="signup_exitSection">
+            <button onClick={closeModal} className="signup_exitbutton">
               X
             </button>
           </div>
           <div>
-            <h2 className="login_titleHeading text-center">{headings.signUp}</h2>
+            <h2 className="signup_titleHeading text-center">{headings.signUp}</h2>
           </div>
           <form onSubmit={onSubmitHAndler}>
-            <div className="userLoginContainer">
+            <div className="usersignupContainer">
               <label>{headings.UserName}</label>
               <input
                 type="text"
@@ -114,8 +119,8 @@ const SignUp = (props) => {
               )}
             </div>
 
-            <div className="login_buttonSection">
-              <button type="submit" className="userLoginButton">
+            <div className="signup_buttonSection">
+              <button type="submit" className="usersignupButton">
                 {headings.signUp}
               </button>
             </div>
@@ -167,11 +172,7 @@ const SignUp = (props) => {
           </div>
         </div>
 
-        <img
-          className="imageLogin flex-fill order-1 d-none d-md-block"
-          src="https://cdn.pixabay.com/photo/2019/04/26/07/14/store-4156934_960_720.png"
-          alt=""
-        />
+        
       </div>
     </div>
   );

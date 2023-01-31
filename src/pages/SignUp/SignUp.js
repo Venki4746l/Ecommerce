@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import "./SignUp.css";
+import { headings } from "../../constants/Headings/headings";
 
 const SignUp = (props) => {
   const [errerMessage, SeterrerMessage] = useState("");
@@ -63,39 +64,44 @@ const SignUp = (props) => {
   return (
     <div className="Modal_container_signup">
       <div className="Modal_content_container ">
-        <div className="cardContainerLogin  order-0 w-sm-100 flex-fill ">
-          <div className="login_exitSection">
-            <button onClick={closeModal} className="login_exitbutton">
+      <img
+          className="imagesignup flex-fill order-0 d-none d-md-block"
+          src="https://cdn.pixabay.com/photo/2019/04/26/07/14/store-4156934_960_720.png"
+          alt=""
+        />
+        <div className="cardContainerSignup  order-1 w-sm-100 flex-fill ">
+          <div className="signup_exitSection">
+            <button onClick={closeModal} className="signup_exitbutton">
               X
             </button>
           </div>
           <div>
-            <h2 className="login_titleHeading text-center">SignUp</h2>
+            <h2 className="signup_titleHeading text-center">{headings.signUp}</h2>
           </div>
           <form onSubmit={onSubmitHAndler}>
-            <div className="userLoginContainer">
-              <label>UserName</label>
+            <div className="usersignupContainer">
+              <label>{headings.UserName}</label>
               <input
                 type="text"
                 placeholder="Enter username"
                 className="form-control"
                 ref={userNameRef}
               />
-              <label>Name</label>
+              <label>{headings.name}</label>
               <input
                 type="text"
                 placeholder="Enter name"
                 className="form-control"
               />
 
-              <label>Password</label>
+              <label>{headings.Password}</label>
               <input
                 type="password"
                 placeholder="Enter Password"
                 className="form-control"
                 ref={passWordRef}
               />
-              <label>Confirm Password</label>
+              <label>{headings.ConfirmPassword}</label>
               <input
                 type="password"
                 placeholder="confrim Password"
@@ -113,15 +119,15 @@ const SignUp = (props) => {
               )}
             </div>
 
-            <div className="login_buttonSection">
-              <button type="submit" className="userLoginButton">
-                SignUp
+            <div className="signup_buttonSection">
+              <button type="submit" className="usersignupButton">
+                {headings.signUp}
               </button>
             </div>
           </form>
           <hr />
           <div className="text-center text-muted delimiter">
-            or use a social network
+            {headings.socialMessage}
           </div>
           <div className="d-flex flex-column">
             <div className="d-flex justify-content-center">
@@ -156,9 +162,9 @@ const SignUp = (props) => {
 
             <div className="modal-footer d-flex justify-content-center">
               <div className="signup-section">
-                Already a member ?{" "}
+                {headings.alreadyAmember}{" "}
                 <button onClick={loginModalShow} className="login_button">
-                  Login
+                  {headings.loginHeading}
                 </button>
                 .
               </div>
@@ -166,11 +172,7 @@ const SignUp = (props) => {
           </div>
         </div>
 
-        <img
-          className="imageLogin flex-fill order-1 d-none d-md-block"
-          src="https://cdn.pixabay.com/photo/2019/04/26/07/14/store-4156934_960_720.png"
-          alt=""
-        />
+        
       </div>
     </div>
   );

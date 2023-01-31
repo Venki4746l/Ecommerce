@@ -12,7 +12,7 @@ function Checkout() {
 
   let TotalCart = 0;
   items.Carts.forEach(function (item) {
-    TotalCart += Math.round(item.quantity * item.price);
+    TotalCart += (item.quantity * item.price)
   });
   return (
     <>
@@ -251,7 +251,7 @@ function Checkout() {
                     <div key={key} className="d-flex justify-content-between">
                       <p className="checkout-card-productsName"><span className="itemTextOverflow">{item.name}</span>{item.quantity}</p>
                       <p className="checkout-card-products">
-                        ${Math.round(item.price * item.quantity)}
+                        ${(item.price * item.quantity).toFixed(2)}
                       </p>
                     </div>
                   ))}
@@ -260,7 +260,7 @@ function Checkout() {
                 <hr className="mt-0 checkout-hr" />
                 <div className="d-flex justify-content-between mb-4 pt-3">
                   <h6 className="checkout-items">Subtotal</h6>
-                  <h6 className="checkout-items">${TotalCart}</h6>
+                  <h6 className="checkout-items">${TotalCart.toFixed(2)}</h6>
                 </div>
                 <div className="d-flex justify-content-between">
                   <h6 className="checkout-items">Shipping</h6>
@@ -270,7 +270,7 @@ function Checkout() {
               <div className="checkout-total-container">
                 <div className="d-flex justify-content-between mt-2">
                   <h5 className="checkout-total">Total</h5>
-                  <h5 className="checkout-total">${TotalCart }</h5>
+                  <h5 className="checkout-total">${TotalCart.toFixed(2) }</h5>
                 </div>
               </div>
             </div>

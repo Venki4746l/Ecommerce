@@ -57,6 +57,7 @@
 .offer-card-button:hover {
     background-color: #d19c97;
     color: black;
+    text-decoration: none;
   }
 
 @media (min-width: 1200px) {

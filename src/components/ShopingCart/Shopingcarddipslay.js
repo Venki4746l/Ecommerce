@@ -37,6 +37,7 @@ const Shopingcarddipslay = () => {
 
   //dleted or dcress quantity
   const dcressQuantityhandler = (item,key) => {
+    
     if (item.quantity === 1) {
       dispatch({
         type: DELETE_CART,

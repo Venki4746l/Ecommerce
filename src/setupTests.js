@@ -2,3 +2,10 @@
 // allows you to do things like:
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
+<<<<<<< HEAD
+=======
+import "@testing-library/jest-dom";
+import { configure } from "enzyme";
+import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
+configure({ adapter: new Adapter() });
+>>>>>>> 89ca65b752e80da9638c450027c7e83be964d832

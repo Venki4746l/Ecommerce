@@ -116,7 +116,7 @@ const AllProducts = () => {
                       </svg>
                       <button
                         onClick={() =>
-                          dispatch({ type: ADD_CART, payload: eachProduct })
+                          dispatch({ type: ADD_CART, payload: {...eachProduct,quantity:1} })
                         }
                         className="button"
                       >

@@ -25,13 +25,23 @@ const Navbar = () => {
 
   //user Details hanlder
   const userDetailshandler = (details) => {
-    const nameuser = details[0].name.firstname + details[0].name.lastname;
+    
+    const nameuser = details[0].firstName + details[0].lastName;
     setUserName(nameuser);
   };
 
   //register modal
   const signupHandlermodal=(value)=>{
     setRegisterModal(value)
+  }
+  //create account handler when click signup here
+  const createAccountHanlder=(value)=>{
+    setRegisterModal(value)
+  }
+
+  //login modal show after user register succesfully registered
+  const loginModalShowAfterRegister=(value)=>{
+    setLoginmodal(value)
   }
 
   return (
@@ -237,6 +247,7 @@ const Navbar = () => {
                   logOutShow={logoutButtonShow}
                   modalClose={loginHandlermodal}
                   userDetailsGet={userDetailshandler}
+                  createAccout={createAccountHanlder}
                 />
               )}
             </div>
@@ -245,6 +256,7 @@ const Navbar = () => {
               {registerModal && (
                 <SignUp
                   modalClose={signupHandlermodal}
+                  loginModalOpen={loginModalShowAfterRegister}
                 />
               )}
             </div>

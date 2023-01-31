@@ -1,17 +1,8 @@
-<<<<<<< HEAD
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
-import { getSingleProduct } from "../../../redux/actions/ShopDetailAction";
-=======
 import React, { useEffect, useState } from "react";
-import { SpinnerCircular } from "spinners-react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getSingleProduct } from "../../../redux/actions/ShopDetailAction";
-import Rating from "../Rating/Rating";
 
->>>>>>> 89ca65b752e80da9638c450027c7e83be964d832
 import AllProducts from "../AllProducts/AllProducts";
 import { Link } from "react-router-dom";
 import "./SingleProduct.css";
@@ -84,14 +75,10 @@ const SingleProduct = () => {
                 </div>
                 <div className="col-sm-12 col-md-12 col-lg-7">
                   <h3 className="shop-detail-product-title">{product.title}</h3>
-<<<<<<< HEAD
-                  <Rating rating={product.rating?.rate} reviews={product.rating?.count} />
-=======
                   <Rating
                     rating={product.rating?.rate}
                     reviews={product.rating?.count}
                   />
->>>>>>> 89ca65b752e80da9638c450027c7e83be964d832
 
                   <h3 className="shop-product-price">${product.price}</h3>
 
@@ -215,16 +202,11 @@ const SingleProduct = () => {
                       <div className="value-container">
                         <p className="value ">{count}</p>
                       </div>
-<<<<<<< HEAD
-                      <div>
-                        <button className="shop-detail-cart-button">
-=======
                       <div className="">
                         <button
                           onClick={increaseQuantity}
                           className="shop-detail-cart-button"
                         >
->>>>>>> 89ca65b752e80da9638c450027c7e83be964d832
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 448 512"

@@ -25,7 +25,3 @@ const Home = () => {
 export default Home;
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> Venkateswara_rao

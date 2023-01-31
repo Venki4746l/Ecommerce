@@ -15,4 +15,4 @@ export const ERROR = 'ERROR'
         dispatch({ type: ERROR, payload: err });
       }
     };
-  };
+  }; 

@@ -107,7 +107,7 @@ const Login = (props) => {
             </button>
           </div>
           <div>
-            <h2 className="login_titleHeading text-center">
+            <h2 data-testid="LoginHeading" className="login_titleHeading text-center">
               {headings.loginHeading}
             </h2>
           </div>

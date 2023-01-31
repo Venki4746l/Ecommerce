@@ -9,7 +9,7 @@ import { AiOutlineStar} from 'react-icons/ai'
 
 const Rating = ({ rating, reviews }) => {
   const productRating = Array.from({ length: 5 }, (elem, index) => {
-  //  i = 0, 1,2, 3, 4
+  //  index = 0, 1,2, 3, 4
     return (
       <span key={index}>
         {rating >= index + 1 ? (
@@ -26,7 +26,7 @@ const Rating = ({ rating, reviews }) => {
     <>
       <div className="stars">
         {productRating}
-        <p>({reviews} Reviews)</p>
+        <p className="ml-1">({reviews} Reviews)</p>
       </div>
     </>
   );

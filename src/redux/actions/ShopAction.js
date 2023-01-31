@@ -3,8 +3,9 @@ import axios from "axios";
 export const GET = 'GET'
 export const SUCCESS = 'SUCCESS'
 export const ERROR = 'ERROR'
+
   
-  export const fetchData = () => {
+export const fetchData = () => {
     return async function (dispatch) {
       dispatch({ type: GET });
       try {

@@ -1,16 +1,14 @@
 import React, { useEffect } from "react";
-import { SpinnerCircular } from "spinners-react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getSingleProduct } from "../../../redux/actions/ShopDetailAction";
-import Rating from '../Rating/Rating'
-
 import AllProducts from "../AllProducts/AllProducts";
 import { Link } from "react-router-dom";
 import "./SingleProduct.css";
-
 import TabSection from "../TabSection/TabSection";
 import { ADD_CART } from "../../../redux/actions/Carditemaction";
+
+import Rating from "../Rating/Rating";
 
 const SingleProduct = () => {
   const { loading, product } = useSelector((state) => state.productDetails);
@@ -18,6 +16,7 @@ const SingleProduct = () => {
   const { id } = useParams();
 
   useEffect(() => {
+    // dispatching the action
     dispatch(getSingleProduct(id));
   }, [dispatch, id]);
 
@@ -34,14 +33,18 @@ const SingleProduct = () => {
         </div>
       </div>
       <div className="shop-detail-container">
-        {!loading ? (
+        {loading ? (
+          <div className="spinner-container">
+            <h1>Loading...</h1>
+          </div>
+        ) : (
           <>
             <div className="container-fluid" key={product.id}>
               <div className="row">
                 <div className="col-sm-12 col-md-12 col-lg-5">
                   <div className="border shop-detail-product-img-container">
                     <img
-                      src={product.image}
+                      src={product.image }
                       alt={product.title}
                       className="shop-detail-product-avatar"
                     />
@@ -50,11 +53,11 @@ const SingleProduct = () => {
                 <div className="col-sm-12 col-md-12 col-lg-7">
                   <h3 className="shop-detail-product-title">{product.title}</h3>
                   <Rating rating={product.rating?.rate} reviews={product.rating?.count} />
-                
+
                   <h3 className="shop-product-price">${product.price}</h3>
 
                   <p className="shop-product-description">
-                    {product.description}
+                    {product.description }
                   </p>
                   <div className="shop-detail-size-container">
                     <h6 className="shop-detail-size">Sizes: </h6>
@@ -170,18 +173,16 @@ const SingleProduct = () => {
                       <div className="value-container">
                         <p className="value ">1</p>
                       </div>
-                      <div className="">
-                        <Link to={`/shop/productdetails/${product.id}`}>
-                          <button className="shop-detail-cart-button">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 448 512"
-                              className="cart-button"
-                            >
-                              <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
-                            </svg>
-                          </button>
-                        </Link>
+                      <div>
+                        <button className="shop-detail-cart-button">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512"
+                            className="cart-button"
+                          >
+                            <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
+                          </svg>
+                        </button>
                       </div>
                     </div>
                     <div>
@@ -237,10 +238,6 @@ const SingleProduct = () => {
               </div>
             </div>
           </>
-        ) : (
-          <div className="spinner-container">
-            <SpinnerCircular size={100} style={{ color: "#fd7e14" }} />
-          </div>
         )}
       </div>
       <div className="col-lg-12 tab-section-container">

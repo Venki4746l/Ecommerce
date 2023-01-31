@@ -53,10 +53,10 @@ const AllProducts = () => {
         <OwlCarousel {...options}>
           {products.map((eachProduct, key) => {
             return (
-              <div key={key} className="col-sm-12 col-md-6 col-lg-3">
+              <div key={key} >
                 <Card
                   style={{
-                    width: "19rem",
+                    width: "18rem",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
@@ -75,7 +75,7 @@ const AllProducts = () => {
 
                   <div style={{ height: "6rem" }}>
                     <div className="pt-3 pl-3 pr-3">
-                      <Card.Title className="all-products-shop-title">
+                      <Card.Title style={{fontSize: '12px'}}>
                         {eachProduct.title}
                       </Card.Title>
                       <div className="d-flex justify-content-center">

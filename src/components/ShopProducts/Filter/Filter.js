@@ -9,7 +9,7 @@ const Filter = () => {
                     <h5 className="font-weight-semi-bold mb-4 filter-heading">Filter by price</h5>
                     <form>
                         <div className="d-flex justify-content-between mb-2">
-                            <div>
+                            <div >
                             <input type="checkbox" className="" id="price-all" />
                             <label className="pl-2" htmlFor="price-all">All Price</label>
                             </div>

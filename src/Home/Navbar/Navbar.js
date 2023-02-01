@@ -2,17 +2,17 @@
 import React, { useState } from "react";
 import CarsoulImages from "./CarsoulImages";
 import "./Navbar.css";
-import { Link,useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Login from "../../pages/Login/Login";
-import SignUp from './../../pages/SignUp/SignUp';
+import SignUp from "./../../pages/SignUp/SignUp";
 
 const Navbar = () => {
   const [loginModal, setLoginmodal] = useState(false);
   const [isLogined, setIslogined] = useState(false);
   const [userName, setUserName] = useState("");
-  const [registerModal,setRegisterModal]=useState(false)
+  const [registerModal, setRegisterModal] = useState(false);
   //check the cuurent location
-  const location=useLocation()
+  const location = useLocation();
   //this for open login modal
   const loginHandlermodal = (value) => {
     setLoginmodal(value);
@@ -25,24 +25,24 @@ const Navbar = () => {
 
   //user Details hanlder
   const userDetailshandler = (details) => {
-    
-    const nameuser = details[0].firstName + details[0].lastName;
+    const nameuser = details[0].lastName;
+   
     setUserName(nameuser);
   };
 
   //register modal
-  const signupHandlermodal=(value)=>{
-    setRegisterModal(value)
-  }
+  const signupHandlermodal = (value) => {
+    setRegisterModal(value);
+  };
   //create account handler when click signup here
-  const createAccountHanlder=(value)=>{
-    setRegisterModal(value)
-  }
+  const createAccountHanlder = (value) => {
+    setRegisterModal(value);
+  };
 
   //login modal show after user register succesfully registered
-  const loginModalShowAfterRegister=(value)=>{
-    setLoginmodal(value)
-  }
+  const loginModalShowAfterRegister = (value) => {
+    setLoginmodal(value);
+  };
 
   return (
     <div>
@@ -232,7 +232,10 @@ const Navbar = () => {
                     >
                       Login
                     </p>
-                    <p onClick={()=>setRegisterModal(true)} className="font-weight-bold nav-item nav-link items">
+                    <p
+                      onClick={() => setRegisterModal(true)}
+                      className="font-weight-bold nav-item nav-link items"
+                    >
                       Register
                     </p>
                   </div>
@@ -261,7 +264,7 @@ const Navbar = () => {
               )}
             </div>
 
-            { location.pathname==="/" && <CarsoulImages />}
+            {location.pathname === "/" && <CarsoulImages />}
           </div>
         </div>
       </div>

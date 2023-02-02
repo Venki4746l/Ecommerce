@@ -107,23 +107,6 @@ const TabSection = () => {
                 </li>
               </ul>
             </div>
-            <div className="col-md-6">
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item px-0">
-                  Sit erat duo lorem duo ea consetetur, et eirmod takimata.
-                </li>
-                <li className="list-group-item px-0">
-                  Amet kasd gubergren sit sanctus et lorem eos sadipscing at.
-                </li>
-                <li className="list-group-item px-0">
-                  Duo amet accusam eirmod nonumy stet et et stet eirmod.
-                </li>
-                <li className="list-group-item px-0">
-                  Takimata ea clita labore amet ipsum erat justo voluptua.
-                  Nonumy.
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
         <div

@@ -26,7 +26,7 @@ const Navbar = () => {
   //user Details hanlder
   const userDetailshandler = (details) => {
     const nameuser = details[0].lastName;
-   
+
     setUserName(nameuser);
   };
 

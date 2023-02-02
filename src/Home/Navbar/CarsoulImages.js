@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Navbar.css'
 
 const CarsoulImages = () => {
@@ -23,9 +24,9 @@ const CarsoulImages = () => {
             <h3 className="display-4 text-white font-weight-bold mb-4">
               Reasonable Price
             </h3>
-            <a href="..." className="btn btn-light py-2 px-3">
+            <Link to="/shop" className="btn btn-light py-2 px-3">
               Shop Now
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -44,9 +45,9 @@ const CarsoulImages = () => {
             <h3 className="display-4 text-white font-weight-bold mb-4">
               Fashionable Dress
             </h3>
-            <a href="..." className="btn btn-light py-2 px-3">
+            <Link to="/shop" className="btn btn-light py-2 px-3">
               Shop Now
-            </a>
+            </Link>
           </div>
         </div>
       </div>

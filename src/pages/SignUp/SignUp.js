@@ -7,6 +7,7 @@ import { headings } from "../../constants/Headings/headings";
 const SignUp = (props) => {
   const [errerMessage, SeterrerMessage] = useState("");
   const [error, setError] = useState(false);
+  const lastNameRef = useRef();
   const userNameRef = useRef();
   const passWordRef = useRef();
   const conformPassRef = useRef();
@@ -21,13 +22,18 @@ const SignUp = (props) => {
   const onSubmitHAndler = (e) => {
     e.preventDefault();
     //get user enter name and password
+    const lastName = lastNameRef.current.value;
     const username = userNameRef.current.value;
     const password = passWordRef.current.value;
     const confrimpass = conformPassRef.current.value;
+
     //checking the conditions details
     if (username === "") {
       setError(true);
       SeterrerMessage("userName Required");
+    } else if (lastName === "") {
+      setError(true);
+      SeterrerMessage("Enter name is Required");
     } else if (password.length < 8) {
       setError(true);
       SeterrerMessage("Password must be 8 charcters");
@@ -36,6 +42,9 @@ const SignUp = (props) => {
       SeterrerMessage("Password must be same as above password");
     } else {
       setError(false);
+      //data post to local storage
+      const personData = { lastName, username, password };
+      localStorage.setItem("UserDetails", JSON.stringify(personData));
       //POST request using axios inside useEffect React hook
       fetch("https://dummyjson.com/users/add", {
         method: "POST",
@@ -64,7 +73,7 @@ const SignUp = (props) => {
   return (
     <div className="Modal_container_signup">
       <div className="Modal_content_container ">
-      <img
+        <img
           className="imagesignup flex-fill order-0 d-none d-md-block"
           src="https://cdn.pixabay.com/photo/2019/04/26/07/14/store-4156934_960_720.png"
           alt=""
@@ -76,7 +85,9 @@ const SignUp = (props) => {
             </button>
           </div>
           <div>
-            <h2 className="signup_titleHeading text-center">{headings.signUp}</h2>
+            <h2 className="signup_titleHeading text-center">
+              {headings.signUp}
+            </h2>
           </div>
           <form onSubmit={onSubmitHAndler}>
             <div className="usersignupContainer">
@@ -92,6 +103,7 @@ const SignUp = (props) => {
                 type="text"
                 placeholder="Enter name"
                 className="form-control"
+                ref={lastNameRef}
               />
 
               <label>{headings.Password}</label>
@@ -129,6 +141,7 @@ const SignUp = (props) => {
           <div className="text-center text-muted delimiter">
             {headings.socialMessage}
           </div>
+          {/* present we not implement through login and signup with social buttons  */}
           <div className="d-flex flex-column">
             <div className="d-flex justify-content-center">
               <button
@@ -171,8 +184,6 @@ const SignUp = (props) => {
             </div>
           </div>
         </div>
-
-        
       </div>
     </div>
   );

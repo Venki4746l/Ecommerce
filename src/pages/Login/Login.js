@@ -7,8 +7,6 @@ import { headings } from "../../constants/Headings/headings";
 const Login = (props) => {
   const [userDetails, setUserDetails] = useState([]);
 
-  
-
   //error in login and succefully
   const [error, setError] = useState(false);
   const [message, setMessage] = useState("");
@@ -16,12 +14,11 @@ const Login = (props) => {
   const [loginState, setLoginState] = useState(false);
 
   //singup page for clicking not account singnup
-  const registerPageOpenHandler=()=>{
-    props.createAccout(true)
+  const registerPageOpenHandler = () => {
+    props.createAccout(true);
     props.modalClose(false);
+  };
 
-  }
-  
   //login intergration with dummyjson data
   const fetchData = async () => {
     const response = await fetch("https://dummyjson.com/users");
@@ -51,6 +48,13 @@ const Login = (props) => {
     e.preventDefault();
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
+
+    //adding new user data it similar to post method
+    const newUserData = localStorage.getItem("UserDetails");
+    if (newUserData !== undefined) {
+      userDetails.push(JSON.parse(newUserData));
+    }
+
     //sample user details username:atuny0 password:9uQFF1Lh
     const userData = {
       username,
@@ -107,7 +111,10 @@ const Login = (props) => {
             </button>
           </div>
           <div>
-            <h2 data-testid="LoginHeading" className="login_titleHeading text-center">
+            <h2
+              data-testid="LoginHeading"
+              className="login_titleHeading text-center"
+            >
               {headings.loginHeading}
             </h2>
           </div>
@@ -131,7 +138,9 @@ const Login = (props) => {
             <div>
               {error && <p className="ErrorMessage">{message}</p>}
               {loginState && (
-                <p className="successfullymessage">{headings.userLoginMessgae}</p>
+                <p className="successfullymessage">
+                  {headings.userLoginMessgae}
+                </p>
               )}
             </div>
             <div className="login_buttonSection">
@@ -142,8 +151,9 @@ const Login = (props) => {
           </form>
           <hr />
           <div className="text-center text-muted delimiter">
-           {headings.socialMessage}
+            {headings.socialMessage}
           </div>
+          {/* present we not implement through login and signup with social buttons  */}
           <div className="d-flex flex-column">
             <div className="d-flex justify-content-center">
               <button
@@ -178,7 +188,10 @@ const Login = (props) => {
             <div className="modal-footer d-flex justify-content-center">
               <div className="signup-section">
                 {headings.socialMessage}{" "}
-                <button onClick={registerPageOpenHandler}  className="signUpbutton">
+                <button
+                  onClick={registerPageOpenHandler}
+                  className="signUpbutton"
+                >
                   {headings.signUp}
                 </button>
                 .

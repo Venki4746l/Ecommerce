@@ -65,5 +65,4 @@ const SocialMediaLinks = [
     ),
   },
 ];
-
 export default SocialMediaLinks;

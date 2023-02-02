@@ -20,14 +20,15 @@ import EmptyCart from "./EmtyCard";
 const Shopingcarddipslay = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  // getting the redux state value
   const items = useSelector((state) => state._cardProduct);
   console.log(items);
-
+// total items in card count 
   let TotalCart = 0;
   items.Carts.forEach(function (item) {
     TotalCart += item.quantity * item.price;
   });
+  //calacualting the total price of the card items
   function TotalPrice(price, tonggia) {
     return Number(price * tonggia).toLocaleString("en-US");
   }
@@ -36,7 +37,7 @@ const Shopingcarddipslay = () => {
     navigate("/checkout");
   };
 
-  //dleted or dcress quantity
+  //deleted  or decrease  quantity
   const dcressQuantityhandler = (item, key) => {
     if (item.quantity === 1) {
       dispatch({
@@ -164,18 +165,6 @@ const Shopingcarddipslay = () => {
             </div>
           )}
           <div className="col-lg-4">
-            {/* <form className="mb-5" action="">
-            <div className="input-group">
-              <input
-                type="text"
-                className="form-control p-4"
-                placeholder="Coupon Code"
-              />
-              <div className="input-group-append">
-                <button className="btn btn-primary">Apply Coupon</button>
-              </div>
-            </div>
-          </form> */}
             <div className="card border-info mb-5">
               <div className="card-header bg-info border-0">
                 <h4 className="font-weight-bold text-white m-0">

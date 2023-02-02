@@ -5,6 +5,7 @@ import "./Navbar.css";
 import { Link, useLocation } from "react-router-dom";
 import Login from "../../pages/Login/Login";
 import SignUp from "./../../pages/SignUp/SignUp";
+import productsCategory from "../../constants/NavBar/CategoryData";
 
 const Navbar = () => {
   const [loginModal, setLoginmodal] = useState(false);
@@ -114,33 +115,14 @@ const Navbar = () => {
                     </Link>
                   </div>
                 </div>
-                <Link to="/" className="font-weight-bold nav-item nav-link">
-                  Shirts
-                </Link>
-                <Link to="/" className="font-weight-bold nav-item nav-link">
-                  Jeans
-                </Link>
-                <Link to="/" className="font-weight-bold nav-item nav-link">
-                  Swimwear
-                </Link>
-                <Link to="/" className="font-weight-bold nav-item nav-link">
-                  Sleepwear
-                </Link>
-                <Link to="/" className="font-weight-bold nav-item nav-link">
-                  Sportswear
-                </Link>
-                <Link to="/" className="font-weight-bold nav-item nav-link">
-                  Jumpsuits
-                </Link>
-                <Link to="/" className="font-weight-bold nav-item nav-link">
-                  Blazers
-                </Link>
-                <Link to="/" className="font-weight-bold nav-item nav-link">
-                  Jackets
-                </Link>
-                <Link to="/" className="font-weight-bold nav-item nav-link">
-                  Shoes
-                </Link>
+                {productsCategory.map((each) => (
+                  <Link key={each.id}
+                    to={each.path}
+                    className="font-weight-bold nav-item nav-link"
+                  >
+                    {each.name}
+                  </Link>
+                ))}
               </div>
             </nav>
           </div>

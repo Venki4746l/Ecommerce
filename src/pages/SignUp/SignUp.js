@@ -141,6 +141,7 @@ const SignUp = (props) => {
           <div className="text-center text-muted delimiter">
             {headings.socialMessage}
           </div>
+          {/* present we not implement through login and signup with social buttons  */}
           <div className="d-flex flex-column">
             <div className="d-flex justify-content-center">
               <button

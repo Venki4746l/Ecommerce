@@ -11,27 +11,29 @@ import "./SingleProduct.css";
 
 import TabSection from "../TabSection/TabSection";
 import { ADD_CART } from "../../../redux/actions/Carditemaction";
+import { ProductSizes } from "../../../constants/Colors";
+import { SingleProductColor } from "./../../../constants/Colors";
 
 const SingleProduct = () => {
   const { loading, product } = useSelector((state) => state.productDetails);
   const [addTocard, setAddTocart] = useState(false);
   const dispatch = useDispatch();
   const { id } = useParams();
-  //auantiy increase
+  //quantity increase
   const [count, setCount] = useState(1);
 
-  //increase quantiy
+  //increase quantity
   const increaseQuantity = () => {
     setCount((prev) => prev + 1);
   };
-  //decrease Quntity
+  //decrease quantity
   const decreaseQuantity = () => {
     if (count > 1) {
       setCount((prev) => prev - 1);
     }
   };
 
-  //add to cart
+  //add to cart item with selected quantity
   const addTocardhandler = (item) => {
     setAddTocart(true);
 
@@ -83,101 +85,32 @@ const SingleProduct = () => {
                   </p>
                   <div className="shop-detail-size-container">
                     <h6 className="shop-detail-size">Sizes: </h6>
-                    <div className="shop-detail-size-align-container">
-                      <input type="radio" id="xs" className="input-item mr-2" />
-                      <label htmlFor="xs" className="mr-3">
-                        XS
-                      </label>
-                    </div>
-                    <div>
-                      <input
-                        type="radio"
-                        id="small"
-                        className="input-item mr-2"
-                      />
-                      <label htmlFor="small" className="mr-3">
-                        S
-                      </label>
-                    </div>
-                    <div>
-                      <input
-                        type="radio"
-                        id="medium"
-                        className="input-item mr-2"
-                      />
-                      <label htmlFor="medium" className="mr-3">
-                        M
-                      </label>
-                    </div>
-                    <div>
-                      <input
-                        type="radio"
-                        id="large"
-                        className="input-item mr-2"
-                      />
-                      <label htmlFor="large" className="mr-3">
-                        L
-                      </label>
-                    </div>
-                    <div>
-                      <input type="radio" id="xl" className="input-item mr-2" />
-                      <label htmlFor="xl" className="mr-3">
-                        XL
-                      </label>
-                    </div>
+
+                    {ProductSizes.map((eachSize) => {
+                      return (
+                        <div key={eachSize.id}>
+                          <input
+                            type="radio"
+                            className="input-item mr-2"
+                            id={eachSize.id}
+                          />
+                          <label htmlFor={eachSize.id} className="mr-3">
+                            {eachSize.label}
+                          </label>
+                        </div>
+                      );
+                    })}
                   </div>
                   <div className="shop-detail-size-container pt-3">
                     <h6 className="shop-detail-size">Colors: </h6>
-                    <div className="shop-detail-size-align-container">
-                      <input
-                        type="radio"
-                        id="black"
-                        className="input-item mr-2"
-                      />
-                      <label htmlFor="black" className="mr-3">
-                        Black
-                      </label>
-                    </div>
-                    <div>
-                      <input
-                        type="radio"
-                        id="white"
-                        className="input-item mr-2"
-                      />
-                      <label htmlFor="white" className="mr-3">
-                        White
-                      </label>
-                    </div>
-                    <div>
-                      <input
-                        type="radio"
-                        id="red"
-                        className="input-item mr-2"
-                      />
-                      <label htmlFor="red" className="mr-3">
-                        Red
-                      </label>
-                    </div>
-                    <div>
-                      <input
-                        type="radio"
-                        id="green"
-                        className="input-item mr-2"
-                      />
-                      <label htmlFor="green" className="mr-3">
-                        Green
-                      </label>
-                    </div>
-                    <div>
-                      <input
-                        type="radio"
-                        id="blue"
-                        className="input-item mr-2"
-                      />
-                      <label htmlFor="blue" className="mr-3">
-                        Blue
-                      </label>
-                    </div>
+                    {SingleProductColor.map((eachColor) => {
+                      return (
+                        <div key={eachColor.id}>
+                          <input type="radio" className="input-item mr-2" />
+                          <label className="mr-3">{eachColor.color}</label>
+                        </div>
+                      );
+                    })}
                   </div>
                   <div className="shop-detail-button-cart-container">
                     <div className="shop-detail-cart-button-container">

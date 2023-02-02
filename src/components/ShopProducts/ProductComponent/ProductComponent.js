@@ -24,6 +24,7 @@ const ProductComponents = () => {
     between601and800: false,
     between801and1000: false,
   })
+  
 
   const handleCheckbox = (e) => {
     const {name, checked} = e.target 

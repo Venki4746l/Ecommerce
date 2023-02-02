@@ -11,11 +11,13 @@ const initProduct = {
   Carts: [],
 };
 
- function cardProduct(state = initProduct, action) {
+function cardProduct(state = initProduct, action) {
   const { type, payload } = action;
   switch (type) {
     case ADD_CART:
-      if (state.Carts.length===0) {
+      //check any items in cart or not intilal check
+    
+      if (state.Carts.length === 0) {
         let cart = {
           id: payload.id,
           quantity: payload.quantity,
@@ -24,7 +26,9 @@ const initProduct = {
           price: payload.price,
         };
         state.Carts.push(cart);
-      } else {
+      }
+      //already item in card increase the quantity
+      else {
         let check = false;
         state.Carts.map((item, key) => {
           if (item.id === payload.id) {
@@ -33,6 +37,7 @@ const initProduct = {
           }
           return check;
         });
+        //if item not in cart add the item in to cart
         if (!check) {
           let _cart = {
             id: payload.id,
@@ -46,10 +51,8 @@ const initProduct = {
       }
       return {
         ...state,
-        
       };
     case INCREASE_QUANTITY:
-     
       state.Carts[payload].quantity++;
 
       return {
@@ -58,7 +61,6 @@ const initProduct = {
     case DECREASE_QUANTITY:
       let quantity = state.Carts[payload].quantity;
       if (quantity > 1) {
-       
         state.Carts[payload].quantity--;
       }
 
@@ -66,6 +68,7 @@ const initProduct = {
         ...state,
       };
     case DELETE_CART:
+      //Deleted the item into cart checking the id and removing product in cart
       return {
         ...state,
         Carts: state.Carts.filter((item) => {
@@ -75,8 +78,6 @@ const initProduct = {
     default:
       return state;
   }
-
-
 }
 
-export default cardProduct
+export default cardProduct;

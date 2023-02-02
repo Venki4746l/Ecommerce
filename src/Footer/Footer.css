@@ -91,6 +91,7 @@
 
 .shopper-heading:hover {
   color: #1c1c1c;
+  text-decoration: none;
 }
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */

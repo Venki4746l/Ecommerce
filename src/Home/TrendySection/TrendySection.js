@@ -73,3 +73,4 @@ const TrendySection = (props) => {
 };
 
 export default TrendySection;
+

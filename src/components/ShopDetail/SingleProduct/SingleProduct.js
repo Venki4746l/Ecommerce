@@ -6,13 +6,13 @@ import { getSingleProduct } from "../../../redux/actions/ShopDetailAction";
 import Rating from "../Rating/Rating";
 import SocialIConShareData from "../../../constants/Products/SocialButtonSinglesectionData";
 import AllProducts from "../AllProducts/AllProducts";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import "./SingleProduct.css";
 
 import TabSection from "../TabSection/TabSection";
 import { ADD_CART } from "../../../redux/actions/Carditemaction";
-import { ProductSizes } from "../../../constants/Colors";
-import { SingleProductColor } from "./../../../constants/Colors";
+// import { ProductSizes } from "../../../constants/Colors";
+// import { SingleProductColor } from "./../../../constants/Colors";
 
 const SingleProduct = () => {
   const { loading, product } = useSelector((state) => state.productDetails);
@@ -21,6 +21,9 @@ const SingleProduct = () => {
   const { id } = useParams();
   //quantity increase
   const [count, setCount] = useState(1);
+
+  //navigate to cart after clicking the add to cart
+  const navigate=useNavigate()
 
   //increase quantity
   const increaseQuantity = () => {
@@ -38,7 +41,8 @@ const SingleProduct = () => {
     setAddTocart(true);
 
     dispatch({ type: ADD_CART, payload: { ...item, quantity: count } });
-    setTimeout(() => setAddTocart(false), 1500);
+   
+    navigate("/cartCheck")
   };
 
   useEffect(() => {
@@ -83,7 +87,7 @@ const SingleProduct = () => {
                   <p className="shop-product-description">
                     {product.description}
                   </p>
-                  <div className="shop-detail-size-container">
+                  {/* <div className="shop-detail-size-container">
                     <h6 className="shop-detail-size">Sizes: </h6>
 
                     {ProductSizes.map((eachSize) => {
@@ -111,7 +115,7 @@ const SingleProduct = () => {
                         </div>
                       );
                     })}
-                  </div>
+                  </div> */}
                   <div className="shop-detail-button-cart-container">
                     <div className="shop-detail-cart-button-container">
                       <div>
@@ -149,9 +153,8 @@ const SingleProduct = () => {
                     <div>
                       <button
                         onClick={() => addTocardhandler(product)}
-                        className={
-                          addTocard ? "addedTocart" : "shop-cart-button"
-                        }
+                        className="shop-cart-button"
+                        
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -160,7 +163,7 @@ const SingleProduct = () => {
                         >
                           <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
                         </svg>
-                        {addTocard ? "Item Added " : "Add To Cart"}
+                        Add To Cart
                       </button>
                     </div>
                   </div>

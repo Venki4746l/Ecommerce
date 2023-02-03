@@ -1,0 +1,22 @@
+.itemMessageContainer {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(206, 36, 36, 0.9); /* Black w/ opacity */
+  }
+  .ItemMessageContent {
+    margin: auto;
+    display: block;
+    width: 80%;
+    height: 40%;
+    max-width: 400px;
+    display: flex;
+    
+    
+  }

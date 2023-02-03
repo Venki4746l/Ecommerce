@@ -14,9 +14,10 @@ import { ADD_CART } from "../../../redux/actions/Carditemaction";
 // import { ProductSizes } from "../../../constants/Colors";
 // import { SingleProductColor } from "./../../../constants/Colors";
 
+
 const SingleProduct = () => {
   const { loading, product } = useSelector((state) => state.productDetails);
-  const [addTocard, setAddTocart] = useState(false);
+  // const [addTocard, setAddTocart] = useState(false);
   const dispatch = useDispatch();
   const { id } = useParams();
   //quantity increase
@@ -38,7 +39,7 @@ const SingleProduct = () => {
 
   //add to cart item with selected quantity
   const addTocardhandler = (item) => {
-    setAddTocart(true);
+    // setAddTocart(true);
 
     dispatch({ type: ADD_CART, payload: { ...item, quantity: count } });
    
@@ -194,6 +195,7 @@ const SingleProduct = () => {
         <TabSection />
       </div>
       <AllProducts />
+     
     </>
   );
 };

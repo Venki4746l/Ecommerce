@@ -1,22 +1,28 @@
 .itemMessageContainer {
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    z-index: 45; /* Sit on top */
     left: 0;
     top: 0;
+    right: 10px;
+    bottom: 10px;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(206, 36, 36, 0.9); /* Black w/ opacity */
+    background-color:transparent; /* Fallback color */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    
+   
   }
   .ItemMessageContent {
-    margin: auto;
     display: block;
     width: 80%;
-    height: 40%;
-    max-width: 400px;
+    height: 10%;
+    max-width: 800px;
     display: flex;
+    background-color: darkgreen;
     
     
   }

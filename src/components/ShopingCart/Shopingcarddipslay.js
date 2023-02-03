@@ -18,8 +18,8 @@ const Shopingcarddipslay = () => {
   // getting the redux state value
   const items = useSelector((state) => state._cardProduct);
   console.log(items);
-  // total items in card count
-// total items in card count 
+  
+  
   // total items in card count
   let TotalCart = 0;
   items.Carts.forEach(function (item) {
@@ -154,9 +154,11 @@ const Shopingcarddipslay = () => {
                         >
                           <i className="fa fa-trash"></i>
                         </button>
-                      </td>
-                      {DeletedOK && (
-                        <div className="RemoveModal_container">
+                        {DeletedOK && (
+                        <div
+                          onClick={() => setDeletedOk(false)}
+                          className="RemoveModal_container"
+                        >
                           <div className="Modal_content_container">
                             <button
                               onClick={() => setDeletedOk(false)}
@@ -186,6 +188,8 @@ const Shopingcarddipslay = () => {
                           </div>
                         </div>
                       )}
+                      </td>
+                      
                     </tr>
                   ))}
                 </tbody>

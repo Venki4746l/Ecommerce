@@ -157,9 +157,9 @@ const Shopingcarddipslay = () => {
                         {DeletedOK && (
                         <div
                           onClick={() => setDeletedOk(false)}
-                          className="RemoveModal_container"
+                          className="RemoveModal_body"
                         >
-                          <div className="Modal_content_container">
+                          <div className="RemoveModal_content">
                             <button
                               onClick={() => setDeletedOk(false)}
                               className="crossButton"

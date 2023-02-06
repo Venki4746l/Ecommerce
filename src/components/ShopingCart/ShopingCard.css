@@ -81,26 +81,24 @@
   align-items: center;
   position: fixed; /* Stay in place */
   z-index: 100; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .RemoveModal_content {
-  margin: auto;
   display: block;
-  width: 40%;
-  height: 40%;
-  max-width: 400px;
+  width: 73%;
+  height: 43%;
+  max-width: 410px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   background-color: white;
   border-radius: 15px;
-  box-shadow:0px 0px 5px rgb(112, 112, 112) ;
+  box-shadow: 0px 0px 5px rgb(112, 112, 112);
+  overflow: hidden;
 }
 .crossButton {
   align-self: flex-end;

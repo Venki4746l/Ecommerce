@@ -1,5 +1,5 @@
 /* login modal container */
-.Modal_container {
+.Modal_container_login {
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -7,13 +7,16 @@
   left: 0;
   top: 0;
   z-index: 99;
+  background-color: rgba(0, 0, 0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.Modal_content_container {
+.Modal_content_container_login {
   display: flex;
   width: 80%;
   margin: 5% auto;
   background-color: white;
-
   border-radius: 15px;
 }
 /*card container for input fileds*/
@@ -48,7 +51,7 @@
 .login_titleHeading {
   font-size: 34px;
   font-family: "poppins";
-  color:black;
+  color: black;
 }
 
 .userLoginContainer {
@@ -73,7 +76,7 @@
   flex-direction: column;
   margin: 35px;
 }
-.userLoginButton{
+.userLoginButton {
   width: 200px;
   background-color: #b85d5d;
   border-width: 0px;
@@ -82,7 +85,7 @@
   font-size: 25px;
 }
 
-.socailButton{
+.socailButton {
   height: 45px;
   width: 45px;
   border-width: 0px;
@@ -91,24 +94,22 @@
 }
 
 /*error message section*/
-.ErrorMessage{
+.ErrorMessage {
   color: red;
   font-size: 15px;
-  font-family:italic;
+  font-family: italic;
   text-align: center;
 }
 /*correct detials entered */
-.successfullymessage{
+.successfullymessage {
   color: green;
   font-size: 15px;
   text-align: center;
-
 }
 /*singup buuton for create account*/
-.signUpbutton{
-  border-width:0px ;
+.signUpbutton {
+  border-width: 0px;
   background-color: rgb(211, 221, 224);
   border-radius: 10px;
   color: blue;
-  
 }

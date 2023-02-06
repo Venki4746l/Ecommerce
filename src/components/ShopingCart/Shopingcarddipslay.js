@@ -9,6 +9,7 @@ import {
 import "./ShopingCard.css";
 import { useNavigate, Link } from "react-router-dom";
 import EmptyCart from "./EmtyCard";
+import { useEffect } from "react";
 
 const Shopingcarddipslay = () => {
   const dispatch = useDispatch();
@@ -18,8 +19,7 @@ const Shopingcarddipslay = () => {
   // getting the redux state value
   const items = useSelector((state) => state._cardProduct);
   console.log(items);
-  
-  
+
   // total items in card count
   let TotalCart = 0;
   items.Carts.forEach(function (item) {
@@ -33,6 +33,11 @@ const Shopingcarddipslay = () => {
   const procedtocheckout = () => {
     navigate("/checkout");
   };
+  //when pop up handle open stop scroll in background
+  useEffect(() => {
+    const text = DeletedOK ? "hidden" : "unset";
+    document.body.style.overflow = text;
+  }, [DeletedOK]);
 
   //deleted  or decrease  quantity
   const dcressQuantityhandler = (item, key) => {
@@ -155,41 +160,40 @@ const Shopingcarddipslay = () => {
                           <i className="fa fa-trash"></i>
                         </button>
                         {DeletedOK && (
-                        <div
-                          onClick={() => setDeletedOk(false)}
-                          className="RemoveModal_body"
-                        >
-                          <div className="RemoveModal_content">
-                            <button
-                              onClick={() => setDeletedOk(false)}
-                              className="crossButton"
-                            >
-                              X
-                            </button>
-                            <h1 className="removeName">Remove Item</h1>
-                            <p className="confromMessage">
-                              Are you sure you want to remove this item?
-                            </p>
-
-                            <div className="ButtonContainer_remove">
+                          <div
+                            onClick={() => setDeletedOk(false)}
+                            className="RemoveModal_body"
+                          >
+                            <div className="RemoveModal_content">
                               <button
                                 onClick={() => setDeletedOk(false)}
-                                className="CancleButton_remove"
+                                className="crossButton"
                               >
-                                Cancel
+                                X
                               </button>
-                              <button
-                                onClick={() => DeletdhandlerItem(key)}
-                                className="RemoveButton_remove "
-                              >
-                                Remove
-                              </button>
+                              <h1 className="removeName">Remove Item</h1>
+                              <p className="confromMessage">
+                                Are you sure you want to remove this item?
+                              </p>
+
+                              <div className="ButtonContainer_remove">
+                                <button
+                                  onClick={() => setDeletedOk(false)}
+                                  className="CancleButton_remove"
+                                >
+                                  Cancel
+                                </button>
+                                <button
+                                  onClick={() => DeletdhandlerItem(key)}
+                                  className="RemoveButton_remove "
+                                >
+                                  Remove
+                                </button>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      )}
+                        )}
                       </td>
-                      
                     </tr>
                   ))}
                 </tbody>

@@ -102,8 +102,8 @@ const Login = (props) => {
     props.modalClose(false);
   };
   return (
-    <div className="Modal_container">
-      <div className="Modal_content_container ">
+    <div className="Modal_container_login">
+      <div className="Modal_content_container_login ">
         <div className="cardContainerLogin  order-0 w-sm-100 flex-fill ">
           <div className="login_exitSection">
             <button onClick={closeModal} className="login_exitbutton">

@@ -1,5 +1,5 @@
 //saishiva- navbar design ,venkateswara rao login section detials
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import CarsoulImages from "./CarsoulImages";
 import "./Navbar.css";
 import { Link, useLocation } from "react-router-dom";
@@ -14,6 +14,19 @@ const Navbar = () => {
   const [registerModal, setRegisterModal] = useState(false);
   //check the cuurent location
   const location = useLocation();
+
+  //scroll hiddiden and unset when modal is open
+  useEffect(() => {
+    
+    if(loginModal || registerModal){
+      document.body.style.overflow = "hidden";
+
+    }
+    else{
+      document.body.style.overflow = "unset";
+    }
+    
+  }, [loginModal,registerModal]);
   //this for open login modal
   const loginHandlermodal = (value) => {
     setLoginmodal(value);

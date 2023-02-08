@@ -1,5 +1,5 @@
 //this section down by venkateswara rao
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   INCREASE_QUANTITY,
@@ -7,7 +7,7 @@ import {
   DELETE_CART,
 } from "../../redux/actions/Carditemaction";
 import "./ShopingCard.css";
-import ItemActionMessage from '../../pages/ItemActionMessage'
+import ItemActionMessage from "../../pages/ItemActionMessage";
 import { useNavigate, Link } from "react-router-dom";
 import EmptyCart from "./EmtyCard";
 
@@ -16,16 +16,21 @@ const Shopingcarddipslay = () => {
   const navigate = useNavigate();
   //state for confrom deletd popup
   const [DeletedOK, setDeletedOk] = useState(false);
-  const [stauts,setStatus]=useState(false)
+  const [stauts, setStatus] = useState(false);
+  const [itemActiondata, setItemActionData] = useState({
+    actionType: "",
+    itemName: "",
+    quantity: "",
+  });
 
-  useEffect(()=>{
-setTimeout(()=>{
-  setStatus(false)
-},2000)
-  },[stauts])
+  // auto close action message
+  useEffect(() => {
+    setTimeout(() => {
+      setStatus(false);
+    }, 5000);
+  }, [stauts]);
   // getting the redux state value
   const items = useSelector((state) => state._cardProduct);
-  console.log(items);
 
   // total items in card count
   let TotalCart = 0;
@@ -46,6 +51,17 @@ setTimeout(()=>{
     document.body.style.overflow = text;
   }, [DeletedOK]);
 
+  //increase quantity handler
+  const increaseQuantityHndler = (item, key) => {
+    dispatch({ type: INCREASE_QUANTITY, payload: key });
+    //showing the item increse action data to show the pop the message in bottom
+    setStatus(true);
+    setItemActionData({
+      actionType: "increase",
+      itemName: item.name,
+      quantity: item.quantity,
+    });
+  };
   //deleted  or decrease  quantity
   const dcressQuantityhandler = (item, key) => {
     if (item.quantity > 1) {
@@ -53,14 +69,28 @@ setTimeout(()=>{
         type: DECREASE_QUANTITY,
         payload: key,
       });
+      //showing hte item decrease action data to show the pop the message
+      setStatus(true);
+      setItemActionData({
+        actionType: "decrease",
+        itemName: item.name,
+        quantity: item.quantity,
+      });
     } else {
       setDeletedOk(true);
     }
   };
   //remove item to cart
-  const DeletdhandlerItem = (key) => {
+  const DeletdhandlerItem = (item, key) => {
     dispatch({ type: DELETE_CART, payload: key });
     setDeletedOk(false);
+    //showing the item deleted action data to show the pop the message in bottom
+    setStatus(true);
+    setItemActionData({
+      actionType: "Deleted",
+      itemName: item.name,
+      quantity: item.quantity,
+    });
   };
 
   return (
@@ -143,12 +173,7 @@ setTimeout(()=>{
                           </h1>
                           <div className="input-group-btn">
                             <button
-                              onClick={() =>
-                                dispatch({
-                                  type: INCREASE_QUANTITY,
-                                  payload: key,
-                                })
-                              }
+                              onClick={() => increaseQuantityHndler(item, key)}
                               className="buttons-increse-quantity"
                             >
                               <i className="fa fa-plus"></i>
@@ -191,7 +216,7 @@ setTimeout(()=>{
                                   Cancel
                                 </button>
                                 <button
-                                  onClick={() => DeletdhandlerItem(key)}
+                                  onClick={() => DeletdhandlerItem(item, key)}
                                   className="RemoveButton_remove "
                                 >
                                   Remove
@@ -248,7 +273,7 @@ setTimeout(()=>{
             </div>
           </div>
         </div>
-        {stauts && <ItemActionMessage  />}
+        {stauts && <ItemActionMessage itemActionDetails={itemActiondata} />}
       </div>
     </React.Fragment>
   );

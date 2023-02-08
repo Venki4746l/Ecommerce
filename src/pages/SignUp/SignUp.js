@@ -137,50 +137,14 @@ const SignUp = (props) => {
               </button>
             </div>
           </form>
-          <hr />
-          <div className="text-center text-muted delimiter">
-            {headings.socialMessage}
-          </div>
-          {/* present we not implement through login and signup with social buttons  */}
-          <div className="d-flex flex-column">
-            <div className="d-flex justify-content-center">
-              <button
-                type="button"
-                className="socailButton btn-primary m-2 btn-round"
-                data-toggle="tooltip"
-                data-placement="top"
-                title="Twitter"
-              >
-                <i className="fab fa-twitter"></i>
-              </button>
-              <button
-                type="button"
-                className="socailButton btn-info m-2 btn-round"
-                data-toggle="tooltip"
-                data-placement="top"
-                title="Facebook"
-              >
-                <i className="fab fa-facebook"></i>
-              </button>
-              <button
-                type="button"
-                className="socailButton btn-secondary  m-2 btn-round"
-                data-toggle="tooltip"
-                data-placement="top"
-                title="Linkedin"
-              >
-                <i className="fab fa-linkedin"></i>
-              </button>
-            </div>
 
-            <div className="modal-footer d-flex justify-content-center">
-              <div className="signup-section">
-                {headings.alreadyAmember}{" "}
-                <button onClick={loginModalShow} className="login_button">
-                  {headings.loginHeading}
-                </button>
-                .
-              </div>
+          <div className="modal-footer d-flex justify-content-center">
+            <div className="signup-section">
+              {headings.alreadyAmember}{" "}
+              <button onClick={loginModalShow} className="login_button">
+                {headings.loginHeading}
+              </button>
+              .
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 //this section down by venkateswara rao
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   INCREASE_QUANTITY,
@@ -7,15 +7,22 @@ import {
   DELETE_CART,
 } from "../../redux/actions/Carditemaction";
 import "./ShopingCard.css";
+import ItemActionMessage from '../../pages/ItemActionMessage'
 import { useNavigate, Link } from "react-router-dom";
 import EmptyCart from "./EmtyCard";
-import { useEffect } from "react";
 
 const Shopingcarddipslay = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   //state for confrom deletd popup
   const [DeletedOK, setDeletedOk] = useState(false);
+  const [stauts,setStatus]=useState(false)
+
+  useEffect(()=>{
+setTimeout(()=>{
+  setStatus(false)
+},2000)
+  },[stauts])
   // getting the redux state value
   const items = useSelector((state) => state._cardProduct);
   console.log(items);
@@ -241,6 +248,7 @@ const Shopingcarddipslay = () => {
             </div>
           </div>
         </div>
+        {stauts && <ItemActionMessage  />}
       </div>
     </React.Fragment>
   );

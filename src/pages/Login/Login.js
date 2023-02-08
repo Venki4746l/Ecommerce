@@ -126,6 +126,7 @@ const Login = (props) => {
                 placeholder="Enter username"
                 className="form-control"
                 ref={usernameRef}
+                required
               />
               <label>{headings.Password}</label>
               <input
@@ -133,6 +134,7 @@ const Login = (props) => {
                 placeholder="Enter Password"
                 className="form-control"
                 ref={passwordRef}
+                required
               />
             </div>
             <div>

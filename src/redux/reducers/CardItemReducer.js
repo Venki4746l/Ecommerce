@@ -5,6 +5,7 @@ import {
   DECREASE_QUANTITY,
   INCREASE_QUANTITY,
   DELETE_CART,
+  CLEAR_CART
 } from "../actions/Carditemaction.js";
 
 const initProduct = {
@@ -75,6 +76,12 @@ function cardProduct(state = initProduct, action) {
           return item.id !== state.Carts[payload].id;
         }),
       };
+      case CLEAR_CART:
+        //clear cart after successfully place order
+        return{
+          ...state,
+          Carts:[]
+        }
     default:
       return state;
   }

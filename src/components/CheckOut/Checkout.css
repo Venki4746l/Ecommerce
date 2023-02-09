@@ -144,6 +144,16 @@
   margin-bottom: 8px;
 }
 
+.checkout-buttonBefore{
+  width: 100%;
+  border: none;
+  font-weight: 700;
+  font-size: 22px;
+  margin: 14px 0;
+  padding: 15px 0;
+  background-color: #d9d3d2;
+  transition: all 0.2s;
+}
 .checkout-button{
   width: 100%;
   border: none;
@@ -151,13 +161,13 @@
   font-size: 22px;
   margin: 14px 0;
   padding: 15px 0;
-  background-color: #d19c97;
+  background-color: #cf7171;
   transition: all 0.2s;
 }
 
 .checkout-button:hover{
-  color: white;
-  background-color: #cf7171;
+  color: black;
+  background-color: rgb(230, 52, 132);
 }
 
 ::placeholder {

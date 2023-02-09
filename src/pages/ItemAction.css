@@ -1,0 +1,36 @@
+.itemMessageContainer {
+    position: fixed; /* Stay in place */
+    z-index: 45; /* Sit on top */
+    left: 0;
+    top: 0;
+    right: 10px;
+    bottom: 10px;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color:transparent; /* Fallback color */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 10px;
+    
+   
+  }
+  .ItemMessageContent {
+    display: block;
+    width: 80%;
+    height: 10%;
+    max-width: 800px;
+    display: flex;
+    background-color: rgb(28, 30, 28);
+    padding: 15px; 
+    border-radius: 15px;
+    text-align: center;
+    
+  }
+  .messageShow{
+    color: white;
+    font-size: 18px;
+
+  }

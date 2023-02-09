@@ -1,5 +1,5 @@
 //this section down by venkateswara rao
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   INCREASE_QUANTITY,
@@ -7,23 +7,32 @@ import {
   DELETE_CART,
 } from "../../redux/actions/Carditemaction";
 import "./ShopingCard.css";
+import ItemActionMessage from "../../pages/ItemActionMessage";
 import { useNavigate, Link } from "react-router-dom";
 import EmptyCart from "./EmtyCard";
-
-// import { useDispatch } from 'react-redux';
-// import { Redirect } from 'react-router-dom';
-// import { productDetailsReducer } from './../../redux/reducers/ProductRreducer';
-//   DecreaseQuantity,
-//   DeleteCart,
-// } from "../../redux/actions/Carditemaction.js";
 
 const Shopingcarddipslay = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  //state for confrom deletd popup
+  const [DeletedOK, setDeletedOk] = useState(false);
+  const [stauts, setStatus] = useState(false);
+  const [itemActiondata, setItemActionData] = useState({
+    actionType: "",
+    itemName: "",
+    quantity: "",
+  });
+
+  // auto close action message
+  useEffect(() => {
+    setTimeout(() => {
+      setStatus(false);
+    }, 5000);
+  }, [stauts]);
   // getting the redux state value
   const items = useSelector((state) => state._cardProduct);
-  console.log(items);
-// total items in card count 
+
+  // total items in card count
   let TotalCart = 0;
   items.Carts.forEach(function (item) {
     TotalCart += item.quantity * item.price;
@@ -36,20 +45,52 @@ const Shopingcarddipslay = () => {
   const procedtocheckout = () => {
     navigate("/checkout");
   };
+  //when pop up handle open stop scroll in background
+  useEffect(() => {
+    const text = DeletedOK ? "hidden" : "unset";
+    document.body.style.overflow = text;
+  }, [DeletedOK]);
 
+  //increase quantity handler
+  const increaseQuantityHndler = (item, key) => {
+    dispatch({ type: INCREASE_QUANTITY, payload: key });
+    //showing the item increse action data to show the pop the message in bottom
+    setStatus(true);
+    setItemActionData({
+      actionType: "increase",
+      itemName: item.name,
+      quantity: item.quantity,
+    });
+  };
   //deleted  or decrease  quantity
   const dcressQuantityhandler = (item, key) => {
-    if (item.quantity === 1) {
-      dispatch({
-        type: DELETE_CART,
-        payload: key,
-      });
-    } else {
+    if (item.quantity > 1) {
       dispatch({
         type: DECREASE_QUANTITY,
         payload: key,
       });
+      //showing hte item decrease action data to show the pop the message
+      setStatus(true);
+      setItemActionData({
+        actionType: "decrease",
+        itemName: item.name,
+        quantity: item.quantity,
+      });
+    } else {
+      setDeletedOk(true);
     }
+  };
+  //remove item to cart
+  const DeletdhandlerItem = (item, key) => {
+    dispatch({ type: DELETE_CART, payload: key });
+    setDeletedOk(false);
+    //showing the item deleted action data to show the pop the message in bottom
+    setStatus(true);
+    setItemActionData({
+      actionType: "Deleted",
+      itemName: item.name,
+      quantity: item.quantity,
+    });
   };
 
   return (
@@ -132,12 +173,7 @@ const Shopingcarddipslay = () => {
                           </h1>
                           <div className="input-group-btn">
                             <button
-                              onClick={() =>
-                                dispatch({
-                                  type: INCREASE_QUANTITY,
-                                  payload: key,
-                                })
-                              }
+                              onClick={() => increaseQuantityHndler(item, key)}
                               className="buttons-increse-quantity"
                             >
                               <i className="fa fa-plus"></i>
@@ -150,13 +186,45 @@ const Shopingcarddipslay = () => {
                       </td>
                       <td className="align-middle">
                         <button
-                          onClick={() =>
-                            dispatch({ type: DELETE_CART, payload: key })
-                          }
+                          onClick={() => setDeletedOk(true)}
                           className="card-deleted-button"
                         >
                           <i className="fa fa-trash"></i>
                         </button>
+                        {DeletedOK && (
+                          <div
+                            onClick={() => setDeletedOk(false)}
+                            className="RemoveModal_body"
+                          >
+                            <div className="RemoveModal_content">
+                              <button
+                                onClick={() => setDeletedOk(false)}
+                                className="crossButton"
+                              >
+                                X
+                              </button>
+                              <h1 className="removeName">Remove Item</h1>
+                              <p className="confromMessage">
+                                Are you sure you want to remove this item?
+                              </p>
+
+                              <div className="ButtonContainer_remove">
+                                <button
+                                  onClick={() => setDeletedOk(false)}
+                                  className="CancleButton_remove"
+                                >
+                                  Cancel
+                                </button>
+                                <button
+                                  onClick={() => DeletdhandlerItem(item, key)}
+                                  className="RemoveButton_remove "
+                                >
+                                  Remove
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        )}
                       </td>
                     </tr>
                   ))}
@@ -164,6 +232,7 @@ const Shopingcarddipslay = () => {
               </table>
             </div>
           )}
+
           <div className="col-lg-4">
             <div className="card border-info mb-5">
               <div className="card-header bg-info border-0">
@@ -188,17 +257,23 @@ const Shopingcarddipslay = () => {
                   <h5 className="font-weight-bold">Total</h5>
                   <h5 className="font-weight-bold">${TotalCart.toFixed(2)}</h5>
                 </div>
-
-                <button
-                  onClick={procedtocheckout}
-                  className="btn-block checkout_button my-3 py-3"
-                >
-                  Proceed To Checkout
-                </button>
+                {items.Carts.length === 0 ? (
+                  <button className="btn-block checkout_buttonHide my-3 py-3">
+                    Proceed To Checkout
+                  </button>
+                ) : (
+                  <button
+                    onClick={procedtocheckout}
+                    className="btn-block checkout_button my-3 py-3"
+                  >
+                    Proceed To Checkout
+                  </button>
+                )}
               </div>
             </div>
           </div>
         </div>
+        {stauts && <ItemActionMessage itemActionDetails={itemActiondata} />}
       </div>
     </React.Fragment>
   );

@@ -13,6 +13,14 @@
   font-size: 22px;
   color: black;
 }
+/* when cart item is null hide disable checkout buttton */
+.checkout_buttonHide {
+  background-color: #dfdcdc;
+  border-width: 0px;
+  border-radius: 13px;
+  font-size: 22px;
+  color: black;
+}
 .checkout_button:hover {
   color: white;
 }
@@ -40,6 +48,13 @@
   height: 30px;
   width: 31px;
 }
+.hideDecreseButton {
+  background-color: rgb(107, 106, 106);
+  border-width: 0px;
+  color: transparent;
+  height: 30px;
+  width: 31px;
+}
 .buttons-decrese-quantity:hover {
   background-color: red;
 }
@@ -55,6 +70,74 @@
   background-color: red;
 }
 
-.titlewraping{
+.titlewraping {
   text-overflow: ellipsis;
+}
+
+/* remove item */
+.RemoveModal_body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.RemoveModal_content {
+  display: block;
+  width: 73%;
+  height: 43%;
+  max-width: 410px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px rgb(112, 112, 112);
+  overflow: hidden;
+}
+.crossButton {
+  align-self: flex-end;
+  margin-right: 10px;
+  font-size: 20px;
+  border-width: 0px;
+}
+.removeName {
+  color: black;
+  text-align: center;
+  font-size: 25px;
+}
+.confromMessage {
+  text-align: center;
+  font-size: 16px;
+  color: rgb(49, 49, 49);
+}
+.ButtonContainer_remove {
+  display: flex;
+  justify-content: space-around;
+}
+.CancleButton_remove {
+  background-color: transparent;
+  width: 130px;
+  border-width: 0px;
+  border: 1px solid blue;
+  font-size: 16px;
+  color: blue;
+  padding: 10px;
+  border-radius: 15px;
+  margin: 5px;
+}
+.RemoveButton_remove {
+  background-color: blue;
+  font-size: 18px;
+  width: 120px;
+  padding: 10px;
+  color: white;
+  border-width: 0px;
+  border-radius: 15px;
+  margin: 5px;
 }

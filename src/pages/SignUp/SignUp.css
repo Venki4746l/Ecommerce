@@ -2,12 +2,19 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  overflow: none;
+  overflow: auto;
   left: 0;
   top: 0;
   z-index: 120;
+ 
 }
-
+.Modal_content_container {
+  display: flex;
+  width: 80%;
+  margin: 5% auto;
+  background-color: white;
+  border-radius: 15px;
+}
 /*login buuton for login account*/
 .login_button{
     border-width:0px ;

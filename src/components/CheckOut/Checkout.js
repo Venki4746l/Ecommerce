@@ -1,15 +1,15 @@
 // bala
-
-import React from "react";
+import React, { useState } from "react";
 import "./Checkout.css";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { CLEAR_CART } from "./../../redux/actions/Carditemaction";
+import PlaceOrderMessage from "./PlaceOrderMessage";
 
 function Checkout() {
   const items = useSelector((state) => state._cardProduct);
   // console.log(items);
-
+  const [orderIntiate, setIntiateOrder] = useState(false);
   let TotalCart = 0;
   items.Carts.forEach(function (item) {
     TotalCart += item.quantity * item.price;
@@ -21,7 +21,10 @@ function Checkout() {
       type: CLEAR_CART,
       payload: item,
     });
-    alert("successfully placed order");
+    setIntiateOrder(true);
+    setTimeout(() => {
+      setIntiateOrder(false);
+    }, 10000);
   };
   return (
     <>
@@ -205,7 +208,6 @@ function Checkout() {
                       className="checkout-radio"
                       name="payment"
                       id="banktransfer"
-                      checked
                     />
                     <label
                       className="checkout-label mb-0"
@@ -229,6 +231,7 @@ function Checkout() {
                 )}
               </div>
             </div>
+            {orderIntiate && <PlaceOrderMessage /> }
           </div>
         </div>
       </div>

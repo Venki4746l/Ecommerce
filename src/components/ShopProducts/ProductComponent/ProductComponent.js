@@ -4,16 +4,27 @@ import React from "react";
 import { fetchData } from "../../../redux/actions/ShopAction";
 import "./ProductComponent.css";
 import { SpinnerCircularFixed } from "spinners-react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { ADD_CART } from "../../../redux/actions/Carditemaction";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 const ProductComponents = () => {
   const dispatch = useDispatch();
+  const navigate=useNavigate()
   const { products, loading } = useSelector((state) => ({ ...state.Products }));
   const [searchInput, setSearchInput] = useState("");
   const [sort, setSort] = useState(null);
+
+  //add to cart handler
+  const AddtocartHandler=(each)=>{
+    dispatch({
+      type: ADD_CART,
+      payload: { ...each, quantity: 1 },
+    
+    })
+    navigate("/cartCheck")
+  }
   //states for price ranges slecting
   const [filterByPrice, setFilterByPrice] = useState({
     all: true,
@@ -281,11 +292,9 @@ const ProductComponents = () => {
                             </button>
                           </Link>
                           <button
-                            onClick={() =>
-                              dispatch({
-                                type: ADD_CART,
-                                payload: { ...each, quantity: 1 },
-                              })
+                            onClick={() =>AddtocartHandler(each)
+                              
+                              
                             }
                             className="btn btn-sm text-dark p-0"
                           >

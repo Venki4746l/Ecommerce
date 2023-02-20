@@ -25,9 +25,10 @@ const Shopingcarddipslay = () => {
 
   // auto close action message
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setStatus(false);
-    }, 5000);
+    }, 2000);
+    return () => clearTimeout(timer);
   }, [stauts]);
   // getting the redux state value
   const items = useSelector((state) => state._cardProduct);

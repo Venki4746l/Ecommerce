@@ -1,0 +1,17 @@
+.placeOrderModal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  left: 0;
+  top: 0;
+  z-index: 102;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.PlaceorderContent {
+  display: flex;
+  width: 80%;
+  margin: 5% auto;
+  background-color: white;
+  border-radius: 15px;
+}
